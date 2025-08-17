@@ -1,7 +1,6 @@
-import Marquee from "react-fast-marquee";
 import Slider from "../components/slider";
 
-const icons = [
+const techs1 = [
   {
     src: "/icons8-chakra-ui.svg",
     alt: "Chakra UI",
@@ -84,12 +83,27 @@ const icons = [
   },
 ];
 
+const techs2 = [
+  {
+    src: "",
+    alt: ""
+  }
+]
+
 export default function Tech() {
   return (
-    <section className="flex justify-center items-center">
-      <div className="border-y-4 flex flex-col gap-8 py-8 w-[100vw]">
-        <Slider images={icons}/>
-        <Slider images={icons}/>
+    <section className="flex flex-col justify-center items-center w-full min-h-screen gap-10">
+      <h1 className="text-6xl font-playfair-display">Tech & Tools</h1>
+      <div
+        className="w-full rounded-xl glass backdrop-blur-md transition outline-1 outline-card-hover hover:outline-purple-400
+        hover:shadow-[0_0_10px_theme('colors.purple.500')]"
+      >
+        <div className="w-full flex flex-col gap-8 py-8 overflow-x-hidden">
+          <Slider images={techs1} direction="right" />
+          <Slider images={techs1} direction="left" />
+          <div className="pointer-events-none absolute z-10 left-0 top-0 h-full w-16 bg-gradient-to-r from-card to-transparent rounded-l-xl" />
+          <div className="pointer-events-none absolute z-10 right-0 top-0 h-full w-16 bg-gradient-to-l from-card to-transparent rounded-r-xl" />
+        </div>
       </div>
     </section>
   );

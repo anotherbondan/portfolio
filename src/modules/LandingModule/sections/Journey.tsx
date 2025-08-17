@@ -1,4 +1,4 @@
-import Card from "../components/card";
+import Experience from "../components/experience";
 import TagList from "../components/tag";
 const data = [
   {
@@ -30,9 +30,9 @@ const data = [
 export default function Journey() {
   return (
     <section id="experience" className="">
-      <Card data={data[0]}>
+      <Experience data={data[0]}>
         <TagList descList={data[0].tag}/>
-      </Card>
+      </Experience>
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Molle, Nunito } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Molle, Nunito, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/elements/Navbar";
 
@@ -13,16 +13,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const molle = Molle({
-  variable: "--font-molle",
-  weight: "400",
-  subsets: ["latin"],
-});
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"]
+})
 
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-});
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"]
+})
 
 export const metadata: Metadata = {
   title: "Ananda's Portfolio",
@@ -37,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${molle.variable} ${nunito.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playfairDisplay.variable} ${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         {children}
