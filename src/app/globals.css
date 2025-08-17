@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #faf9f6;
   --foreground: #171717;
 }
 
@@ -10,13 +10,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  --font-nunito: var(--font-nunito);
+  --font-molle: var(--font-molle);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary:     #FF6F61;
+  --color-secondary:   #6B4226; 
+  --color-accent-1:    #2c4e72;
+  --color-accent-2:    #FFD166;
+  --color-accent-3:    #32a956;
+  --color-bg:          #F8F1E7;
+  --color-text:        #2F2F2F;  
 }
 
 body {
@@ -24,3 +27,36 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.glass {
+  /* Properti Kunci untuk Efek Kaca */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.25
+  ); /* Warna latar belakang dengan transparansi */
+  backdrop-filter: blur(10px); /* Efek blur pada elemen di belakangnya */
+  -webkit-backdrop-filter: blur(10px); /* Dukungan untuk browser Safari */
+
+  /* Estetika Tambahan */
+  border-radius: 15px; /* Sudut yang membulat */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Garis tepi tipis semi-transparan */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Bayangan untuk efek kedalaman */
+
+  /* Styling Konten di Dalamnya (Opsional) */
+  padding: 30px;
+  color: #fff; /* Warna teks kontras */
+}
+
+.retro-text {
+      font-family: 'Molle', cursive;
+      font-size: 64px;
+      color: #ff6f61;
+      text-shadow: 
+        2px 2px 0 #000, 
+        4px 4px 0 #ffd166, 
+        6px 6px 0 #000;
+      letter-spacing: 2px;
+      transform: rotate(-2deg);
+    }
