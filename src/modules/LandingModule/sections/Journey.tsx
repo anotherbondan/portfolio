@@ -33,6 +33,7 @@ export default function Journey() {
       <Experience data={data[0]}>
         <TagList descList={data[0].tag}/>
       </Experience>
+      
     </section>
   );
 }

@@ -15,14 +15,14 @@ type ExperienceProps = {
 
 const Experience: React.FC<ExperienceProps> = ({ data, children }) => {
   return (
-    <div className="w-112 h-63 p-7 glass rounded-xl">
+    <div className="w-112 h-63 p-7 glass rounded-xl border-card-hover border-1">
       <div className="flex flex-col gap-3 h-full">
         <div className="flex gap-3">
-          <div className="w-20 h-20 rounded-lg">
+          <div className="w-20 h-20 rounded-lg border-card-hover border-1">
             <img
               src={data?.logo ?? "/office-worker.png"}
               alt="icon"
-              className="w-full overflow-hidden"
+              className="w-full h-auto overflow-hidden rounded-lg"
             />
           </div>
           <div className="flex flex-col justify-start">
