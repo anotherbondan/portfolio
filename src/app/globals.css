@@ -26,7 +26,7 @@ body {
 }
 
 .glass {
-  background: rgba(41, 41, 41, 0.596);
+  background: rgba(53, 53, 53, 0.596);
   backdrop-filter: blur(36px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
 }
