@@ -7,9 +7,9 @@ interface TagListProps {
   descList: string[];
 }
 
-const Tag: React.FC<TagProps> = ({ desc, index }) => {
+const Tag: React.FC<TagProps> = ({ desc }) => {
   return (
-    <div className={`w-fit rounded-lg bg-card-hover px-2`}>
+    <div className={`w-fit rounded-lg bg-card-hover border-card-pressed border-1 px-2`}>
       <h1 className="font-inter text-white text-xs">{desc}</h1>
     </div>
   );
@@ -17,7 +17,7 @@ const Tag: React.FC<TagProps> = ({ desc, index }) => {
 
 const TagList: React.FC<TagListProps> = ({ descList }) => {
   return (
-    <div className="flex gap-1 w-full overflow-x-scroll">
+    <div className="flex gap-1.5 w-full flex-wrap">
       {descList.map((desc, i) => (
         <Tag key={desc} desc={desc} index={i} />
       ))}

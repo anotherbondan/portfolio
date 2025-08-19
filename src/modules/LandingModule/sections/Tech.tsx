@@ -38,7 +38,7 @@ export default function Tech() {
     <section className="flex flex-col justify-center items-center w-full min-h-screen gap-10">
       <h1 className="text-6xl font-playfair-display">Techs and Tools</h1>
       <div
-        className="w-full rounded-xl glass backdrop-blur-md transition outline-1 outline-card-hover hover:outline-purple-400
+        className="w-full rounded-xl glass backdrop-blur-md transition border-1 border-card-hover hover:border-purple-400
         hover:shadow-[0_0_10px_theme('colors.purple.500')]"
       >
         <div className="w-full flex flex-col gap-8 py-8 overflow-x-hidden">

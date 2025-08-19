@@ -12,7 +12,7 @@ import { FaLinkedin } from "react-icons/fa6";
 export default function Navbar() {
   return (
     <nav className="flex fixed py-8 px-20 min-w-full z-50">
-      <div className="flex w-full rounded-3xl items-center justify-center py-5 px-7 glass outline-1 outline-card-hover backdrop-blur-md">
+      <div className="flex w-full rounded-3xl items-center justify-center py-5 px-7 glass border-1 border-card-hover backdrop-blur-md">
         <div className="flex min-w-full justify-between items-center gap-10">
           <div className="flex justify-between items-center gap-6">
             <Button className="flex rounded-xl w-18 h-18 justify-center items-center ">
