@@ -18,7 +18,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children }) => {
     <div className="w-112 h-63 p-7 glass rounded-xl border-card-hover border-1">
       <div className="flex flex-col gap-3 h-full">
         <div className="flex gap-3">
-          <div className="w-20 h-20 rounded-lg border-card-hover border-1">
+          <div className="w-20 h-20 rounded-lg border-card-hover border-1 bg-card-hover">
             <img
               src={data?.logo ?? "/office-worker.png"}
               alt="icon"

@@ -1,3 +1,6 @@
+"use client";
+
+import Button from "@/components/ui/button";
 import Experience from "../components/experience";
 import TagList from "../components/tag";
 const data = [
@@ -33,7 +36,7 @@ export default function Journey() {
       <Experience data={data[0]}>
         <TagList descList={data[0].tag}/>
       </Experience>
-      
+
     </section>
   );
 }
