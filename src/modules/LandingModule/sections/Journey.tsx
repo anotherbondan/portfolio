@@ -24,12 +24,15 @@ const datas = [
 
 export default function Journey() {
   return (
-    <section id="experience" className=""> 
-      {datas.map((data, idx) => (
-        <Experience key={idx} data={data} index={idx}>
-          <TagList descList={data.tags} />
-        </Experience>
-      ))}
+    <section id="experience" className="flex flex-col w-full min-h-screen items-center gap-10">
+      <h1 className="font-playfair-display text-6xl text-center">Journey so far...</h1>
+      <div className="w-full">
+        {datas.map((data, idx) => (
+          <Experience key={idx} data={data} index={idx}>
+            <TagList descList={data.tags} />
+          </Experience>
+        ))}
+      </div>
     </section>
   );
 }

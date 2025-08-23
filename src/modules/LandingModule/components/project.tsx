@@ -21,19 +21,27 @@ interface ProjectProps {
 
 export default function Project({ data, children }: ProjectProps) {
   return (
-    <Card className="rounded-xl flex flex-col w-86 h-136">
-      <img
-        src={data.cover}
-        alt="icon"
-        className="rounded-t-xl w-full h-46 object-cover"
-      />
-      <div className="flex flex-col p-6 justify-between h-full">
+    <Card className="rounded-xl flex flex-col w-86 h-116 tracking-wider transition-all hover:scale-105 hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')] hover:animate-slow-bounce">
+      <div className="w-full h-72 p-6 overflow-hidden">
+        <img
+          src={data.cover}
+          alt="icon"
+          className="w-full h-full rounded-xl object-cover"
+        />
+      </div>
+      <div className="flex flex-col px-6 pb-6 justify-between h-full">
         <div className="flex flex-col gap-3">
           <div className="flex justify-between">
-            <h1 className="font-semibold font-playfair-display text-xl">{data.title}</h1>
-            <h2 className="text-card-disabled text-xs font-inter">{data.date}</h2>
+            <h1 className="font-semibold font-inter text-xl text-purple-500">
+              {data.title}
+            </h1>
+            <h2 className="text-card-disabled text-xs font-inter">
+              {data.date}
+            </h2>
           </div>
-          <p className="text-sm text-card-disabled break-words font-inter">{data.desc}</p>
+          <p className="text-sm text-card-disabled break-words font-inter">
+            {data.desc}
+          </p>
           {children}
         </div>
         <div className="flex w-full gap-2">
@@ -42,7 +50,7 @@ export default function Project({ data, children }: ProjectProps) {
               <GrGithub />
               <Link href={data.sourceCode} target="_blank">
                 Code
-              </Link> 
+              </Link>
             </Button>
           )}
           {data.projectUrl && (
@@ -50,7 +58,7 @@ export default function Project({ data, children }: ProjectProps) {
               <FaArrowUpRightFromSquare />
               <Link href={data.projectUrl} target="_blank">
                 View Project
-              </Link> 
+              </Link>
             </Button>
           )}
         </div>
