@@ -15,10 +15,10 @@ export default function Navbar() {
       <div className="flex w-full rounded-3xl items-center justify-center py-5 px-7 glass border-1 border-card-hover backdrop-blur-md">
         <div className="flex min-w-full justify-between items-center gap-10">
           <div className="flex justify-between items-center gap-6">
-            <Button className="flex rounded-xl w-18 h-18 justify-center items-center ">
-              <LuUser size={36} color="white" />
-            </Button>
-            <h1 className="font-playfair-display text-5xl">Ananda</h1>
+            <Button className="flex rounded-xl w-18 h-18 justify-center items-center p-3">
+              <img src="/portfolio.png" alt="icon" className="w-full h-full"/>
+            </Button> 
+            <h1 className="text-4xl font-playfair-display">Ananda</h1>
           </div>
           {/* Menu */}
           <div className="flex justify-between items-center gap-4">

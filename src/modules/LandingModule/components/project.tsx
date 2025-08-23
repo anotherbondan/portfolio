@@ -46,7 +46,7 @@ export default function Project({ data, children }: ProjectProps) {
             </Button>
           )}
           {data.projectUrl && (
-            <Button className="flex items-center gap-4 rounded-lg px-6 bg-purple-500 border-none font-inter py-1">
+            <Button className="flex items-center gap-4 rounded-lg px-6 bg-purple-600 border-none font-inter py-1">
               <FaArrowUpRightFromSquare />
               <Link href={data.projectUrl} target="_blank">
                 View Project

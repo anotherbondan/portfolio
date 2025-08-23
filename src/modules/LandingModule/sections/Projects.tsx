@@ -33,7 +33,8 @@ const datas = [
 
 export default function Projects() {
   return (
-    <section id="project" className="min-h-screen">
+    <section id="project" className="min-h-screen flex flex-col gap-14 items-center justify-center">
+      <h1 className="text-7xl font-playfair-display">Projects</h1>
       <div className="flex w-full justify-between items-center">
         {datas.map((data, idx) => (
           <Project key={idx} data={data}>
