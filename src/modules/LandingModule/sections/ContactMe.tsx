@@ -25,7 +25,7 @@ export default function ContactMe() {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-1 focus:ring-purple-200 focus:shadow-[0_0_10px_theme('colors.purple.500')]"
                 />
               </div>
               <div className="w-full flex flex-col gap-1">
@@ -35,7 +35,7 @@ export default function ContactMe() {
                   name="email"
                   placeholder="youremail@email.com"
                   required
-                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-1 focus:ring-purple-200 focus:shadow-[0_0_10px_theme('colors.purple.500')]"
                 />
               </div>
             </div>
@@ -47,7 +47,7 @@ export default function ContactMe() {
                 placeholder="Your Message"
                 rows={5}
                 required
-                className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-1 focus:ring-purple-200 focus:shadow-[0_0_10px_theme('colors.purple.500')]"
               ></textarea>
             </div>
 

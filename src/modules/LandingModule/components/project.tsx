@@ -52,7 +52,7 @@ export default function Project({ data, children }: ProjectProps) {
             </Button>
           )}
           {data.projectUrl && (
-            <Button className="flex items-center gap-4 rounded-lg px-4 bg-purple-600 border-none text-sm font-inter py-2">
+            <Button className="flex items-center gap-4 rounded-lg px-4 bg-purple-600 border-purple-400 text-sm font-inter py-2">
               <FaArrowUpRightFromSquare />
               <Link href={data.projectUrl} target="_blank">
                 View Site
