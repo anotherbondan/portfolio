@@ -21,7 +21,7 @@ interface ProjectProps {
 
 export default function Project({ data, children }: ProjectProps) {
   return (
-    <Card className="group rounded-xl flex flex-col w-86 h-116 tracking-wider transition-all hover:scale-105 hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')] hover:animate-slow-bounce">
+    <Card className="group rounded-xl flex flex-col w-100 h-136 tracking-wider transition-all hover:scale-105 hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')] hover:animate-slow-bounce">
       <div className="w-full h-72 p-6 overflow-hidden">
         <img
           src={data.cover}
@@ -39,14 +39,12 @@ export default function Project({ data, children }: ProjectProps) {
               {data.date}
             </p>
           </div>
-          <p className="text-xs text-card-disabled font-inter">
-            {data.desc}
-          </p>
+          <p className="text-xs text-card-disabled font-inter">{data.desc}</p>
           {children}
         </div>
-        <div className="flex w-full gap-2">
+        <div className="flex w-full gap-4">
           {data.sourceCode && (
-            <Button className="flex items-center bg-card-hover border-card-disabled gap-4 px-3 rounded-lg  font-inter py-2">
+            <Button className="flex items-center bg-card-hover border-purple-400 gap-4 px-4 rounded-lg text-sm font-inter py-2">
               <GrGithub />
               <Link href={data.sourceCode} target="_blank">
                 Code
@@ -54,10 +52,10 @@ export default function Project({ data, children }: ProjectProps) {
             </Button>
           )}
           {data.projectUrl && (
-            <Button className="flex items-center gap-4 rounded-lg px-6 bg-purple-600 border-none font-inter py-2">
+            <Button className="flex items-center gap-4 rounded-lg px-4 bg-purple-600 border-none text-sm font-inter py-2">
               <FaArrowUpRightFromSquare />
               <Link href={data.projectUrl} target="_blank">
-                View Project
+                View Site
               </Link>
             </Button>
           )}

@@ -5,7 +5,7 @@ import { IoPaperPlane } from "react-icons/io5";
 export default function ContactMe() {
   return (
     <section id="contact" className="min-h-screen flex flex-col py-10">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-6">
           <h2 className="text-6xl font-semibold font-playfair-display text-center">
             Contact Me
@@ -25,7 +25,7 @@ export default function ContactMe() {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full p-3 rounded-lg bg-card-hover border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
               <div className="w-full flex flex-col gap-1">
@@ -35,7 +35,7 @@ export default function ContactMe() {
                   name="email"
                   placeholder="youremail@email.com"
                   required
-                  className="w-full p-3 rounded-lg bg-card-hover border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
             </div>
@@ -47,17 +47,17 @@ export default function ContactMe() {
                 placeholder="Your Message"
                 rows={5}
                 required
-                className="w-full p-3 rounded-lg bg-card-hover border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-2 focus:ring-purple-500"
               ></textarea>
             </div>
 
             <Button
               type="submit"
-              className="py-2 rounded-xl bg-purple-500 w-full"
+              className="py-3 rounded-xl bg-purple-500 w-full hover:scale-100"
             >
               <div className="flex gap-2 items-center justify-center">
                 <IoPaperPlane />
-                <h1 className="font-inter">Send Message</h1>
+                <h1 className="font-inter text-xs">Send Message</h1>
               </div>
             </Button>
           </form>

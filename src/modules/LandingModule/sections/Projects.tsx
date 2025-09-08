@@ -1,22 +1,37 @@
+"use client";
+
 import Project from "../components/project";
 import TechList from "../components/tech-list";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // pake icon lucide-react
+import Button from "@/components/ui/button";
 
 const datas = [
   {
     cover: "/compfest-web.png",
     title: "COMPFEST 17",
     date: "May 2025",
-    desc: "Official event website of COMPFEST, Indonesia's largest IT event by Fasilkom UI students. Contributed as a software engineer by designing and implementing an engaging, interactive frontend that enhanced user experience.",
-    tech: ["/techs/tailwind-css.svg", "/techs/nextjs.svg"],
+    desc: "Official event website of COMPFEST, Indonesia's largest IT event by Fasilkom UI students.",
+    tech: [
+      "/techs/nextjs.svg",
+      "/techs/tailwind-css.svg",
+      "/techs/prisma-orm.svg",
+      "/tools/PostgreSQL.svg",
+    ],
     sourceCode: "https://github.com/COMPFEST",
     projectUrl: "https://compfest.id/",
   },
   {
     cover: "/ddp0-web.png",
-    title: "DDP0 2025",
+    title: "DDP-0 2025",
     date: "July 2025",
-    desc: "blablabla",
-    tech: ["/tools/ubuntu.svg", "/tools/figma.svg", "/techs/nextjs.svg"],
+    desc: "DDP-0 is a preparatory program by COSMIC 2024 designed to introduce fundamental programming concepts to incoming CSUI 2025 students.",
+    tech: [
+      "/techs/nextjs.svg",
+      "/techs/tailwind-css.svg",
+      "/techs/prisma-orm.svg",
+    ],
     sourceCode: "https://github.com/DDP0",
     projectUrl: "https://ddp0.csui.dev/",
   },
@@ -24,25 +39,70 @@ const datas = [
     cover: "/ijtihad-web.png",
     title: "Ijtihad",
     date: "Aug 2025",
-    desc: "blablabla",
-    tech: ["/tools/ubuntu.svg", "/tools/figma.svg", "/techs/nextjs.svg"],
-    sourceCode: "",
+    desc: "AI-powered platform for halal product validation, contract analysis, and a fatwa chatbot, developed for the Gemastik 2025 Software Development Competition.",
+    tech: [ "/techs/nextjs.svg", "/techs/FastAPI.svg", "/tools/vercel.svg", "/tools/railway.svg", "/techs/redis.svg", "/tools/firebase.svg", "/tools/gemini-ai.svg", "/tools/PostgreSQL.svg"],
+    sourceCode: "https://github.com/anotherbondan/ijtihad-frontend",
     projectUrl: "https://ijtihad.vercel.app/",
+  },
+  {
+    cover: "/portfolio-web.png",
+    title: "Portfolio",
+    date: "Sep 2025",
+    desc: "A personal web portfolio built to showcase my projects, tools, and experiences in software engineering.",
+    tech: [ "/techs/nextjs.svg", "/tools/vercel.svg"],
+    sourceCode: "https://github.com/anotherbondan/portfolio",
+    projectUrl: "",
   },
 ];
 
 export default function Projects() {
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    mode: "snap",
+    slides: { perView: 1, spacing: 20 },
+    breakpoints: {
+      "(min-width: 768px)": {
+        slides: { perView: 2, spacing: 20 },
+      },
+      "(min-width: 1024px)": {
+        slides: { perView: 3, spacing: 16 },
+      },
+    },
+  });
+
   return (
     <section
       id="project"
-      className="min-h-screen flex flex-col gap-14 items-center justify-center"
+      className="relative min-h-screen flex flex-col gap-14 items-center justify-center"
     >
       <h1 className="text-7xl font-playfair-display">Projects</h1>
-      <div className="flex w-full justify-between items-center">
+
+      <div className="absolute inset-x-0 bottom-1/3 flex justify-between items-center px-4 z-10 pointer-events-none">
+        <Button
+          onClick={() => slider.current?.prev()}
+          className="glass p-2 rounded-full text-white pointer-events-auto -translate-x-1/2"
+        >
+          <ChevronLeft size={28} />
+        </Button>
+        <Button
+          onClick={() => slider.current?.next()}
+          className="glass p-2 rounded-full text-white pointer-events-auto translate-x-1/2"
+        >
+          <ChevronRight size={28} />
+        </Button>
+      </div>
+
+      {/* slider */}
+      <div ref={sliderRef} className="keen-slider w-full">
         {datas.map((data, idx) => (
-          <Project key={idx} data={data}>
-            <TechList data={data.tech} />
-          </Project>
+          <div
+            key={idx}
+            className="keen-slider__slide flex justify-center py-10 px-6"
+          >
+            <Project data={data}>
+              <TechList data={data.tech} />
+            </Project>
+          </div>
         ))}
       </div>
     </section>

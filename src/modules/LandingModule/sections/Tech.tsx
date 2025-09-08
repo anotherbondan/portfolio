@@ -35,7 +35,7 @@ const tools = [
 
 export default function Tech() {
   return (
-    <section className="flex flex-col justify-center items-center w-full min-h-screen gap-10">
+    <section id="tech" className="flex flex-col justify-center items-center w-full min-h-screen gap-10">
       <h1 className="text-6xl font-playfair-display">Techs and Tools</h1>
       <div
         className="w-full rounded-xl glass backdrop-blur-md transition border-1 border-card-hover hover:border-purple-400
