@@ -9,7 +9,7 @@ interface TagListProps {
 
 const Tag: React.FC<TagProps> = ({ desc }) => {
   return (
-    <div className="w-fit rounded-lg bg-card-hover border-card-pressed border-1 px-2">
+    <div className="w-fit rounded-lg bg-card-hover border-card-pressed border-1 px-2 hover:rotate-3 transition-all">
       <h1 className="font-inter text-white text-xs">{desc}</h1>
     </div>
   );

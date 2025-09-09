@@ -44,20 +44,20 @@ export default function Project({ data, children }: ProjectProps) {
         </div>
         <div className="flex w-full gap-4">
           {data.sourceCode && (
-            <Button className="flex items-center bg-card-hover border-purple-400 gap-4 px-4 rounded-lg text-sm font-inter py-2">
-              <GrGithub />
-              <Link href={data.sourceCode} target="_blank">
+            <Link href={data.sourceCode} target="_blank">
+              <Button className="flex items-center bg-card-hover border-purple-400 gap-4 px-4 rounded-lg text-sm font-inter py-2">
+                <GrGithub />
                 Code
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           )}
           {data.projectUrl && (
-            <Button className="flex items-center gap-4 rounded-lg px-4 bg-purple-600 border-purple-400 text-sm font-inter py-2">
-              <FaArrowUpRightFromSquare />
-              <Link href={data.projectUrl} target="_blank">
+            <Link href={data.projectUrl} target="_blank">
+              <Button className="flex items-center gap-4 rounded-lg px-4 bg-purple-600 border-purple-400 text-sm font-inter py-2">
+                <FaArrowUpRightFromSquare />
                 View Site
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           )}
         </div>
       </div>
