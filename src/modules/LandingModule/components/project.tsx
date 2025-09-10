@@ -21,31 +21,31 @@ interface ProjectProps {
 
 export default function Project({ data, children }: ProjectProps) {
   return (
-    <Card className="group rounded-xl flex flex-col w-100 h-136 tracking-wider transition-all hover:scale-105 hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')] hover:animate-slow-bounce">
-      <div className="w-full h-72 p-6 overflow-hidden">
+    <Card className="group hover:animate-slow-bounce flex h-136 w-100 flex-col rounded-xl tracking-wider transition-all hover:scale-105 hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
+      <div className="h-72 w-full overflow-hidden p-6">
         <img
           src={data.cover}
           alt="icon"
-          className="w-full h-full rounded-lg object-cover group-hover:brightness-50 transition-all"
+          className="h-full w-full rounded-lg object-cover transition-all group-hover:brightness-50"
         />
       </div>
-      <div className="flex flex-col px-6 pb-6 justify-between h-full">
+      <div className="flex h-full flex-col justify-between px-6 pb-6">
         <div className="flex flex-col gap-3">
           <div className="flex justify-between">
-            <h1 className="font-semibold font-inter text-2xl text-purple-500">
+            <h1 className="font-inter text-2xl font-semibold text-purple-500">
               {data.title}
             </h1>
-            <p className="text-card-disabled text-xs font-light font-inter">
+            <p className="text-card-disabled font-inter text-xs font-light">
               {data.date}
             </p>
           </div>
-          <p className="text-xs text-card-disabled font-inter">{data.desc}</p>
+          <p className="text-card-disabled font-inter text-xs">{data.desc}</p>
           {children}
         </div>
         <div className="flex w-full gap-4">
           {data.sourceCode && (
             <Link href={data.sourceCode} target="_blank">
-              <Button className="flex items-center bg-card-hover border-purple-400 gap-4 px-4 rounded-lg text-sm font-inter py-2">
+              <Button className="bg-card-hover font-inter flex items-center gap-4 rounded-lg border-purple-400 px-4 py-2 text-sm">
                 <GrGithub />
                 Code
               </Button>
@@ -53,7 +53,7 @@ export default function Project({ data, children }: ProjectProps) {
           )}
           {data.projectUrl && (
             <Link href={data.projectUrl} target="_blank">
-              <Button className="flex items-center gap-4 rounded-lg px-4 bg-purple-600 border-purple-400 text-sm font-inter py-2">
+              <Button className="font-inter flex items-center gap-4 rounded-lg border-purple-400 bg-purple-600 px-4 py-2 text-sm">
                 <FaArrowUpRightFromSquare />
                 View Site
               </Button>

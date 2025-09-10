@@ -10,7 +10,7 @@ interface Image {
 
 interface SliderProps {
   images: Image[];
-  direction: "right" | "left" 
+  direction: "right" | "left";
 }
 
 const Slider: React.FC<SliderProps> = ({ images, direction }) => {
@@ -19,7 +19,7 @@ const Slider: React.FC<SliderProps> = ({ images, direction }) => {
       {images.map((image, index) => (
         <Card
           key={index}
-          className="group mx-2 flex h-4 w-4 border-1 border-card-hover cursor-help items-center justify-center rounded-xl p-6 md:mx-3 md:h-36 md:w-36 hover:scale-105 hover:border-purple-300 hover:shadow-[0_0_10px_theme('colors.purple.500')] transition"
+          className="group border-card-hover mx-2 flex h-4 w-4 cursor-help items-center justify-center rounded-xl border-1 p-6 transition hover:scale-105 hover:border-purple-300 hover:shadow-[0_0_10px_theme('colors.purple.500')] md:mx-3 md:h-36 md:w-36"
         >
           <img
             src={image.src}
@@ -27,7 +27,9 @@ const Slider: React.FC<SliderProps> = ({ images, direction }) => {
             className="h-full w-full group-hover:blur-md"
             draggable="false"
           />
-          <Card className="absolute hidden group-hover:block px-1 font-inter rounded-md border-1 border-card-hover">{image.alt}</Card>
+          <Card className="font-inter border-card-hover absolute hidden rounded-md border-1 px-1 group-hover:block">
+            {image.alt}
+          </Card>
         </Card>
       ))}
     </Marquee>

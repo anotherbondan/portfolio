@@ -14,71 +14,68 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-
   return (
     <>
-      <nav
-        className="flex fixed py-8 px-20 min-w-full z-50"
-      >
-        <div className="flex w-full rounded-4xl items-center justify-center py-5 px-8 glass border-1 border-card-hover backdrop-blur-sm">
-          <div className="flex min-w-full justify-between items-center gap-10">
-            <div className="flex justify-between items-center gap-6">
-              <Button className="flex rounded-full w-18 h-18 justify-center items-center p-4 hover:rotate-[360deg] transition-all">
+      <nav className="fixed z-50 flex min-w-full px-20 py-8">
+        <div className="glass border-card-hover flex w-full items-center justify-center rounded-4xl border-1 px-8 py-5 backdrop-blur-sm">
+          <div className="flex min-w-full items-center justify-between gap-10">
+            <div className="flex items-center justify-between gap-6">
+              <Button className="flex h-18 w-18 items-center justify-center rounded-full p-4 transition-all hover:rotate-[360deg]">
                 <img
                   src="/portfolio.png"
                   alt="icon"
-                  className="w-full h-full"
+                  className="h-full w-full"
                 />
               </Button>
-              <h1 className="text-4xl font-playfair-display">Ananda</h1>
+              <h1 className="font-playfair-display text-4xl">Ananda</h1>
             </div>
             {/* Menu */}
-            <div className="flex justify-between items-center gap-4">
+            <div className="flex items-center justify-between gap-4">
               <Link href="/#home">
-                <Button className="group flex w-18 h-18 items-center justify-center rounded-xl">
+                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
                   <LuHouse size={32} color="white" />
-                  <div className="border-[1px] border-card-hover px-1 bg-card absolute hidden group-hover:block -bottom-1/2 font-inter rounded-md">
+                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
                     Home
                   </div>
                 </Button>
               </Link>
               <Link href="#experience">
-                <Button className="group flex w-18 h-18 items-center justify-center rounded-xl">
+                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
                   <LuBriefcaseBusiness size={32} color="white" />
-                  <div className="border-[1px] border-card-hover px-1 bg-card absolute hidden group-hover:block -bottom-1/2 font-inter rounded-md">
+                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
                     Experiences
                   </div>
                 </Button>
               </Link>
               <Link href="#tech">
-                <Button className="group flex w-18 h-18 items-center justify-center rounded-xl">
+                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
                   <LuWrench size={32} color="white" />
-                  <div className="border-[1px] border-card-hover px-1 bg-card absolute hidden group-hover:block -bottom-1/2 font-inter rounded-md">
+                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
                     Tools
                   </div>
                 </Button>
               </Link>
               <Link href="#project">
-                <Button className="group flex w-18 h-18 items-center justify-center rounded-xl">
+                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
                   <LuBox size={32} color="white" />
-                  <div className="border-[1px] border-card-hover px-1 bg-card absolute hidden group-hover:block -bottom-1/2 font-inter rounded-md">
+                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
                     Projects
                   </div>
                 </Button>
               </Link>
               <Link href="#contact">
-                <Button className="group flex w-18 h-18 items-center justify-center rounded-xl">
+                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
                   <LuMail size={32} color="white" />
-                  <div className="border-[1px] border-card-hover px-1 bg-card absolute hidden group-hover:block -bottom-1/2 font-inter rounded-md">
+                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
                     Contact
                   </div>
                 </Button>
               </Link>
             </div>
             {/* ReachOut */}
-            <Button className="flex h-18 justify-between items-center rounded-xl px-6 gap-4 ">
+            <Button className="flex h-18 items-center justify-between gap-4 rounded-xl px-6">
               <FaLinkedin size={40} />
-              <h1 className="text-2xl font-semibold font-inter max-lg:hidden">
+              <h1 className="font-inter text-2xl font-semibold max-lg:hidden">
                 Reach Out
               </h1>
             </Button>

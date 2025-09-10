@@ -9,9 +9,9 @@ const Button: React.FC<ButtonProps> = ({ className, children, ...props }) => {
   return (
     <button
       className={cn(
-        "bg-card transition hover:scale-105 active:scale-95 shadow-lg border-1 border-card-hover hover:border-purple-200",
+        "bg-card border-card-hover border-1 shadow-lg transition hover:scale-105 hover:border-purple-200 active:scale-95",
         "hover:shadow-[0_0_10px_theme('colors.purple.500')]",
-        className
+        className,
       )}
       {...props}
     >

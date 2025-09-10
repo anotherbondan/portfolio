@@ -28,24 +28,23 @@ const tools = [
   { src: "/tools/vs-code.svg", alt: "VS Code" },
   { src: "/tools/vercel.svg", alt: "Vercel" },
   { src: "/tools/neon.svg", alt: "Neon" },
-  { src: "/tools/gemini-ai.svg", alt: "Gemini" },  
-  { src: "/tools/chatgpt.svg", alt: "OpenAI" },   
+  { src: "/tools/gemini-ai.svg", alt: "Gemini" },
+  { src: "/tools/chatgpt.svg", alt: "OpenAI" },
 ];
-
 
 export default function Tech() {
   return (
-    <section id="tech" className="flex flex-col justify-center items-center w-full min-h-screen gap-10">
-      <h1 className="text-6xl font-playfair-display">Techs and Tools</h1>
-      <div
-        className="w-full rounded-xl glass backdrop-blur-md transition border-1 border-card-hover hover:border-purple-400
-        hover:shadow-[0_0_10px_theme('colors.purple.500')]"
-      >
-        <div className="w-full flex flex-col gap-8 py-8 overflow-x-hidden">
+    <section
+      id="tech"
+      className="flex min-h-screen w-full flex-col items-center justify-center gap-10"
+    >
+      <h1 className="font-playfair-display text-6xl">Techs and Tools</h1>
+      <div className="glass border-card-hover w-full rounded-xl border-1 backdrop-blur-md transition hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
+        <div className="flex w-full flex-col gap-8 overflow-x-hidden py-8">
           <Slider images={techs} direction="right" />
           <Slider images={tools} direction="left" />
-          <div className="pointer-events-none absolute z-10 left-0 top-0 h-full w-16 bg-gradient-to-r from-card to-transparent rounded-l-xl" />
-          <div className="pointer-events-none absolute z-10 right-0 top-0 h-full w-16 bg-gradient-to-l from-card to-transparent rounded-r-xl" />
+          <div className="from-card pointer-events-none absolute top-0 left-0 z-10 h-full w-16 rounded-l-xl bg-gradient-to-r to-transparent" />
+          <div className="from-card pointer-events-none absolute top-0 right-0 z-10 h-full w-16 rounded-r-xl bg-gradient-to-l to-transparent" />
         </div>
       </div>
     </section>

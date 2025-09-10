@@ -34,15 +34,18 @@ export default function Journey() {
   return (
     <section
       id="experience"
-      className="flex flex-col w-full min-h-screen items-center gap-24"
+      className="flex min-h-screen w-full flex-col items-center gap-24"
     >
-      <h1 className="font-playfair-display text-6xl text-center">
+      <h1 className="font-playfair-display text-center text-6xl">
         Journey so far...
       </h1>
-      <div className="flex flex-col items-center justify-center w-full gap-10">
-        <div className="absolute w-1 h-full bg-purple-200 rounded-full shadow-[0_0_10px_theme('colors.purple.500')]"></div>
+      <div className="flex w-full flex-col items-center justify-center gap-10">
+        <div className="absolute h-full w-1 rounded-full bg-purple-200 shadow-[0_0_10px_theme('colors.purple.500')]"></div>
         {datas.map((data, idx) => (
-          <div key={idx} className={`flex w-full ${idx % 2 == 0 ? "justify-start" : "justify-end"}`}>
+          <div
+            key={idx}
+            className={`flex w-full ${idx % 2 == 0 ? "justify-start" : "justify-end"}`}
+          >
             <Experience key={idx} data={data} index={idx}>
               <TagList descList={data.tags} />
             </Experience>

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Molle, Nunito, Playfair_Display } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Inter,
+  Molle,
+  Nunito,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/elements/Navbar";
 import Footer from "@/components/elements/Footer";
@@ -16,13 +23,13 @@ const geistMono = Geist_Mono({
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Ananda Gautama | Software Engineer",
@@ -41,7 +48,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

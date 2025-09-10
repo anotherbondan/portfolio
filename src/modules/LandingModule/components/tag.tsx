@@ -9,15 +9,15 @@ interface TagListProps {
 
 const Tag: React.FC<TagProps> = ({ desc }) => {
   return (
-    <div className="w-fit rounded-lg bg-card-hover border-card-pressed border-1 px-2 hover:rotate-3 transition-all">
-      <h1 className="font-inter text-white text-xs">{desc}</h1>
+    <div className="bg-card-hover border-card-pressed w-fit rounded-lg border-1 px-2 transition-all hover:rotate-3">
+      <h1 className="font-inter text-xs text-white">{desc}</h1>
     </div>
   );
 };
 
 const TagList: React.FC<TagListProps> = ({ descList }) => {
   return (
-    <div className="flex gap-1.5 w-full flex-wrap">
+    <div className="flex w-full flex-wrap gap-1.5">
       {descList.map((desc, i) => (
         <Tag key={desc} desc={desc} index={i} />
       ))}

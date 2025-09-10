@@ -4,58 +4,64 @@ import { IoPaperPlane } from "react-icons/io5";
 
 export default function ContactMe() {
   return (
-    <section id="contact" className="min-h-screen flex flex-col py-10">
+    <section id="contact" className="flex min-h-screen flex-col py-10">
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-6">
-          <h2 className="text-6xl font-semibold font-playfair-display text-center">
+          <h2 className="font-playfair-display text-center text-6xl font-semibold">
             Contact Me
           </h2>
-          <p className="text-xs font-inter text-gray-500 text-center">
+          <p className="font-inter text-center text-xs text-gray-500">
             Know me better!
           </p>
         </div>
 
-        <div className="w-full flex flex-col gap-6 p-6 rounded-xl"> 
+        <div className="flex w-full flex-col gap-6 rounded-xl p-6">
           <form className="space-y-6" method="POST" action="/api/send-email">
             <div className="flex gap-4">
-              <div className="w-full flex flex-col gap-1">
-                <label htmlFor="name" className="font-semibold font-inter">Name</label>
+              <div className="flex w-full flex-col gap-1">
+                <label htmlFor="name" className="font-inter font-semibold">
+                  Name
+                </label>
                 <input
                   type="text"
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-1 focus:ring-purple-200 focus:shadow-[0_0_10px_theme('colors.purple.500')]"
+                  className="bg-card-hover w-full rounded-lg p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:ring-1 focus:ring-purple-200 focus:outline-none"
                 />
               </div>
-              <div className="w-full flex flex-col gap-1">
-                <label htmlFor="email" className="font-semibold font-inter">Email</label>
+              <div className="flex w-full flex-col gap-1">
+                <label htmlFor="email" className="font-inter font-semibold">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
                   placeholder="youremail@email.com"
                   required
-                  className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-1 focus:ring-purple-200 focus:shadow-[0_0_10px_theme('colors.purple.500')]"
+                  className="bg-card-hover w-full rounded-lg p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:ring-1 focus:ring-purple-200 focus:outline-none"
                 />
               </div>
             </div>
 
-            <div className="w-full flex flex-col gap-1">
-              <label htmlFor="message" className="font-semibold font-inter">Message</label>
+            <div className="flex w-full flex-col gap-1">
+              <label htmlFor="message" className="font-inter font-semibold">
+                Message
+              </label>
               <textarea
                 name="message"
                 placeholder="Your Message"
                 rows={5}
                 required
-                className="w-full p-3 rounded-lg bg-card-hover focus:outline-none focus:ring-1 focus:ring-purple-200 focus:shadow-[0_0_10px_theme('colors.purple.500')]"
+                className="bg-card-hover w-full rounded-lg p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:ring-1 focus:ring-purple-200 focus:outline-none"
               ></textarea>
             </div>
 
             <Button
               type="submit"
-              className="py-3 rounded-xl bg-purple-500 w-full hover:scale-100"
+              className="w-full rounded-xl bg-purple-500 py-3 hover:scale-100"
             >
-              <div className="flex gap-2 items-center justify-center">
+              <div className="flex items-center justify-center gap-2">
                 <IoPaperPlane />
                 <h1 className="font-inter text-xs">Send Message</h1>
               </div>

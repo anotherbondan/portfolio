@@ -7,11 +7,11 @@ import Tech from "./sections/Tech";
 export default function LandingModule() {
   return (
     <main className="flex flex-col gap-10 px-15">
-      <Hero/>
-      <Journey/>
-      <Tech/>
-      <Projects/>
-      <ContactMe/>
+      <Hero />
+      <Journey />
+      <Tech />
+      <Projects />
+      <ContactMe />
     </main>
-  )
+  );
 }

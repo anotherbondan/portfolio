@@ -40,7 +40,16 @@ const datas = [
     title: "Ijtihad",
     date: "Aug 2025",
     desc: "AI-powered platform for halal product validation, contract analysis, and a fatwa chatbot, developed for the Gemastik 2025 Software Development Competition.",
-    tech: [ "/techs/nextjs.svg", "/techs/FastAPI.svg", "/tools/vercel.svg", "/tools/railway.svg", "/techs/redis.svg", "/tools/firebase.svg", "/tools/gemini-ai.svg", "/tools/PostgreSQL.svg"],
+    tech: [
+      "/techs/nextjs.svg",
+      "/techs/FastAPI.svg",
+      "/tools/vercel.svg",
+      "/tools/railway.svg",
+      "/techs/redis.svg",
+      "/tools/firebase.svg",
+      "/tools/gemini-ai.svg",
+      "/tools/PostgreSQL.svg",
+    ],
     sourceCode: "https://github.com/anotherbondan/ijtihad-frontend",
     projectUrl: "https://ijtihad.vercel.app/",
   },
@@ -49,7 +58,7 @@ const datas = [
     title: "Portfolio",
     date: "Sep 2025",
     desc: "A personal web portfolio built to showcase my projects, tools, and experiences in software engineering.",
-    tech: [ "/techs/nextjs.svg", "/tools/vercel.svg"],
+    tech: ["/techs/nextjs.svg", "/tools/vercel.svg"],
     sourceCode: "https://github.com/anotherbondan/portfolio",
     projectUrl: "",
   },
@@ -73,20 +82,20 @@ export default function Projects() {
   return (
     <section
       id="project"
-      className="relative min-h-screen flex flex-col gap-14 items-center justify-center"
+      className="relative flex min-h-screen flex-col items-center justify-center gap-14"
     >
-      <h1 className="text-7xl font-playfair-display">Projects</h1>
+      <h1 className="font-playfair-display text-7xl">Projects</h1>
 
-      <div className="absolute inset-x-0 bottom-1/3 flex justify-between items-center px-4 z-10 pointer-events-none">
+      <div className="pointer-events-none absolute inset-x-0 bottom-1/3 z-10 flex items-center justify-between px-4">
         <Button
           onClick={() => slider.current?.prev()}
-          className="glass p-2 rounded-full text-white pointer-events-auto -translate-x-1/2"
+          className="glass pointer-events-auto -translate-x-1/2 rounded-full p-2 text-white"
         >
           <ChevronLeft size={28} />
         </Button>
         <Button
           onClick={() => slider.current?.next()}
-          className="glass p-2 rounded-full text-white pointer-events-auto translate-x-1/2"
+          className="glass pointer-events-auto translate-x-1/2 rounded-full p-2 text-white"
         >
           <ChevronRight size={28} />
         </Button>
@@ -97,7 +106,7 @@ export default function Projects() {
         {datas.map((data, idx) => (
           <div
             key={idx}
-            className="keen-slider__slide flex justify-center py-10 px-6"
+            className="keen-slider__slide flex justify-center px-6 py-10"
           >
             <Project data={data}>
               <TechList data={data.tech} />
