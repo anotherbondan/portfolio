@@ -64,73 +64,77 @@ export default function ContactMe() {
           </p>
         </div>
 
-        <div className="flex w-full flex-col gap-6 rounded-xl p-6">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="flex gap-4">
-              <div className="flex w-full flex-col gap-1">
-                <label htmlFor="name" className="font-inter font-semibold">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  disabled={isLoading}
-                  className="bg-card-hover w-full rounded-lg p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:ring-1 focus:ring-purple-200 focus:outline-none disabled:opacity-50"
-                />
+        <div className="grid grid-cols-2">
+          <div className="flex w-full flex-col gap-6 rounded-xl p-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div className="flex gap-4">
+                <div className="flex w-full flex-col gap-1">
+                  <label htmlFor="name" className="font-inter font-semibold">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    disabled={isLoading}
+                    className="bg-card w-full rounded-xl p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:outline-none disabled:opacity-50"
+                  />
+                </div>
+                <div className="flex w-full flex-col gap-1">
+                  <label htmlFor="email" className="font-inter font-semibold">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="youremail@email.com"
+                    required
+                    disabled={isLoading}
+                    className="bg-card w-full rounded-xl p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:outline-none disabled:opacity-50"
+                  />
+                </div>
               </div>
-              <div className="flex w-full flex-col gap-1">
-                <label htmlFor="email" className="font-inter font-semibold">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="youremail@email.com"
-                  required
-                  disabled={isLoading}
-                  className="bg-card-hover w-full rounded-lg p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:ring-1 focus:ring-purple-200 focus:outline-none disabled:opacity-50"
-                />
-              </div>
-            </div>
 
-            <div className="flex w-full flex-col gap-1">
-              <label htmlFor="message" className="font-inter font-semibold">
-                Message
-              </label>
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                rows={5}
-                required
+              <div className="flex w-full flex-col gap-1">
+                <label htmlFor="message" className="font-inter font-semibold">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  rows={5}
+                  required
+                  disabled={isLoading}
+                  className="bg-card w-full rounded-xl p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:outline-none disabled:opacity-50"
+                ></textarea>
+              </div>
+
+              <Button
+                type="submit"
                 disabled={isLoading}
-                className="bg-card-hover w-full rounded-lg p-3 focus:shadow-[0_0_10px_theme('colors.purple.500')] focus:ring-1 focus:ring-purple-200 focus:outline-none disabled:opacity-50"
-              ></textarea>
-            </div>
-
-            <Button
-              type="submit"
-              disabled={isLoading}
-              className="w-full rounded-xl bg-purple-500 py-3 hover:scale-100 disabled:opacity-70 disabled:hover:scale-100"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <IoPaperPlane />
-                <h1 className="font-inter text-xs">
-                  {isLoading ? "Sending..." : "Send Message"}
-                </h1>
-              </div>
-            </Button>
-            {status.message && (
-              <div
-                className={`text-center text-sm font-semibold ${
-                  status.type === "success" ? "text-green-500" : "text-red-500"
-                }`}
+                className="w-full rounded-xl bg-purple-500 py-3 hover:scale-100 disabled:opacity-70 disabled:hover:scale-100"
               >
-                {status.message}
-              </div>
-            )}
-          </form>
+                <div className="flex items-center justify-center gap-2">
+                  <IoPaperPlane />
+                  <h1 className="font-inter text-xs">
+                    {isLoading ? "Sending..." : "Send Message"}
+                  </h1>
+                </div>
+              </Button>
+              {status.message && (
+                <div
+                  className={`text-center text-sm font-semibold ${
+                    status.type === "success"
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }`}
+                >
+                  {status.message}
+                </div>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </section>

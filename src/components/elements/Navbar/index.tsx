@@ -6,12 +6,10 @@ import {
   LuBriefcaseBusiness,
   LuHouse,
   LuMail,
-  LuUser,
   LuWrench,
 } from "react-icons/lu";
 import { FaLinkedin } from "react-icons/fa6";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Navbar() {
   return (
@@ -20,14 +18,13 @@ export default function Navbar() {
         <div className="glass border-card-hover flex w-full items-center justify-center rounded-4xl border-1 px-8 py-5 backdrop-blur-sm">
           <div className="flex min-w-full items-center justify-between gap-10">
             <div className="flex items-center justify-between gap-6">
-              <Button className="flex h-18 w-18 items-center justify-center rounded-full p-4 transition-all hover:rotate-[360deg]">
+              <Button className="flex h-18 w-18 items-center justify-center rounded-full p-4 transition-all hover:rotate-12 hover:scale-105 transform">
                 <img
                   src="/portfolio.png"
                   alt="icon"
                   className="h-full w-full"
                 />
               </Button>
-              <h1 className="font-playfair-display text-4xl">Ananda</h1>
             </div>
             {/* Menu */}
             <div className="flex items-center justify-between gap-4">

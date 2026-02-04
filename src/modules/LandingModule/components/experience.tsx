@@ -28,10 +28,10 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
             index % 2 == 0 ? "translate-x-1/2" : "-translate-x-1/2"
           }`}
         ></div>
-        <div className="glass border-card-hover h-63 w-124 rounded-xl border-1 p-7 transition-all hover:border-purple-200 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
+        <div className="glass backdrop-blur-3xl border-card-hover  h-63 w-124 rounded-3xl border-1 p-7 transition-all hover:border-purple-200 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
           <div className="flex h-full flex-col gap-3">
             <div className="flex items-center gap-3">
-              <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-lg border-1 bg-white">
+              <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-white">
                 <img
                   src={data?.logo ?? "/office-worker.png"}
                   alt="icon"

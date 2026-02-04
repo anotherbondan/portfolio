@@ -38,7 +38,7 @@ export default function Tech() {
       id="tech"
       className="flex min-h-screen w-full flex-col items-center justify-center gap-10"
     >
-      <h1 className="font-playfair-display text-6xl">Techs and Tools</h1>
+      <h1 className="font-playfair-display text-6xl text-purple-200 [text-shadow:0_0_5px_theme(colors.purple.400),0_0_10px_theme(colors.purple.500),0_0_20px_theme(colors.purple.600),0_0_40px_theme(colors.purple.700)]">Techs and Tools</h1>
       <div className="glass border-card-hover w-full rounded-xl border-1 backdrop-blur-md transition hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
         <div className="flex w-full flex-col gap-8 overflow-x-hidden py-8">
           <Slider images={techs} direction="right" />

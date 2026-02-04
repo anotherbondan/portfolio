@@ -21,12 +21,12 @@ interface ProjectProps {
 
 export default function Project({ data, children }: ProjectProps) {
   return (
-    <Card className="group hover:animate-slow-bounce flex h-136 w-100 flex-col rounded-xl tracking-wider transition-all hover:scale-105 hover:border-purple-400 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
+    <Card className="group hover:animate-slow-bounce hover:ring-1 hover:ring-purple-200 flex h-136 w-100 border-1 border-neutral-500 hover:border-none transform flex-col rounded-2xl tracking-wider transition-all hover:shadow-[0_0_10px_theme('colors.purple.500')]">
       <div className="h-72 w-full overflow-hidden p-6">
         <img
           src={data.cover}
           alt="icon"
-          className="h-full w-full rounded-lg object-cover transition-all group-hover:brightness-50"
+          className="h-full w-full rounded-xl object-cover transition-all group-hover:brightness-50"
         />
       </div>
       <div className="flex h-full flex-col justify-between px-6 pb-6">
@@ -39,13 +39,13 @@ export default function Project({ data, children }: ProjectProps) {
               {data.date}
             </p>
           </div>
-          <p className="text-card-disabled font-inter text-xs">{data.desc}</p>
+          <p className="text-card-disabled font-inter text-xs font-light">{data.desc}</p>
           {children}
         </div>
         <div className="flex w-full gap-4">
           {data.sourceCode && (
             <Link href={data.sourceCode} target="_blank">
-              <Button className="bg-card-hover font-inter flex items-center gap-4 rounded-lg border-purple-400 px-4 py-2 text-sm">
+              <Button className="bg-card-hover font-inter flex items-center gap-4 rounded-lg border-card-disabled hover:ring-px hover:ring-purple-200 px-4 py-2 text-sm">
                 <GrGithub />
                 Code
               </Button>

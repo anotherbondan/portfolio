@@ -60,7 +60,7 @@ const datas = [
     desc: "A personal web portfolio built to showcase my projects, tools, and experiences in software engineering.",
     tech: ["/techs/nextjs.svg", "/tools/vercel.svg"],
     sourceCode: "https://github.com/anotherbondan/portfolio",
-    projectUrl: "",
+    projectUrl: "https://ananda-gautama.vercel.app/",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Projects() {
         slides: { perView: 2, spacing: 20 },
       },
       "(min-width: 1024px)": {
-        slides: { perView: 3, spacing: 16 },
+        slides: { perView: 3, spacing: 4 },
       },
     },
   });
@@ -84,21 +84,21 @@ export default function Projects() {
       id="project"
       className="relative flex min-h-screen flex-col items-center justify-center gap-14"
     >
-      <h1 className="font-playfair-display text-7xl">Projects</h1>
+      <h1 className="font-playfair-display text-7xl text-purple-200 [text-shadow:0_0_5px_theme(colors.purple.400),0_0_10px_theme(colors.purple.500),0_0_20px_theme(colors.purple.600),0_0_40px_theme(colors.purple.700)]">Projects</h1>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-1/3 z-10 flex items-center justify-between px-4">
-        <Button
+        <button
           onClick={() => slider.current?.prev()}
-          className="glass pointer-events-auto -translate-x-1/2 rounded-full p-2 text-white"
+          className="glass pointer-events-auto -translate-x-1/2 transform cursor-pointer rounded-full border-1 border-neutral-500 p-2 bg-card-hover text-white backdrop-blur-sm transition-all hover:scale-105"
         >
-          <ChevronLeft size={28} />
-        </Button>
-        <Button
+          <ChevronLeft className="transform transition-all" size={28} />
+        </button>
+        <button
           onClick={() => slider.current?.next()}
-          className="glass pointer-events-auto translate-x-1/2 rounded-full p-2 text-white"
+          className="glass pointer-events-auto translate-x-1/2 transform cursor-pointer rounded-full border-1 border-neutral-500 p-2 bg-card-hover text-white backdrop-blur-sm transition-all hover:scale-105"
         >
-          <ChevronRight size={28} />
-        </Button>
+          <ChevronRight className="transform transition-all" size={28} />
+        </button>
       </div>
 
       {/* slider */}

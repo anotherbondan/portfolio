@@ -10,7 +10,7 @@ const datas = [
     role: "Staff of Software Engineer",
     date: "May 2025 - Present",
     descs: ["Build interactive frontend"],
-    tags: ["Frontend", "Teamwork", "Ubuntu", "Figma", "ReactJS", "TailwindCSS"],
+    tags: ["ReactJS", "TailwindCSS"],
   },
   {
     logo: "/ddp0.jpg",
@@ -18,7 +18,7 @@ const datas = [
     role: "Staff of IT Development",
     date: "July 2025 - Present",
     descs: ["bikin web bos"],
-    tags: ["Frontend", "Teamwork", "Ubuntu", "Figma", "ReactJS", "TailwindCSS"],
+    tags: ["ReactJS", "TailwindCSS", "NextJS"],
   },
   {
     logo: "/bem.jpg",
@@ -26,7 +26,7 @@ const datas = [
     role: "Staff of SE at Business and Partnership",
     date: "Aug 2025 - Present",
     descs: ["bikin web bos"],
-    tags: ["Frontend", "Teamwork", "Ubuntu", "Figma", "ReactJS", "TailwindCSS"],
+    tags: ["ReactJS", "TailwindCSS", "NextJS"],
   },
 ];
 
@@ -36,7 +36,7 @@ export default function Journey() {
       id="experience"
       className="flex min-h-screen w-full flex-col items-center gap-24"
     >
-      <h1 className="font-playfair-display text-center text-6xl">
+      <h1 className="font-playfair-display text-center text-6xl text-purple-200 [text-shadow:0_0_5px_theme(colors.purple.400),0_0_10px_theme(colors.purple.500),0_0_20px_theme(colors.purple.600),0_0_40px_theme(colors.purple.700)]">
         Journey so far...
       </h1>
       <div className="flex w-full flex-col items-center justify-center gap-10">
