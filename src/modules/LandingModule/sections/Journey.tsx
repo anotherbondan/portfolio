@@ -21,7 +21,7 @@ const datas = [
     tags: ["Frontend", "Teamwork", "Ubuntu", "Figma", "ReactJS", "TailwindCSS"],
   },
   {
-    logo: "/bem.webp",
+    logo: "/bem.jpg",
     event: "BEM Fasilkom UI 2025",
     role: "Staff of SE at Business and Partnership",
     date: "Aug 2025 - Present",
