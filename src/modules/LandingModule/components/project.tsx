@@ -21,40 +21,40 @@ interface ProjectProps {
 
 export default function Project({ data, children }: ProjectProps) {
   return (
-    <Card className="group hover:animate-slow-bounce hover:ring-1 hover:ring-purple-200 flex h-136 w-100 border-1 border-neutral-500 hover:border-none transform flex-col rounded-2xl tracking-wider transition-all hover:shadow-[0_0_10px_theme('colors.purple.500')]">
-      <div className="h-72 w-full overflow-hidden p-6">
+    <Card className="group hover:animate-slow-bounce hover:ring-1 hover:ring-purple-200 flex gap-6 w-full border-1 border-neutral-500 hover:border-none transform p-10 rounded-2xl tracking-wider transition-all hover:shadow-[0_0_10px_theme('colors.purple.500')]">
+      <div className="h-72 aspect-video overflow-hidden shrink-0">
         <img
           src={data.cover}
           alt="icon"
           className="h-full w-full rounded-xl object-cover transition-all group-hover:brightness-50"
         />
       </div>
-      <div className="flex h-full flex-col justify-between px-6 pb-6">
+      <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-3">
           <div className="flex justify-between">
-            <h1 className="font-inter text-2xl font-semibold text-purple-500">
+            <h1 className="font-inter text-3xl font-semibold text-neutral-300">
               {data.title}
             </h1>
-            <p className="text-card-disabled font-inter text-xs font-light">
+            <p className="text-card-disabled font-inter text-lg font-light">
               {data.date}
             </p>
           </div>
-          <p className="text-card-disabled font-inter text-xs font-light">{data.desc}</p>
+          <p className="text-card-disabled font-inter text-md font-light">{data.desc}</p>
           {children}
         </div>
-        <div className="flex w-full gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {data.sourceCode && (
             <Link href={data.sourceCode} target="_blank">
-              <Button className="bg-card-hover font-inter flex items-center gap-4 rounded-lg border-card-disabled hover:ring-px hover:ring-purple-200 px-4 py-2 text-sm">
-                <GrGithub />
+              <Button className="bg-card-hover w-full font-inter flex items-center justify-center  gap-4 rounded-lg border-card-disabled hover:ring-px hover:ring-purple-200 px-4 py-4 text-lg">
+                <GrGithub size={28} />
                 Code
               </Button>
             </Link>
           )}
           {data.projectUrl && (
             <Link href={data.projectUrl} target="_blank">
-              <Button className="font-inter flex items-center gap-4 rounded-lg border-purple-400 bg-purple-600 px-4 py-2 text-sm">
-                <FaArrowUpRightFromSquare />
+              <Button className="font-inter flex w-full items-center justify-center  gap-4 rounded-lg border-purple-400 bg-purple-600 px-4 py-4 text-lg">
+                <FaArrowUpRightFromSquare size={28} />
                 View Site
               </Button>
             </Link>

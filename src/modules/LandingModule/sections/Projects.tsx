@@ -17,7 +17,6 @@ const datas = [
       "/techs/nextjs.svg",
       "/techs/tailwind-css.svg",
       "/techs/prisma-orm.svg",
-      "/tools/PostgreSQL.svg",
     ],
     sourceCode: "https://github.com/COMPFEST",
     projectUrl: "https://compfest.id/",
@@ -82,36 +81,18 @@ export default function Projects() {
   return (
     <section
       id="project"
-      className="relative flex min-h-screen flex-col items-center justify-center gap-14"
+      className="relative flex min-h-screen flex-col items-center justify-center gap-14 pt-40 pb-20"
     >
-      <h1 className="font-playfair-display text-7xl text-purple-200 [text-shadow:0_0_5px_theme(colors.purple.400),0_0_10px_theme(colors.purple.500),0_0_20px_theme(colors.purple.600),0_0_40px_theme(colors.purple.700)]">Projects</h1>
-
-      <div className="pointer-events-none absolute inset-x-0 bottom-1/3 z-10 flex items-center justify-between px-4">
-        <button
-          onClick={() => slider.current?.prev()}
-          className="glass pointer-events-auto -translate-x-1/2 transform cursor-pointer rounded-full border-1 border-neutral-500 p-2 bg-card-hover text-white backdrop-blur-sm transition-all hover:scale-105"
-        >
-          <ChevronLeft className="transform transition-all" size={28} />
-        </button>
-        <button
-          onClick={() => slider.current?.next()}
-          className="glass pointer-events-auto translate-x-1/2 transform cursor-pointer rounded-full border-1 border-neutral-500 p-2 bg-card-hover text-white backdrop-blur-sm transition-all hover:scale-105"
-        >
-          <ChevronRight className="transform transition-all" size={28} />
-        </button>
-      </div>
+      <h1 className="font-playfair-display text-7xl text-purple-200 [text-shadow:0_0_5px_theme(colors.purple.400),0_0_10px_theme(colors.purple.500),0_0_20px_theme(colors.purple.600),0_0_40px_theme(colors.purple.700)]">
+        Projects
+      </h1>
 
       {/* slider */}
-      <div ref={sliderRef} className="keen-slider w-full">
+      <div ref={sliderRef} className="w-full space-y-10">
         {datas.map((data, idx) => (
-          <div
-            key={idx}
-            className="keen-slider__slide flex justify-center px-6 py-10"
-          >
-            <Project data={data}>
-              <TechList data={data.tech} />
-            </Project>
-          </div>
+          <Project key={idx} data={data}>
+            <TechList data={data.tech} />
+          </Project>
         ))}
       </div>
     </section>

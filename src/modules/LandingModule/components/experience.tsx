@@ -28,7 +28,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
             index % 2 == 0 ? "translate-x-1/2" : "-translate-x-1/2"
           }`}
         ></div>
-        <div className="glass backdrop-blur-3xl border-card-hover  h-63 w-124 rounded-3xl border-1 p-7 transition-all hover:border-purple-200 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
+        <div className="glass backdrop-blur-3xl border-card-hover  min-h-64 w-124 rounded-3xl border-1 p-7 transition-all hover:border-purple-200 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
           <div className="flex h-full flex-col gap-3">
             <div className="flex items-center gap-3">
               <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-white">
@@ -42,7 +42,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
                 <h2 className="font-inter text-2xl font-semibold">
                   {data?.event ?? "Event"}
                 </h2>
-                <h3 className="font-inter text-md text-purple-500">
+                <h3 className="font-inter text-md text-neutral-300">
                   {data?.role ?? "Role"}
                 </h3>
                 <div className="flex items-center gap-1">
@@ -53,7 +53,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
                 </div>
               </div>
             </div>
-            <div className="flex h-full flex-col justify-between">
+            <div className="flex h-full flex-col justify-between gap-4">
               <ul className="font-inter text-card-disabled list-disc pl-4 text-sm">
                 {data.descs.map((desc, idx) => (
                   <li key={idx}>{desc}</li>

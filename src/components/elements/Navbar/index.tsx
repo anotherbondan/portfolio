@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="glass border-card-hover flex w-full items-center justify-center rounded-4xl border-1 px-8 py-5 backdrop-blur-sm">
           <div className="flex min-w-full items-center justify-between gap-10">
             <div className="flex items-center justify-between gap-6">
-              <Button className="flex h-18 w-18 items-center justify-center rounded-full p-4 transition-all hover:rotate-12 hover:scale-105 transform">
+              <Button className="flex h-18 w-18 transform items-center justify-center rounded-full p-4 transition-all hover:scale-105 hover:rotate-12">
                 <img
                   src="/portfolio.png"
                   alt="icon"
@@ -60,22 +60,24 @@ export default function Navbar() {
                   </div>
                 </Button>
               </Link>
-              <Link href="#contact">
+              {/* <Link href="#contact">
                 <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
                   <LuMail size={32} color="white" />
                   <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
                     Contact
                   </div>
                 </Button>
-              </Link>
+              </Link> */}
             </div>
             {/* ReachOut */}
-            <Button className="flex h-18 items-center justify-between gap-4 rounded-xl px-6">
-              <FaLinkedin size={40} />
-              <h1 className="font-inter text-2xl font-semibold max-lg:hidden">
-                Reach Out
-              </h1>
-            </Button>
+            <Link href={"https://www.linkedin.com/in/anandagautama/"} target="_blank">
+              <Button className="flex h-18 items-center justify-between gap-4 rounded-xl px-6">
+                <FaLinkedin size={40} />
+                <h1 className="font-inter text-2xl font-semibold max-lg:hidden">
+                  Reach Out
+                </h1>
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>

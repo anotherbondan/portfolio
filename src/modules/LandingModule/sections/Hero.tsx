@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex min-h-screen w-full flex-col items-center justify-center pt-20"
+      className="flex min-h-screen w-full flex-col items-center justify-center py-20"
     >
       <div className="flex h-full w-full items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-6">

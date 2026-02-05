@@ -10,7 +10,7 @@ export default function TechList({ data }: TechListProps) {
       {data.map((image, idx) => (
         <Card
           key={idx}
-          className="bg-neutral-900 h-8 w-8 rounded-lg p-1.5 transition-all duration-200 hover:scale-105 hover:rotate-6 lg:h-10 lg:w-10"
+          className="bg-neutral-900 border-card-hover border-1 h-8 w-8 rounded-lg p-1.5 transition-all duration-200 hover:scale-105 hover:rotate-6 lg:h-10 lg:w-10"
         >
           <img src={image} alt="icon" className="h-auto w-full object-cover" />
         </Card>
