@@ -3,6 +3,8 @@ import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "@/components/ui/button";
+import { FaArrowRight, FaDownload } from "react-icons/fa6";
+import { LuDownload } from "react-icons/lu";
 
 export default function Hero() {
   return (
@@ -46,16 +48,21 @@ export default function Hero() {
             I specialize in building scalable web applications, designing elegant user interfaces, and solving complex problems with code. Let's build something amazing together.
           </p>
 
-          <div className="flex gap-4 mt-4">
+          <div className="flex flex-wrap gap-4 mt-4 items-center">
             <a href="#project">
-              <Button className="bg-purple-600 border-none px-6 py-3 rounded-full hover:bg-purple-500 transition-colors">
+              <Button className="bg-purple-600 border-none px-6 py-3 rounded-full hover:bg-purple-500 transition-colors shadow-[0_0_15px_theme('colors.purple.500/30')] hover:shadow-[0_0_25px_theme('colors.purple.500/50')]">
                 <span className="font-inter font-semibold">View My Work</span>
               </Button>
             </a>
-            <a href="#contact">
-              <Button className="bg-transparent border-white/20 border px-6 py-3 rounded-full hover:border-purple-400 hover:bg-purple-900/10 transition-colors">
-                <span className="font-inter font-semibold">Contact Me</span>
+            <a href="/AnandaGautamaSekarKhosmana_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-transparent border-white/20 border px-6 py-3 rounded-full hover:border-purple-400 hover:bg-purple-900/10 transition-colors flex items-center gap-2 group">
+                <span className="font-inter font-semibold">Resume</span>
+                <LuDownload/>
               </Button>
+            </a>
+            <a href="#contact" className="flex items-center gap-1.5 group">
+                <span className="font-inter font-semibold group-hover:underline">Contact Me</span>
+                <FaArrowRight className="group-hover:translate-x-1 transform transition-all"/>
             </a>
           </div>
         </motion.div>

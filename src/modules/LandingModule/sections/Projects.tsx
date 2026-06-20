@@ -2,10 +2,6 @@
 
 import Project from "../components/project";
 import TechList from "../components/tech-list";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // pake icon lucide-react
-import Button from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const datas = [
@@ -65,20 +61,6 @@ const datas = [
 ];
 
 export default function Projects() {
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    mode: "snap",
-    slides: { perView: 1, spacing: 20 },
-    breakpoints: {
-      "(min-width: 768px)": {
-        slides: { perView: 2, spacing: 20 },
-      },
-      "(min-width: 1024px)": {
-        slides: { perView: 3, spacing: 4 },
-      },
-    },
-  });
-
   return (
     <section
       id="project"
@@ -89,20 +71,20 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-playfair-display text-7xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]"
+        className="font-playfair-display text-5xl md:text-7xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]"
       >
         Projects
       </motion.h1>
 
-      {/* slider */}
-      <div ref={sliderRef} className="w-full space-y-10">
+      <div className="grid grid-cols-1 gap-10 w-full max-w-7xl px-6 lg:px-8 mt-4">
         {datas.map((data, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: idx * 0.15, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+            className="flex w-full"
           >
             <Project data={data}>
               <TechList data={data.tech} />

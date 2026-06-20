@@ -41,10 +41,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-6 z-50 flex w-full justify-center px-4">
-      <div className="glass flex items-center justify-between gap-6 md:gap-12 rounded-full px-6 py-3 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_theme('colors.purple.500/20')]">
+      <div className="glass flex items-center justify-between gap-6 md:gap-12 rounded-full px-4 py-3 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_theme('colors.purple.500/20')]">
         
         {/* Left: Logo */}
-        <Link href="/#home" className="flex items-center justify-center transform transition-transform hover:scale-105 hover:-rotate-12">
+        <Link href="/#home" className="flex items-center justify-center transform transition-transform hover:scale-105 hover:-rotate-12 pl-2">
           <div className="relative h-10 w-10">
             <Image
               src="/portfolio.png"
