@@ -19,7 +19,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
   return (
     <div className="flex w-1/2">
       <div
-        className={`flex w-full items-center justify-between ${
+        className={`flex w-full items-center gap-6 ${
           index % 2 == 0 ? "flex-row-reverse" : "flex-row"
         }`}
       >
@@ -28,14 +28,14 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
             index % 2 == 0 ? "translate-x-1/2" : "-translate-x-1/2"
           }`}
         ></div>
-        <div className="glass backdrop-blur-3xl border-card-hover  min-h-64 w-124 rounded-3xl border-1 p-7 transition-all hover:border-purple-200 hover:shadow-[0_0_10px_theme('colors.purple.500')]">
+        <div className="group glass backdrop-blur-3xl border-white/10 min-h-64 max-w-140 rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]">
           <div className="flex h-full flex-col gap-3">
             <div className="flex items-center gap-3">
               <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-white">
                 <img
                   src={data?.logo ?? "/office-worker.png"}
                   alt="icon"
-                  className="h-full w-full object-center"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="flex flex-col justify-between">

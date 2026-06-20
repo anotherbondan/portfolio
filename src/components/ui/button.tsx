@@ -1,23 +1,32 @@
-import { ButtonHTMLAttributes } from "react";
-import { cn } from "@/lib/utils";
+"use client";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+import { ButtonHTMLAttributes, forwardRef } from "react";
+import { cn } from "@/lib/utils";
+import { motion, HTMLMotionProps } from "framer-motion";
+
+type ButtonProps = HTMLMotionProps<"button"> & {
   className?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({ className, children, ...props }) => {
-  return (
-    <button
-      className={cn(
-        "bg-card border-card-hover border-1 shadow-lg transition hover:scale-105 hover:border-purple-200 active:scale-95",
-        "hover:shadow-[0_0_10px_theme('colors.purple.500')]",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <motion.button
+        ref={ref}
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.98 }}
+        className={cn(
+          "bg-card border-card-hover border-1 shadow-md transition-colors hover:border-purple-400 hover:bg-purple-900/10",
+          "hover:shadow-[0_0_10px_theme('colors.purple.500/50')]",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </motion.button>
+    );
+  }
+);
+Button.displayName = "Button";
 
 export default Button;

@@ -6,6 +6,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // pake icon lucide-react
 import Button from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const datas = [
   {
@@ -83,16 +84,30 @@ export default function Projects() {
       id="project"
       className="relative flex min-h-screen flex-col items-center justify-center gap-14 pt-40 pb-20"
     >
-      <h1 className="font-playfair-display text-7xl text-purple-200 [text-shadow:0_0_5px_theme(colors.purple.400),0_0_10px_theme(colors.purple.500),0_0_20px_theme(colors.purple.600),0_0_40px_theme(colors.purple.700)]">
+      <motion.h1 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="font-playfair-display text-7xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]"
+      >
         Projects
-      </h1>
+      </motion.h1>
 
       {/* slider */}
       <div ref={sliderRef} className="w-full space-y-10">
         {datas.map((data, idx) => (
-          <Project key={idx} data={data}>
-            <TechList data={data.tech} />
-          </Project>
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: idx * 0.15, ease: "easeOut" }}
+          >
+            <Project data={data}>
+              <TechList data={data.tech} />
+            </Project>
+          </motion.div>
         ))}
       </div>
     </section>

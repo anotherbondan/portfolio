@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
 type CardProps = {
@@ -6,8 +6,18 @@ type CardProps = {
   className?: string;
 };
 
-const Card: React.FC<CardProps> = ({ children, className }) => {
-  return <div className={cn("bg-card", className)}>{children}</div>;
-};
+const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ children, className }, ref) => {
+    return (
+      <div 
+        ref={ref}
+        className={cn("glass ring-1 ring-white/10 rounded-2xl", className)}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+Card.displayName = "Card";
 
 export default Card;

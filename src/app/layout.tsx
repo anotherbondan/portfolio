@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import {
   Geist,
   Geist_Mono,
-  Inter,
-  Molle,
-  Nunito,
-  Playfair_Display,
+  Outfit,
+  Plus_Jakarta_Sans,
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/elements/Navbar";
@@ -21,13 +19,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
 });
 
@@ -44,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${playfairDisplay.variable} ${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         {children}

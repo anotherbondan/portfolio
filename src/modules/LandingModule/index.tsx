@@ -11,6 +11,7 @@ export default function LandingModule() {
       <Journey />
       <Tech />
       <Projects />
+      <ContactMe />
     </main>
   );
 }

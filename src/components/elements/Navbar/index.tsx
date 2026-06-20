@@ -1,86 +1,91 @@
 "use client";
 
 import Button from "@/components/ui/button";
-import {
-  LuBox,
-  LuBriefcaseBusiness,
-  LuHouse,
-  LuMail,
-  LuWrench,
-} from "react-icons/lu";
 import { FaLinkedin } from "react-icons/fa6";
 import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  const navLinks = [
+    { name: "Home", href: "#home", id: "home" },
+    { name: "Experience", href: "#experience", id: "experience" },
+    { name: "Tools", href: "#tech", id: "tech" },
+    { name: "Projects", href: "#project", id: "project" },
+    { name: "Contact", href: "#contact", id: "contact" },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Find the section that is currently most visible
+      const sections = navLinks.map(link => document.getElementById(link.id));
+      const scrollPosition = window.scrollY + 200; // Offset for navbar
+
+      sections.forEach(section => {
+        if (section) {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+
+          if (scrollPosition >= top && scrollPosition < bottom) {
+            setActiveSection(section.id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <>
-      <nav className="fixed z-50 flex min-w-full px-20 py-8">
-        <div className="glass border-card-hover flex w-full items-center justify-center rounded-4xl border-1 px-8 py-5 backdrop-blur-sm">
-          <div className="flex min-w-full items-center justify-between gap-10">
-            <div className="flex items-center justify-between gap-6">
-              <Button className="flex h-18 w-18 transform items-center justify-center rounded-full p-4 transition-all hover:scale-105 hover:rotate-12">
-                <img
-                  src="/portfolio.png"
-                  alt="icon"
-                  className="h-full w-full"
-                />
-              </Button>
-            </div>
-            {/* Menu */}
-            <div className="flex items-center justify-between gap-4">
-              <Link href="/#home">
-                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
-                  <LuHouse size={32} color="white" />
-                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
-                    Home
-                  </div>
-                </Button>
-              </Link>
-              <Link href="#experience">
-                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
-                  <LuBriefcaseBusiness size={32} color="white" />
-                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
-                    Experiences
-                  </div>
-                </Button>
-              </Link>
-              <Link href="#tech">
-                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
-                  <LuWrench size={32} color="white" />
-                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
-                    Tools
-                  </div>
-                </Button>
-              </Link>
-              <Link href="#project">
-                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
-                  <LuBox size={32} color="white" />
-                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
-                    Projects
-                  </div>
-                </Button>
-              </Link>
-              {/* <Link href="#contact">
-                <Button className="group flex h-18 w-18 items-center justify-center rounded-xl">
-                  <LuMail size={32} color="white" />
-                  <div className="border-card-hover bg-card font-inter absolute -bottom-1/2 hidden rounded-md border-[1px] px-1 group-hover:block">
-                    Contact
-                  </div>
-                </Button>
-              </Link> */}
-            </div>
-            {/* ReachOut */}
-            <Link href={"https://www.linkedin.com/in/anandagautama/"} target="_blank">
-              <Button className="flex h-18 items-center justify-between gap-4 rounded-xl px-6">
-                <FaLinkedin size={40} />
-                <h1 className="font-inter text-2xl font-semibold max-lg:hidden">
-                  Reach Out
-                </h1>
-              </Button>
-            </Link>
+    <nav className="fixed top-6 z-50 flex w-full justify-center px-4">
+      <div className="glass flex items-center justify-between gap-6 md:gap-12 rounded-full px-6 py-3 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_theme('colors.purple.500/20')]">
+        
+        {/* Left: Logo */}
+        <Link href="/#home" className="flex items-center justify-center transform transition-transform hover:scale-105 hover:-rotate-12">
+          <div className="relative h-10 w-10">
+            <Image
+              src="/portfolio.png"
+              alt="Logo"
+              fill
+              className="object-contain"
+            />
           </div>
+        </Link>
+
+        {/* Center: Desktop Menu */}
+        <div className="hidden md:flex items-center justify-center gap-2">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <Link 
+                key={link.name} 
+                href={link.href}
+                className={`font-inter text-sm font-medium transition-all px-4 py-2 rounded-full ${
+                  isActive 
+                    ? "bg-purple-500/20 text-purple-300" 
+                    : "text-neutral-300 hover:text-purple-400 hover:bg-white/5"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
-      </nav>
-    </>
+
+        {/* Right: LinkedIn Reach Out */}
+        <Link href="https://www.linkedin.com/in/anandagautama/" target="_blank">
+          <Button className="flex h-10 items-center justify-center gap-2 rounded-full px-5 py-2 bg-purple-600 border-none hover:bg-purple-500 hover:shadow-[0_0_10px_theme('colors.purple.500/50')]">
+            <FaLinkedin size={18} />
+            <span className="font-inter text-sm font-semibold hidden md:block">
+              Reach Out
+            </span>
+          </Button>
+        </Link>
+        
+      </div>
+    </nav>
   );
 }
