@@ -1,11 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaGraduationCap } from "react-icons/fa6";
 
 const stats = [
-  { value: "3+", label: "Roles" },
-  { value: "10+", label: "Projects" },
-  { value: "20+", label: "Technologies" },
+  { value: "2++", label: "Years of Experience" },
+  { value: "10++", label: "Projects Completed" },
+  { value: "20++", label: "Technologies Learned" },
 ];
 
 export default function Statistics() {
