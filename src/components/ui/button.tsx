@@ -25,7 +25,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
       </motion.button>
     );
-  }
+  },
 );
 Button.displayName = "Button";
 

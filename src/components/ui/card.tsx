@@ -9,14 +9,14 @@ type CardProps = {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ children, className }, ref) => {
     return (
-      <div 
+      <div
         ref={ref}
-        className={cn("glass ring-1 ring-white/10 rounded-2xl", className)}
+        className={cn("glass rounded-2xl ring-1 ring-white/10", className)}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 Card.displayName = "Card";
 

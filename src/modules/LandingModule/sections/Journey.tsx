@@ -13,7 +13,7 @@ const datas = [
     descs: [
       "Spearheaded strategic partnerships with corporate sponsors and tech startups to fund large-scale faculty events and initiatives.",
       "Led and mentored a team of business development associates to innovate new revenue streams and secure vital sponsorships.",
-      "Negotiated multi-tiered partnership agreements while maintaining long-term, mutually beneficial relationships with key stakeholders."
+      "Negotiated multi-tiered partnership agreements while maintaining long-term, mutually beneficial relationships with key stakeholders.",
     ],
     tags: ["Leadership", "Business Strategy", "Negotiation"],
   },
@@ -25,7 +25,7 @@ const datas = [
     descs: [
       "Architected scalable microservices and responsive frontends for Southeast Asia's largest student-run IT event.",
       "Mentored junior developers, enforcing clean code practices, thorough code reviews, and robust CI/CD pipelines.",
-      "Optimized database queries and significantly improved site load times to handle massive traffic spikes during peak event registration."
+      "Optimized database queries and significantly improved site load times to handle massive traffic spikes during peak event registration.",
     ],
     tags: ["Next.js", "TypeScript", "System Architecture"],
   },
@@ -37,7 +37,7 @@ const datas = [
     descs: [
       "Guided undergraduate students in mastering Object-Oriented Programming principles, data structures, and algorithmic logic using Java.",
       "Evaluated weekly lab assignments and course projects, providing comprehensive and constructive feedback on code quality and design patterns.",
-      "Conducted weekly tutorial sessions to demystify complex theoretical concepts like Polymorphism, Inheritance, and Encapsulation."
+      "Conducted weekly tutorial sessions to demystify complex theoretical concepts like Polymorphism, Inheritance, and Encapsulation.",
     ],
     tags: ["Java", "OOP", "Mentoring"],
   },
@@ -83,9 +83,9 @@ export default function Journey() {
   return (
     <section
       id="experience"
-      className="flex min-h-screen w-full flex-col items-center gap-24 pt-40 pb-20 relative"
+      className="relative flex min-h-screen w-full flex-col items-center gap-24 pt-40 pb-20"
     >
-      <motion.h1 
+      <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -94,12 +94,12 @@ export default function Journey() {
       >
         Journey so far...
       </motion.h1>
-      <div className="flex w-full flex-col items-center justify-center gap-10 relative px-4 lg:px-12">
-        <div className="absolute h-full w-1 rounded-full bg-purple-400 shadow-[0_0_10px_theme('colors.purple.500/50')] left-8 lg:left-1/2 lg:-translate-x-1/2 opacity-50 lg:opacity-100 z-0"></div>
+      <div className="relative flex w-full flex-col items-center justify-center gap-10 px-4 lg:px-12">
+        <div className="absolute left-8 z-0 h-full w-1 rounded-full bg-purple-400 opacity-50 shadow-[0_0_10px_theme('colors.purple.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
         {datas.map((data, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 50}}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: idx * 0.1, ease: "easeOut" }}

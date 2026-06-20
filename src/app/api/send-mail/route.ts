@@ -11,13 +11,15 @@ export async function POST(request: Request) {
       from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
       to: process.env.RESEND_TO_EMAIL || "anandagautama3112@gmail.com",
       replyTo: email,
-      subject: subject ? `${subject} - from ${name}` : `New Contact Form Submission from ${name}`,
+      subject: subject
+        ? `${subject} - from ${name}`
+        : `New Contact Form Submission from ${name}`,
       text: message,
       html: `
         <h3>New Contact Form Submission</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
+        <p><strong>Subject:</strong> ${subject || "N/A"}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
