@@ -27,11 +27,22 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Ananda's Portfolio",
-  description: "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
-  keywords: ["Ananda Gautama", "Software Engineer", "Full-Stack Developer", "Frontend", "Backend", "Portfolio", "Next.js", "React"],
+  description:
+    "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
+  keywords: [
+    "Ananda Gautama",
+    "Software Engineer",
+    "Full-Stack Developer",
+    "Frontend",
+    "Backend",
+    "Portfolio",
+    "Next.js",
+    "React",
+  ],
   openGraph: {
     title: "Ananda's Portfolio",
-    description: "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
+    description:
+      "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
     url: "https://ananda-gautama.vercel.app/",
     siteName: "Ananda Gautama Portfolio",
     images: [
@@ -48,7 +59,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ananda's Portfolio",
-    description: "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications.",
+    description:
+      "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications.",
     images: ["/portfolio-web.png"],
   },
 };

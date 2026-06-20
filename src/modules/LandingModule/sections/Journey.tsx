@@ -93,7 +93,7 @@ export default function Journey() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col items-center gap-4 px-4 text-center z-10"
+        className="z-10 flex flex-col items-center gap-4 px-4 text-center"
       >
         <h1 className="font-playfair-display text-center text-6xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
           Journey so far...

@@ -121,7 +121,7 @@ export default function Tech() {
   return (
     <section
       id="tech"
-      className="flex min-h-screen w-full flex-col items-center pt-40 pb-20 gap-12"
+      className="flex min-h-screen w-full flex-col items-center gap-12 pt-40 pb-20"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

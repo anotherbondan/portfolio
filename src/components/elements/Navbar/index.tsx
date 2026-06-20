@@ -53,8 +53,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-6 z-50 flex w-full justify-center px-4">
-        <div className="glass flex items-center justify-between backdrop-blur-md gap-6 md:gap-12 rounded-full px-4 py-3 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_0_15px_theme('colors.purple.500/20')] w-full max-w-5xl">
-          
+        <div className="glass flex w-full max-w-5xl items-center justify-between gap-6 rounded-full px-4 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_15px_theme('colors.purple.500/20')] md:gap-12">
           {/* Left: Logo */}
           <Link
             href="/#home"

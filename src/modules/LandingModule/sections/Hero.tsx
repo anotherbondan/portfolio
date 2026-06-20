@@ -96,10 +96,10 @@ export default function Hero() {
             <div className="absolute inset-0 scale-110 rounded-full border border-purple-300/10 transition-transform delay-75 duration-700 group-hover:scale-125" />
 
             {/* Main Avatar Container */}
-            <div className="w-full h-full rounded-full overflow-hidden relative border-2 border-white/10 bg-black/50 shadow-[0_0_40px_theme('colors.purple.500/20')] group-hover:border-purple-400/50 transition-colors duration-500 z-10">
-              <Image 
-                src="/office-worker.png" 
-                alt="Ananda Gautama SK Profile" 
+            <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-white/10 bg-black/50 shadow-[0_0_40px_theme('colors.purple.500/20')] transition-colors duration-500 group-hover:border-purple-400/50">
+              <Image
+                src="/office-worker.png"
+                alt="Ananda Gautama SK Profile"
                 fill
                 className="object-cover grayscale-[30%] transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
               />

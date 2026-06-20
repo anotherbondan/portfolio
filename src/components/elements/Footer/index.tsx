@@ -81,8 +81,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 px-6 py-6 md:flex-row lg:px-8 border-t border-white/5 relative z-10">
-        <p className="text-neutral-500 text-sm font-inter">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 border-t border-white/5 px-6 py-6 md:flex-row lg:px-8">
+        <p className="font-inter text-sm text-neutral-500">
           © {year} Ananda Gautama SK. All rights reserved.
         </p>
       </div>
