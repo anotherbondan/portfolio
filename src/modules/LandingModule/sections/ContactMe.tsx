@@ -135,9 +135,9 @@ export default function ContactMe() {
             </Button>
             {status.message && (
               <div
-                className={`text-center text-sm font-semibold mt-4 ${
+                className={`text-center text-sm font-semibold mt-2 ${
                   status.type === "success"
-                    ? "text-cyan-400"
+                    ? "text-green-400"
                     : "text-red-400"
                 }`}
               >

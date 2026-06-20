@@ -1,13 +1,15 @@
-import { transporter } from "@/lib/mailer";
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
 
-    await transporter.sendMail({
-      from: process.env.BREVO_SMTP_USER,
-      to: process.env.BREVO_SMTP_USER,
+    const { data, error } = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
+      to: process.env.RESEND_TO_EMAIL || "anandagautama3112@gmail.com",
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: message,
@@ -20,14 +22,22 @@ export async function POST(request: Request) {
       `,
     });
 
+    if (error) {
+      console.error("Error sending email with Resend:", error);
+      return NextResponse.json(
+        { success: false, message: "Failed to send email" },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json({
       success: true,
       message: "Email sent successfully",
     });
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("Error processing request:", error);
     return NextResponse.json(
-      { success: false, message: "Failed to send email" },
+      { success: false, message: "Failed to process request" },
       { status: 500 },
     );
   }
