@@ -3,15 +3,21 @@
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 import { motion, HTMLMotionProps } from "framer-motion";
+import { Slot } from "@radix-ui/react-slot";
 
 type ButtonProps = HTMLMotionProps<"button"> & {
   className?: string;
+  asChild?: boolean;
 };
 
+const MotionSlot = motion.create(Slot);
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ className, children, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? MotionSlot : motion.button;
+
     return (
-      <motion.button
+      <Comp
         ref={ref}
         whileHover={{ scale: 1.01 }}
         whileTap={{ scale: 0.98 }}
@@ -23,7 +29,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {children}
-      </motion.button>
+      </Comp>
     );
   },
 );

@@ -52,7 +52,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-6 z-50 flex w-full justify-center px-4">
+      <nav className="fixed top-6 z-50 flex w-full justify-center px-3">
         <div className="glass flex w-full max-w-5xl items-center justify-between gap-6 rounded-full px-4 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_15px_theme('colors.purple.500/20')] md:gap-12">
           {/* Left: Logo */}
           <Link
@@ -92,18 +92,20 @@ export default function Navbar() {
 
           {/* Right: LinkedIn Reach Out & Mobile Hamburger */}
           <div className="flex items-center gap-4">
-            <Link
-              href="https://www.linkedin.com/in/anandagautama/"
-              target="_blank"
-              className="hidden sm:block"
+            <Button
+              asChild
+              className="hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none bg-purple-600 px-3 py-2 hover:bg-purple-500 hover:shadow-[0_0_10px_theme('colors.purple.500/50')] sm:block md:flex"
             >
-              <Button className="flex h-10 items-center justify-center gap-2 rounded-full border-none bg-purple-600 px-5 py-2 hover:bg-purple-500 hover:shadow-[0_0_10px_theme('colors.purple.500/50')]">
+              <Link
+                href="https://www.linkedin.com/in/anandagautama/"
+                target="_blank"
+              >
                 <FaLinkedin size={18} />
-                <span className="font-inter hidden text-sm font-semibold max-lg:text-xs md:block">
+                <span className="font-inter text-sm font-semibold max-lg:text-xs">
                   Reach Out
                 </span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
 
             <button
               className="p-2 text-neutral-300 transition-colors hover:text-purple-400 md:hidden"

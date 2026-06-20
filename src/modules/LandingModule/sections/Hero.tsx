@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa6";
 import { LuDownload } from "react-icons/lu";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -82,23 +83,29 @@ export default function Hero() {
           </p>
 
           <div className="mt-2 flex w-full flex-col items-center gap-4 sm:mt-4 sm:w-auto sm:flex-row sm:flex-wrap lg:justify-start">
-            <a href="#project" className="w-full sm:w-auto">
-              <Button className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 shadow-[0_0_15px_theme('colors.purple.500/30')] transition-colors hover:bg-purple-500 hover:shadow-[0_0_25px_theme('colors.purple.500/50')] sm:w-auto sm:py-3">
-                <span className="font-inter font-semibold">View My Work</span>
-              </Button>
-            </a>
-            <a
-              href="/AnandaGautamaSekarKhosmana_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
+            <Button
+              asChild
+              className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 shadow-[0_0_15px_theme('colors.purple.500/30')] transition-colors hover:bg-purple-500 hover:shadow-[0_0_25px_theme('colors.purple.500/50')] sm:w-auto sm:py-3"
             >
-              <Button className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3.5 transition-colors hover:border-purple-400 hover:bg-purple-900/10 sm:w-auto sm:py-3">
+              <Link href="#project" className="w-full sm:w-auto">
+                <span className="font-inter font-semibold">View My Work</span>
+              </Link>
+            </Button>
+            <Button
+              asChild
+              className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3.5 transition-colors hover:border-purple-400 hover:bg-purple-900/10 sm:w-auto sm:py-3"
+            >
+              <Link
+                href="/AnandaGautamaSekarKhosmana_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
                 <span className="font-inter font-semibold">Resume</span>
                 <LuDownload />
-              </Button>
-            </a>
-            <a
+              </Link>
+            </Button>
+            <Link
               href="#contact"
               className="group mt-2 flex items-center gap-1.5 sm:mt-0"
             >
@@ -106,7 +113,7 @@ export default function Hero() {
                 Contact Me
               </span>
               <FaArrowRight className="transform transition-all group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
