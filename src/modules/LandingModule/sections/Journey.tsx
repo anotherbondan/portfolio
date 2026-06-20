@@ -94,16 +94,16 @@ export default function Journey() {
       >
         Journey so far...
       </motion.h1>
-      <div className="flex w-full flex-col items-center justify-center gap-10 relative max-w-6xl mx-auto px-4 md:px-6">
-        <div className="absolute h-full w-1 rounded-full bg-purple-400 shadow-[0_0_10px_theme('colors.purple.500/50')] left-8 md:left-1/2 md:-translate-x-1/2 opacity-50 md:opacity-100 z-0"></div>
+      <div className="flex w-full flex-col items-center justify-center gap-10 relative px-4 lg:px-12">
+        <div className="absolute h-full w-1 rounded-full bg-purple-400 shadow-[0_0_10px_theme('colors.purple.500/50')] left-8 lg:left-1/2 lg:-translate-x-1/2 opacity-50 lg:opacity-100 z-0"></div>
         {datas.map((data, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50}}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: idx * 0.1, ease: "easeOut" }}
-            className={`flex w-full justify-start ${idx % 2 == 0 ? "md:justify-start" : "md:justify-end"}`}
+            className={`flex w-full justify-start ${idx % 2 == 0 ? "lg:justify-start" : "lg:justify-end"}`}
           >
             <Experience key={idx} data={data} index={idx}>
               <TagList descList={data.tags} />

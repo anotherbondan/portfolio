@@ -117,11 +117,11 @@ export default function Tech() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-2 glass p-1.5 rounded-3xl md:rounded-full border border-white/10 w-full md:w-auto"
+          className="flex flex-wrap gap-1 glass p-1.5 rounded-3xl md:rounded-full border border-white/10 w-auto"
         >
           <button
             onClick={() => setActiveTab("frontend")}
-            className={`px-6 py-2.5 rounded-full font-inter text-sm font-semibold transition-all duration-300 ${
+            className={`px-6 py-2.5 rounded-full font-inter text-sm max-md:text-xs font-semibold transition-all duration-300 ${
               activeTab === "frontend"
                 ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
                 : "text-neutral-400 hover:text-purple-300 hover:bg-white/5"
@@ -131,7 +131,7 @@ export default function Tech() {
           </button>
           <button
             onClick={() => setActiveTab("backend")}
-            className={`px-6 py-2.5 rounded-full font-inter text-sm font-semibold transition-all duration-300 ${
+            className={`px-6 py-2.5 rounded-full font-inter text-sm max-md:text-xs font-semibold transition-all duration-300 ${
               activeTab === "backend"
                 ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
                 : "text-neutral-400 hover:text-purple-300 hover:bg-white/5"
@@ -141,7 +141,7 @@ export default function Tech() {
           </button>
           <button
             onClick={() => setActiveTab("devops")}
-            className={`px-6 py-2.5 rounded-full font-inter text-sm font-semibold transition-all duration-300 ${
+            className={`px-6 py-2.5 rounded-full font-inter text-sm max-md:text-xs font-semibold transition-all duration-300 ${
               activeTab === "devops"
                 ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
                 : "text-neutral-400 hover:text-purple-300 hover:bg-white/5"
