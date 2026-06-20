@@ -3,7 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "@/components/ui/button";
-import { FaArrowRight, FaDownload } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import { LuDownload } from "react-icons/lu";
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
         >
           <div className="flex flex-col gap-2">
             <h2 className="font-playfair-display text-4xl md:text-5xl font-semibold text-neutral-100">
-              Hi, I'm <span className="text-purple-300">Ananda Gautama SK</span>
+              Hi, I&apos;m <span className="text-purple-300">Ananda Gautama SK</span>
             </h2>
             <h1 className="font-playfair-display text-3xl md:text-4xl text-neutral-400 h-[40px]">
               <span className="text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
@@ -45,7 +45,7 @@ export default function Hero() {
           </div>
 
           <p className="font-inter text-neutral-400 text-lg md:text-xl max-w-lg leading-relaxed">
-            I specialize in building scalable web applications, designing elegant user interfaces, and solving complex problems with code. Let's build something amazing together.
+            I specialize in building scalable web applications, designing elegant user interfaces, and solving complex problems with code. Let&apos;s build something amazing together.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-4 items-center">

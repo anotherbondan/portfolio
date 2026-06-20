@@ -66,7 +66,7 @@ export default function ContactMe() {
             Contact Me
           </h2>
           <p className="font-inter text-center text-sm text-gray-400 tracking-widest uppercase">
-            Let's build something together
+            Let&apos;s build something together
           </p>
         </motion.div>
 
