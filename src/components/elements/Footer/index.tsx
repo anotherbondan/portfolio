@@ -50,7 +50,7 @@ export default function Footer() {
         {/* Brand / Navigation Links */}
         <div className="flex flex-col items-center md:items-start gap-6">
           <h2 className="font-playfair-display text-2xl font-bold text-neutral-200">
-            Ananda Gautama
+            Ananda Gautama SK
           </h2>
           <div className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4">
             {navLinks.map((link) => (
@@ -84,7 +84,7 @@ export default function Footer() {
 
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 px-6 py-6 md:flex-row lg:px-8 border-t border-white/5 relative z-10">
         <p className="text-neutral-500 text-sm font-inter">
-          © {year} Ananda Gautama. All rights reserved.
+          © {year} Ananda Gautama SK. All rights reserved.
         </p>
       </div>
     </footer>

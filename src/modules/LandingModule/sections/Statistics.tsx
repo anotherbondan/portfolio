@@ -58,8 +58,8 @@ export default function Statistics() {
           {/* Subtle Background Gradient */}
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-          <div className="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 group-hover:shadow-[0_0_20px_theme('colors.purple.500/30')] transition-all duration-500 relative z-10">
-            <FaGraduationCap size={32} className="text-purple-400 group-hover:text-purple-300 transition-colors" />
+          <div className="w-16 h-16 rounded-full p-1 bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 group-hover:shadow-[0_0_20px_theme('colors.purple.500/30')] transition-all duration-500 relative z-10">
+            <img src="/universitas-indonesia.png" alt="Universitas Indonesia" />
           </div>
           <h3 className="font-playfair-display text-2xl font-bold text-neutral-200 relative z-10">
             Universitas Indonesia

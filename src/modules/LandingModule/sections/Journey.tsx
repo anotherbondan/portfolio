@@ -19,7 +19,7 @@ const datas = [
   },
   {
     logo: "/compfest.jpg",
-    event: "COMPFEST",
+    event: "COMPFEST 18",
     role: "Expert Staff of Software Engineer",
     date: "Mar 2026 - Present",
     descs: [

@@ -91,7 +91,7 @@ export default function Hero() {
             <div className="w-full h-full rounded-full overflow-hidden relative border-2 border-white/10 bg-black/50 shadow-[0_0_40px_theme('colors.purple.500/20')] group-hover:border-purple-400/50 transition-colors duration-500 z-10">
               <Image 
                 src="/office-worker.png" 
-                alt="Ananda Gautama Profile" 
+                alt="Ananda Gautama SK Profile" 
                 fill
                 className="object-cover transition-all duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
               />

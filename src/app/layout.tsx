@@ -30,12 +30,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Ananda Gautama | Software Engineer",
-  description: "Portfolio of Ananda Gautama, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
+  title: "Ananda Gautama SK | Software Engineer",
+  description: "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
   keywords: ["Ananda Gautama", "Software Engineer", "Full-Stack Developer", "Frontend", "Backend", "Portfolio", "Next.js", "React"],
   openGraph: {
-    title: "Ananda Gautama | Software Engineer",
-    description: "Portfolio of Ananda Gautama, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
+    title: "Ananda Gautama SK | Software Engineer",
+    description: "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
     url: "https://ananda-gautama.vercel.app/",
     siteName: "Ananda Gautama Portfolio",
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         url: "/portfolio-web.png", // Reusing the project screenshot as the OG image
         width: 1200,
         height: 630,
-        alt: "Ananda Gautama Portfolio",
+        alt: "Ananda Gautama SK Portfolio",
       },
     ],
     locale: "en_US",
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ananda Gautama | Software Engineer",
-    description: "Portfolio of Ananda Gautama, a Full-Stack Developer and Software Engineer building scalable web applications.",
+    title: "Ananda Gautama SK | Software Engineer",
+    description: "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications.",
     images: ["/portfolio-web.png"],
   },
 };
