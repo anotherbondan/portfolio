@@ -123,15 +123,20 @@ export default function Tech() {
       id="tech"
       className="flex min-h-screen w-full flex-col items-center pt-40 pb-20 gap-12"
     >
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-playfair-display text-center text-5xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl"
+        className="flex flex-col items-center gap-4 px-4 text-center"
       >
-        Techs and Tools
-      </motion.h1>
+        <h1 className="font-playfair-display text-center text-5xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl">
+          Techs and Tools
+        </h1>
+        <p className="font-inter text-center text-sm tracking-widest text-gray-400 uppercase">
+          Technologies I use to build robust applications
+        </p>
+      </motion.div>
 
       <div className="flex w-full max-w-5xl flex-col items-center gap-10 px-6">
         {/* Tabs */}

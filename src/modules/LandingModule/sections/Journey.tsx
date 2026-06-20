@@ -88,24 +88,25 @@ export default function Journey() {
       id="experience"
       className="relative flex min-h-screen w-full flex-col items-center gap-24 pt-32 pb-20"
     >
-      <motion.h1
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-playfair-display text-center text-6xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]"
+        className="flex flex-col items-center gap-4 px-4 text-center z-10"
       >
-        Journey so far...
-      </motion.h1>
-      <div className="relative flex w-full flex-col items-center justify-center gap-10 px-4 lg:px-12">
-        <div className="absolute left-8 z-0 h-full w-1 rounded-full bg-purple-400 opacity-50 shadow-[0_0_10px_theme('colors.purple.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
+        <h1 className="font-playfair-display text-center text-6xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
+          Journey so far...
+        </h1>
+        <p className="font-inter text-center text-sm tracking-widest text-gray-400 uppercase">
+          A timeline of my professional experiences
+        </p>
+      </motion.div>
       <div className="relative flex w-full flex-col items-center justify-center gap-10 px-4 lg:px-12">
         <div className="absolute left-8 z-0 h-full w-1 rounded-full bg-purple-400 opacity-50 shadow-[0_0_10px_theme('colors.purple.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
         {datas.map((data, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 50 }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

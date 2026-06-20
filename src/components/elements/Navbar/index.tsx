@@ -8,17 +8,17 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const navLinks = [
+  { name: "Home", href: "#home", id: "home" },
+  { name: "Experience", href: "#experience", id: "experience" },
+  { name: "Tools", href: "#tech", id: "tech" },
+  { name: "Projects", href: "#project", id: "project" },
+  { name: "Contact", href: "#contact", id: "contact" },
+];
+
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Home", href: "#home", id: "home" },
-    { name: "Experience", href: "#experience", id: "experience" },
-    { name: "Tools", href: "#tech", id: "tech" },
-    { name: "Projects", href: "#project", id: "project" },
-    { name: "Contact", href: "#contact", id: "contact" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +39,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [navLinks]);
+  }, []);
 
   // Prevent scroll when mobile menu is open
   useEffect(() => {

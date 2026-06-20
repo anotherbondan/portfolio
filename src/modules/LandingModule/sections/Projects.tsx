@@ -58,15 +58,20 @@ export default function Projects() {
       id="project"
       className="relative flex min-h-screen flex-col items-center justify-center gap-14 pt-32 pb-20"
     >
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-playfair-display text-5xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-7xl"
+        className="flex flex-col items-center gap-4 px-4 text-center"
       >
-        Projects
-      </motion.h1>
+        <h1 className="font-playfair-display text-5xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-7xl">
+          Projects
+        </h1>
+        <p className="font-inter text-center text-sm tracking-widest text-gray-400 uppercase">
+          A showcase of my recent works and contributions
+        </p>
+      </motion.div>
 
       <div className="mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8">
         {datas.map((data, idx) => (
