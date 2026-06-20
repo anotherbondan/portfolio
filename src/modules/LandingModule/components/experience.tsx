@@ -64,26 +64,32 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
                 </div>
               </div>
             </div>
-            <div className="flex h-full flex-col justify-between gap-4 mt-2">
-              <div className={`flex-col gap-2 ${!isExpanded ? "hidden md:flex" : "flex"}`}>
+            <div className="mt-2 flex h-full flex-col justify-between gap-4">
+              <div
+                className={`flex-col gap-2 ${!isExpanded ? "hidden md:flex" : "flex"}`}
+              >
                 <ul className="font-inter text-card-disabled list-disc pl-4 text-sm">
                   {data.descs.map((desc, idx) => (
                     <li key={idx}>{desc}</li>
                   ))}
                 </ul>
               </div>
-              
-              <button 
+
+              <button
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 md:hidden"
               >
                 {isExpanded ? (
-                  <>Show Less <FaChevronUp className="text-xs" /></>
+                  <>
+                    Show Less <FaChevronUp className="text-xs" />
+                  </>
                 ) : (
-                  <>Show Description <FaChevronDown className="text-xs" /></>
+                  <>
+                    Show Description <FaChevronDown className="text-xs" />
+                  </>
                 )}
               </button>
-              
+
               {children}
             </div>
           </div>

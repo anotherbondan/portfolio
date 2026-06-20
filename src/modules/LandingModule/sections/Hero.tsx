@@ -24,7 +24,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="group relative flex h-56 w-56 sm:h-64 sm:w-64 cursor-pointer items-center justify-center lg:h-80 lg:w-80"
+            className="group relative flex h-56 w-56 cursor-pointer items-center justify-center sm:h-64 sm:w-64 lg:h-80 lg:w-80"
           >
             {/* Animated Gradient Glow Background */}
             <div className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr from-purple-600 via-fuchsia-500 to-purple-400 opacity-20 blur-2xl transition-opacity duration-700 group-hover:opacity-40" />
@@ -52,11 +52,11 @@ export default function Hero() {
           className="flex flex-col items-center justify-center gap-5 text-center sm:gap-6 lg:w-1/2 lg:items-start lg:text-left"
         >
           <div className="flex flex-col gap-2">
-            <h2 className="font-playfair-display text-3xl sm:text-4xl font-semibold text-neutral-100 lg:text-5xl">
+            <h2 className="font-playfair-display text-3xl font-semibold text-neutral-100 sm:text-4xl lg:text-5xl">
               Hi, I&apos;m{" "}
               <span className="text-purple-300">Ananda Gautama SK</span>
             </h2>
-            <h1 className="font-playfair-display min-h-[40px] lg:min-h-[48px] text-2xl sm:text-3xl text-neutral-400 lg:text-4xl">
+            <h1 className="font-playfair-display min-h-[40px] text-2xl text-neutral-400 sm:text-3xl lg:min-h-[48px] lg:text-4xl">
               <span className="text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
                 <Typewriter
                   words={[
@@ -75,15 +75,15 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="font-inter max-w-lg text-base sm:text-lg leading-relaxed text-neutral-400 lg:text-xl">
+          <p className="font-inter max-w-lg text-base leading-relaxed text-neutral-400 sm:text-lg lg:text-xl">
             I specialize in building scalable web applications, designing
             elegant user interfaces, and solving complex problems with code.
             Let&apos;s build something amazing together.
           </p>
 
-          <div className="mt-2 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row sm:flex-wrap sm:mt-4 lg:justify-start">
+          <div className="mt-2 flex w-full flex-col items-center gap-4 sm:mt-4 sm:w-auto sm:flex-row sm:flex-wrap lg:justify-start">
             <a href="#project" className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto rounded-full border-none bg-purple-600 px-6 py-3.5 sm:py-3 shadow-[0_0_15px_theme('colors.purple.500/30')] transition-colors hover:bg-purple-500 hover:shadow-[0_0_25px_theme('colors.purple.500/50')]">
+              <Button className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 shadow-[0_0_15px_theme('colors.purple.500/30')] transition-colors hover:bg-purple-500 hover:shadow-[0_0_25px_theme('colors.purple.500/50')] sm:w-auto sm:py-3">
                 <span className="font-inter font-semibold">View My Work</span>
               </Button>
             </a>
@@ -93,21 +93,22 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
             >
-              <Button className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3.5 sm:py-3 transition-colors hover:border-purple-400 hover:bg-purple-900/10">
+              <Button className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3.5 transition-colors hover:border-purple-400 hover:bg-purple-900/10 sm:w-auto sm:py-3">
                 <span className="font-inter font-semibold">Resume</span>
                 <LuDownload />
               </Button>
             </a>
-            <a href="#contact" className="group mt-2 flex items-center gap-1.5 sm:mt-0">
-              <span className="font-inter text-sm sm:text-base font-semibold group-hover:underline">
+            <a
+              href="#contact"
+              className="group mt-2 flex items-center gap-1.5 sm:mt-0"
+            >
+              <span className="font-inter text-sm font-semibold group-hover:underline sm:text-base">
                 Contact Me
               </span>
               <FaArrowRight className="transform transition-all group-hover:translate-x-1" />
             </a>
           </div>
         </motion.div>
-
-        
       </div>
     </section>
   );
