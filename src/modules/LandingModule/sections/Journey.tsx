@@ -95,8 +95,8 @@ export default function Journey() {
       >
         Journey so far...
       </motion.h1>
-      <div className="flex w-full flex-col items-center justify-center gap-10 relative">
-        <div className="absolute h-full w-1 rounded-full bg-purple-400 shadow-[0_0_10px_theme('colors.purple.500/50')]"></div>
+      <div className="flex w-full flex-col items-center justify-center gap-10 relative max-w-6xl mx-auto px-4 md:px-6">
+        <div className="absolute h-full w-1 rounded-full bg-purple-400 shadow-[0_0_10px_theme('colors.purple.500/50')] left-8 md:left-1/2 md:-translate-x-1/2 opacity-50 md:opacity-100 z-0"></div>
         {datas.map((data, idx) => (
           <motion.div
             key={idx}
@@ -104,7 +104,7 @@ export default function Journey() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: idx * 0.1, ease: "easeOut" }}
-            className={`flex w-full ${idx % 2 == 0 ? "justify-start" : "justify-end"}`}
+            className={`flex w-full justify-start ${idx % 2 == 0 ? "md:justify-start" : "md:justify-end"}`}
           >
             <Experience key={idx} data={data} index={idx}>
               <TagList descList={data.tags} />

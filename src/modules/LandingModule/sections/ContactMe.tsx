@@ -2,7 +2,6 @@
 
 import Button from "@/components/ui/button";
 import { useState } from "react";
-import { FaLinkedin } from "react-icons/fa6";
 import { IoPaperPlane } from "react-icons/io5";
 import { motion } from "framer-motion";
 
@@ -54,7 +53,7 @@ export default function ContactMe() {
   }
 
   return (
-    <section id="contact" className="flex min-h-screen flex-col py-20 justify-center items-center">
+    <section id="contact" className="flex min-h-screen flex-col py-20 px-5 justify-center items-center">
       <div className="flex w-full max-w-4xl flex-col gap-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

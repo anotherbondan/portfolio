@@ -72,21 +72,31 @@ export default function Hero() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="flex justify-center md:w-1/2 relative"
+          className="flex justify-center md:w-1/2 relative mt-10 md:mt-0"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full glass flex items-center justify-center p-2 shadow-[0_0_30px_theme('colors.purple.500/30')]">
-            <div className="w-full h-full rounded-full overflow-hidden relative bg-card">
+          {/* Floating container */}
+          <motion.div
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+            className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center group cursor-pointer"
+          >
+            {/* Animated Gradient Glow Background */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-600 via-fuchsia-500 to-purple-400 opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-700 animate-[spin_8s_linear_infinite]" />
+            
+            {/* Outer Border Ring */}
+            <div className="absolute inset-0 rounded-full border border-purple-500/20 scale-105 group-hover:scale-110 transition-transform duration-700" />
+            <div className="absolute inset-0 rounded-full border border-purple-300/10 scale-110 group-hover:scale-125 transition-transform duration-700 delay-75" />
+
+            {/* Main Avatar Container */}
+            <div className="w-full h-full rounded-full overflow-hidden relative border-2 border-white/10 bg-black/50 shadow-[0_0_40px_theme('colors.purple.500/20')] group-hover:border-purple-400/50 transition-colors duration-500 z-10">
               <Image 
                 src="/office-worker.png" 
                 alt="Ananda Gautama Profile" 
                 fill
-                className="object-cover"
+                className="object-cover transition-all duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
               />
             </div>
-            {/* Decorative orbit ring */}
-            <div className="absolute inset-0 rounded-full border border-purple-500/30 -m-4 animate-[spin_10s_linear_infinite]"></div>
-            <div className="absolute inset-0 rounded-full border border-purple-300/10 -m-8 animate-[spin_15s_linear_infinite_reverse]"></div>
-          </div>
+          </motion.div>
         </motion.div>
 
       </div>

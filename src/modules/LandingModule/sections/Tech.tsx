@@ -117,7 +117,7 @@ export default function Tech() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex gap-2 glass p-1.5 rounded-full border border-white/10"
+          className="flex flex-wrap justify-center gap-2 glass p-1.5 rounded-3xl md:rounded-full border border-white/10 w-full md:w-auto"
         >
           <button
             onClick={() => setActiveTab("frontend")}

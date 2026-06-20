@@ -17,18 +17,18 @@ type ExperienceProps = {
 
 const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
   return (
-    <div className="flex w-1/2">
+    <div className="flex w-full md:w-1/2 relative">
       <div
-        className={`flex w-full items-center gap-6 ${
-          index % 2 == 0 ? "flex-row-reverse" : "flex-row"
-        }`}
+        className={`flex w-full items-center gap-6 md:gap-8 flex-row ${
+          index % 2 == 0 ? "md:flex-row-reverse" : "md:flex-row"
+        } pl-16 md:pl-0`}
       >
         <div
-          className={`h-4 w-4 rounded-full bg-purple-200 shadow-[0_0_10px_theme('colors.purple.500')] ${
-            index % 2 == 0 ? "translate-x-1/2" : "-translate-x-1/2"
-          }`}
+          className={`h-4 w-4 shrink-0 rounded-full bg-purple-200 shadow-[0_0_10px_theme('colors.purple.500')] absolute left-[1.6rem] md:static md:left-auto ${
+            index % 2 == 0 ? "md:translate-x-1/2" : "md:-translate-x-1/2"
+          } z-10`}
         ></div>
-        <div className="group glass backdrop-blur-3xl border-white/10 min-h-64 max-w-140 rounded-3xl border p-7 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]">
+        <div className="group glass backdrop-blur-3xl border-white/10 w-full min-h-64 max-w-140 rounded-3xl border p-6 md:p-7 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]">
           <div className="flex h-full flex-col gap-3">
             <div className="flex items-center gap-3">
               <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-white">
