@@ -4,38 +4,50 @@ import Image from "next/image";
 import { useState } from "react";
 
 const frontend = [
-  { src: "/techs/react.svg", alt: "ReactJS" },
-  { src: "/techs/nextjs.svg", alt: "NextJS" },
-  { src: "/techs/tailwind-css.svg", alt: "TailwindCSS" },
-  { src: "/techs/chakra-ui.svg", alt: "Chakra UI" },
-  { src: "/techs/typescript.svg", alt: "TypeScript" },
-  { src: "/techs/javascript.svg", alt: "Javascript" },
-  { src: "/tools/figma.svg", alt: "Figma" },
+  { src: "/fe/react.svg", alt: "ReactJS" },
+  { src: "/fe/nextjs.svg", alt: "NextJS" },
+  { src: "/fe/vite.svg", alt: "Vite" },
+  { src: "/fe/react-router.svg", alt: "React Router" },
+  { src: "/fe/tanstack.svg", alt: "Tanstack" },
+  { src: "/fe/chakra-ui.svg", alt: "Chakra UI" },
+  { src: "/fe/shadcn-ui.svg", alt: "Shadcn/ui" },
+  { src: "/fe/tailwind-css.svg", alt: "TailwindCSS" },
+  { src: "/fe/framer.svg", alt: "Framer" },
+  { src: "/fe/flutter.svg", alt: "Flutter" },
+  { src: "/fe/css.svg", alt: "CSS3" },
+  { src: "/fe/html.svg", alt: "HTML5" },
 ];
 
 const backend = [
-  { src: "/techs/node-js.svg", alt: "NodeJS" },
-  { src: "/techs/express-js.svg", alt: "ExpressJS" },
-  { src: "/techs/python.svg", alt: "Python" },
-  { src: "/techs/FastAPI.svg", alt: "FastAPI" },
-  { src: "/techs/java.svg", alt: "Java" },
-  { src: "/tools/PostgreSQL.svg", alt: "PostgreSQL" },
-  { src: "/techs/prisma-orm.svg", alt: "Prisma" },
-  { src: "/techs/redis.svg", alt: "Redis" },
-  { src: "/tools/firebase.svg", alt: "Firebase" },
-  { src: "/tools/neon.svg", alt: "Neon" },
+  { src: "/be/node-js.svg", alt: "NodeJS" },
+  { src: "/be/nestjs.svg", alt: "NestJS" },
+  { src: "/be/express-js.svg", alt: "ExpressJS" },
+  { src: "/be/django.svg", alt: "Django" },
+  { src: "/be/fast-api.svg", alt: "FastAPI" },
+  { src: "/be/redis.svg", alt: "Redis" },
+  { src: "/be/postgresql.svg", alt: "PostgreSQL" },
+  { src: "/be/prisma.svg", alt: "Prisma" },
+  { src: "/be/typescript.svg", alt: "TypeScript" },
+  { src: "/be/javascript.svg", alt: "Javascript" },
+  { src: "/be/java.svg", alt: "Java" },
+  { src: "/be/python.svg", alt: "Python" },
+  { src: "/be/dart.svg", alt: "Dart" },
 ];
 
 const devops = [
-  { src: "/tools/docker.svg", alt: "Docker" },
-  { src: "/tools/ubuntu.svg", alt: "Ubuntu" },
-  { src: "/tools/github.svg", alt: "Github" },
-  { src: "/tools/vercel.svg", alt: "Vercel" },
-  { src: "/tools/railway.svg", alt: "Railway" },
-  { src: "/tools/npm.svg", alt: "npm" },
-  { src: "/tools/vs-code.svg", alt: "VS Code" },
-  { src: "/tools/gemini-ai.svg", alt: "Gemini" },
-  { src: "/tools/chatgpt.svg", alt: "OpenAI" },
+  { src: "/devtools/docker.svg", alt: "Docker" },
+  { src: "/devtools/vercel.svg", alt: "Vercel" },
+  { src: "/devtools/railway.svg", alt: "Railway" },
+  { src: "/devtools/google-cloud.svg", alt: "Google Cloud Platform" },
+  { src: "/devtools/pnpm.svg", alt: "pnpm" },
+  { src: "/devtools/npm.svg", alt: "npm" },
+  { src: "/devtools/firebase.svg", alt: "Firebase" },
+  { src: "/devtools/neon.svg", alt: "Neon" },
+  { src: "/devtools/supabase.svg", alt: "Supabase" },
+  { src: "/devtools/ubuntu.svg", alt: "Ubuntu" },
+  { src: "/devtools/gemini-ai.svg", alt: "Gemini" },
+  { src: "/devtools/github.svg", alt: "Github" },
+  { src: "/devtools/figma.svg", alt: "Figma" },
 ];
 
 function HoverTile({ item }: { item: { src: string; alt: string } }) {
@@ -55,17 +67,22 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
 
   return (
     <>
-      <div 
-        className="group relative flex flex-col items-center justify-center aspect-square glass rounded-2xl border border-white/5 bg-black/20 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]"
+      <div
+        className="group glass relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-white/5 bg-black/20 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
       >
-        <div className="relative w-1/2 h-1/2 transition-transform duration-300 group-hover:scale-110">
-          <Image src={item.src} alt={item.alt} fill className="object-contain" />
+        <div className="relative h-1/2 w-1/2 transition-transform duration-300 group-hover:scale-110">
+          <Image
+            src={item.src}
+            alt={item.alt}
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
-      
+
       {/* Floating Tooltip outside the relative container but tied to this tile's state */}
       <AnimatePresence>
         {isHovered && (
@@ -73,13 +90,13 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
             initial={{ opacity: 0, scale: 0.8, x: coords.x, y: coords.y }}
             animate={{ opacity: 1, scale: 1, x: coords.x, y: coords.y }}
             exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.15 },
               scale: { duration: 0.15 },
               x: { duration: 0 },
-              y: { duration: 0 }
+              y: { duration: 0 },
             }}
-            className="fixed top-0 left-0 z-50 pointer-events-none bg-purple-900/80 text-purple-100 text-xs px-3 py-1.5 rounded-full whitespace-nowrap shadow-xl border border-purple-500/30 font-inter"
+            className="font-inter pointer-events-none fixed top-0 left-0 z-50 rounded-full border border-purple-500/30 bg-purple-900/80 px-3 py-1.5 text-xs whitespace-nowrap text-purple-100 shadow-xl"
           >
             {item.alt}
           </motion.div>
@@ -90,61 +107,67 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
 }
 
 export default function Tech() {
-  const [activeTab, setActiveTab] = useState<"frontend" | "backend" | "devops">("frontend");
+  const [activeTab, setActiveTab] = useState<"frontend" | "backend" | "devops">(
+    "frontend",
+  );
 
-  const currentData = activeTab === "frontend" ? frontend : activeTab === "backend" ? backend : devops;
+  const currentData =
+    activeTab === "frontend"
+      ? frontend
+      : activeTab === "backend"
+        ? backend
+        : devops;
 
   return (
     <section
       id="tech"
-      className="flex min-h-screen w-full flex-col items-center pt-40 pb-20 gap-12"
+      className="flex min-h-screen w-full flex-col items-center gap-12 pt-32 pb-20"
     >
-      <motion.h1 
+      <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="font-playfair-display text-center text-5xl md:text-6xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]"
+        className="font-playfair-display text-center text-5xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl"
       >
         Techs and Tools
       </motion.h1>
-      
-      <div className="flex flex-col items-center w-full max-w-5xl gap-10 px-6">
-        
+
+      <div className="flex w-full max-w-5xl flex-col items-center gap-10 px-6">
         {/* Tabs */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap gap-1 glass p-1.5 rounded-3xl md:rounded-full border border-white/10 w-auto"
+          className="glass flex w-auto flex-wrap gap-1 rounded-3xl border border-white/10 p-1.5 md:rounded-full"
         >
           <button
             onClick={() => setActiveTab("frontend")}
-            className={`px-6 py-2.5 rounded-full font-inter text-sm max-md:text-xs font-semibold transition-all duration-300 ${
+            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
               activeTab === "frontend"
                 ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:text-purple-300 hover:bg-white/5"
+                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
             }`}
           >
             Frontend
           </button>
           <button
             onClick={() => setActiveTab("backend")}
-            className={`px-6 py-2.5 rounded-full font-inter text-sm max-md:text-xs font-semibold transition-all duration-300 ${
+            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
               activeTab === "backend"
                 ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:text-purple-300 hover:bg-white/5"
+                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
             }`}
           >
             Backend
           </button>
           <button
             onClick={() => setActiveTab("devops")}
-            className={`px-6 py-2.5 rounded-full font-inter text-sm max-md:text-xs font-semibold transition-all duration-300 ${
+            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
               activeTab === "devops"
                 ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:text-purple-300 hover:bg-white/5"
+                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
             }`}
           >
             DevOps & Tools
@@ -152,7 +175,7 @@ export default function Tech() {
         </motion.div>
 
         {/* Tab Content */}
-        <div className="w-full min-h-[400px]">
+        <div className="min-h-[400px] w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -160,7 +183,7 @@ export default function Tech() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-6 justify-center"
+              className="grid grid-cols-3 justify-center gap-6 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7"
             >
               {currentData.map((item, idx) => (
                 <HoverTile key={`${activeTab}-${idx}`} item={item} />
@@ -168,7 +191,6 @@ export default function Tech() {
             </motion.div>
           </AnimatePresence>
         </div>
-
       </div>
     </section>
   );

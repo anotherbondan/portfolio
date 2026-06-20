@@ -31,7 +31,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
         <div className="group glass backdrop-blur-3xl border-white/10 w-full min-h-64 max-w-156 rounded-3xl border p-6 lg:p-7 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]">
           <div className="flex h-full flex-col gap-3">
             <div className="flex items-center max-md:flex-col max-md:items-start gap-3">
-              <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-white">
+              <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-neutral-900">
                 <img
                   src={data?.logo ?? "/office-worker.png"}
                   alt="icon"

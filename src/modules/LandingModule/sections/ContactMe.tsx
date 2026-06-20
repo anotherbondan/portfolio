@@ -54,34 +54,40 @@ export default function ContactMe() {
   }
 
   return (
-    <section id="contact" className="flex min-h-screen flex-col py-20 px-5 justify-center items-center">
+    <section
+      id="contact"
+      className="flex min-h-screen flex-col items-center justify-center px-5 py-32"
+    >
       <div className="flex w-full max-w-4xl flex-col gap-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col gap-4 items-center"
+          className="flex flex-col items-center gap-4"
         >
           <h2 className="font-playfair-display text-center text-6xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
             Contact Me
           </h2>
-          <p className="font-inter text-center text-sm text-gray-400 tracking-widest uppercase">
+          <p className="font-inter text-center text-sm tracking-widest text-gray-400 uppercase">
             Let&apos;s build something together
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full flex flex-col gap-6 rounded-2xl p-8 glass shadow-[0_0_20px_rgba(147,51,234,0.2)] ring-1 ring-white/10"
+          className="glass flex w-full flex-col gap-6 rounded-2xl p-8 shadow-[0_0_20px_rgba(147,51,234,0.2)] ring-1 ring-white/10"
         >
           <form className="space-y-8" onSubmit={handleSubmit}>
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col gap-6 md:flex-row">
               <div className="flex w-full flex-col gap-2">
-                <label htmlFor="name" className="font-inter font-semibold text-neutral-300">
+                <label
+                  htmlFor="name"
+                  className="font-inter font-semibold text-neutral-300"
+                >
                   Name
                 </label>
                 <input
@@ -90,11 +96,14 @@ export default function ContactMe() {
                   placeholder="Your Name"
                   required
                   disabled={isLoading}
-                  className="bg-black/40 border border-white/10 text-white w-full rounded-xl p-4 transition-all focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:border-purple-400 focus:outline-none disabled:opacity-50"
+                  className="w-full rounded-xl border border-white/10 bg-black/40 p-4 text-white transition-all focus:border-purple-400 focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:outline-none disabled:opacity-50"
                 />
               </div>
               <div className="flex w-full flex-col gap-2">
-                <label htmlFor="email" className="font-inter font-semibold text-neutral-300">
+                <label
+                  htmlFor="email"
+                  className="font-inter font-semibold text-neutral-300"
+                >
                   Email
                 </label>
                 <input
@@ -103,13 +112,16 @@ export default function ContactMe() {
                   placeholder="youremail@email.com"
                   required
                   disabled={isLoading}
-                  className="bg-black/40 border border-white/10 text-white w-full rounded-xl p-4 transition-all focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:border-purple-400 focus:outline-none disabled:opacity-50"
+                  className="w-full rounded-xl border border-white/10 bg-black/40 p-4 text-white transition-all focus:border-purple-400 focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:outline-none disabled:opacity-50"
                 />
               </div>
             </div>
 
             <div className="flex w-full flex-col gap-2">
-              <label htmlFor="subject" className="font-inter font-semibold text-neutral-300">
+              <label
+                htmlFor="subject"
+                className="font-inter font-semibold text-neutral-300"
+              >
                 Subject
               </label>
               <input
@@ -118,12 +130,15 @@ export default function ContactMe() {
                 placeholder="Subject"
                 required
                 disabled={isLoading}
-                className="bg-black/40 border border-white/10 text-white w-full rounded-xl p-4 transition-all focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:border-purple-400 focus:outline-none disabled:opacity-50"
+                className="w-full rounded-xl border border-white/10 bg-black/40 p-4 text-white transition-all focus:border-purple-400 focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:outline-none disabled:opacity-50"
               />
             </div>
 
             <div className="flex w-full flex-col gap-2">
-              <label htmlFor="message" className="font-inter font-semibold text-neutral-300">
+              <label
+                htmlFor="message"
+                className="font-inter font-semibold text-neutral-300"
+              >
                 Message
               </label>
               <textarea
@@ -132,14 +147,14 @@ export default function ContactMe() {
                 rows={5}
                 required
                 disabled={isLoading}
-                className="bg-black/40 border border-white/10 text-white w-full rounded-xl p-4 transition-all focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:border-purple-400 focus:outline-none disabled:opacity-50"
+                className="w-full rounded-xl border border-white/10 bg-black/40 p-4 text-white transition-all focus:border-purple-400 focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:outline-none disabled:opacity-50"
               ></textarea>
             </div>
 
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full rounded-xl bg-purple-600 border-none py-4 hover:bg-purple-500 disabled:opacity-70 transition-colors"
+              className="w-full rounded-xl border-none bg-purple-600 py-4 transition-colors hover:bg-purple-500 disabled:opacity-70"
             >
               <div className="flex items-center justify-center gap-3">
                 <IoPaperPlane size={20} />
@@ -150,10 +165,8 @@ export default function ContactMe() {
             </Button>
             {status.message && (
               <div
-                className={`text-center text-sm font-semibold mt-2 ${
-                  status.type === "success"
-                    ? "text-green-400"
-                    : "text-red-400"
+                className={`mt-2 text-center text-sm font-semibold ${
+                  status.type === "success" ? "text-green-400" : "text-red-400"
                 }`}
               >
                 {status.message}
