@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Outfit,
-  Plus_Jakarta_Sans,
-} from "next/font/google";
+import { Geist, Geist_Mono, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/elements/Navbar";
 import Footer from "@/components/elements/Footer";
+import ScrollProgressBar from "@/components/elements/ScrollProgressBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,6 +63,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollProgressBar />
         <Navbar />
         {children}
         <Footer />

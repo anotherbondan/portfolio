@@ -43,21 +43,20 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full border-t border-white/5 bg-black/40 backdrop-blur-md relative overflow-hidden mt-20">
-      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent pointer-events-none" />
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 pt-16 pb-8 md:flex-row lg:px-8 relative z-10">
-        
+    <footer className="relative mt-20 w-full overflow-hidden border-t border-white/5 bg-black/40 backdrop-blur-md">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent" />
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 pt-16 pb-8 md:flex-row lg:px-8">
         {/* Brand / Navigation Links */}
-        <div className="flex flex-col items-center md:items-start gap-6">
+        <div className="flex flex-col items-center gap-6 md:items-start">
           <h2 className="font-playfair-display text-2xl font-bold text-neutral-200">
             Ananda Gautama SK
           </h2>
-          <div className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 md:justify-start">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-neutral-400 hover:text-purple-300 font-inter text-sm font-medium transition-colors"
+                className="font-inter text-sm font-medium text-neutral-400 transition-colors hover:text-purple-300"
               >
                 {link.name}
               </Link>
@@ -74,7 +73,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="text-neutral-400 hover:text-purple-400 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+              className="text-neutral-400 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-purple-400"
             >
               {social.icon}
             </Link>

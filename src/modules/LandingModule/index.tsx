@@ -7,7 +7,7 @@ import Statistics from "./sections/Statistics";
 
 export default function LandingModule() {
   return (
-    <main className="flex flex-col gap-10 w-full overflow-x-hidden">
+    <main className="flex w-full flex-col gap-10 overflow-x-hidden">
       <Hero />
       <Statistics />
       <Journey />
