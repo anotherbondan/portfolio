@@ -21,6 +21,7 @@ export default function ContactMe() {
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
+      subject: formData.get("subject"),
       message: formData.get("message"),
     };
 
@@ -105,6 +106,20 @@ export default function ContactMe() {
                   className="bg-black/40 border border-white/10 text-white w-full rounded-xl p-4 transition-all focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:border-purple-400 focus:outline-none disabled:opacity-50"
                 />
               </div>
+            </div>
+
+            <div className="flex w-full flex-col gap-2">
+              <label htmlFor="subject" className="font-inter font-semibold text-neutral-300">
+                Subject
+              </label>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+                disabled={isLoading}
+                className="bg-black/40 border border-white/10 text-white w-full rounded-xl p-4 transition-all focus:shadow-[0_0_15px_theme('colors.purple.500')] focus:border-purple-400 focus:outline-none disabled:opacity-50"
+              />
             </div>
 
             <div className="flex w-full flex-col gap-2">
