@@ -99,7 +99,7 @@ export default function Navbar() {
             >
               <Button className="flex h-10 items-center justify-center gap-2 rounded-full border-none bg-purple-600 px-5 py-2 hover:bg-purple-500 hover:shadow-[0_0_10px_theme('colors.purple.500/50')]">
                 <FaLinkedin size={18} />
-                <span className="font-inter hidden text-sm font-semibold md:block">
+                <span className="font-inter hidden text-sm max-lg:text-xs font-semibold md:block">
                   Reach Out
                 </span>
               </Button>

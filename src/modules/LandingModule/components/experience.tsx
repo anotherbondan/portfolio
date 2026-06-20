@@ -1,5 +1,7 @@
-import { ReactNode } from "react";
-import { FaBriefcase } from "react-icons/fa6";
+"use client";
+
+import { ReactNode, useState } from "react";
+import { FaBriefcase, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { LuCalendar } from "react-icons/lu";
 
 interface ExperienceData {
@@ -17,6 +19,8 @@ type ExperienceProps = {
 };
 
 const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <div className="relative flex w-full lg:w-1/2">
       <div
@@ -60,12 +64,26 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
                 </div>
               </div>
             </div>
-            <div className="flex h-full flex-col justify-between gap-4">
-              <ul className="font-inter text-card-disabled list-disc pl-4 text-sm">
-                {data.descs.map((desc, idx) => (
-                  <li key={idx}>{desc}</li>
-                ))}
-              </ul>
+            <div className="flex h-full flex-col justify-between gap-4 mt-2">
+              <div className={`flex-col gap-2 ${!isExpanded ? "hidden md:flex" : "flex"}`}>
+                <ul className="font-inter text-card-disabled list-disc pl-4 text-sm">
+                  {data.descs.map((desc, idx) => (
+                    <li key={idx}>{desc}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 md:hidden"
+              >
+                {isExpanded ? (
+                  <>Show Less <FaChevronUp className="text-xs" /></>
+                ) : (
+                  <>Show Description <FaChevronDown className="text-xs" /></>
+                )}
+              </button>
+              
               {children}
             </div>
           </div>

@@ -26,7 +26,7 @@ export default function Statistics() {
             {stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center justify-center pt-8 first:pt-0 md:pt-0 md:first:pt-0"
+                className="flex flex-col items-center justify-center max-md:pb-4 md:px-2"
               >
                 <motion.h3
                   initial={{ scale: 0.5, opacity: 0 }}
