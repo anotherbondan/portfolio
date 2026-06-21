@@ -2,7 +2,8 @@
 
 import Project from "../components/project";
 import TechList from "../components/tech-list";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const datas = [
   {
@@ -10,9 +11,10 @@ const datas = [
     title: "COMPFEST 17",
     date: "May 2025",
     desc: "Official event website of COMPFEST, Indonesia's largest IT event by Fasilkom UI students.",
-    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/fe/vite.svg", "/fe/react-router.svg", "/be/nestjs.svg",   "/be/prisma.svg", "/be/postgresql.svg"],
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/fe/vite.svg", "/fe/react-router.svg", "/be/nestjs.svg", "/be/prisma.svg", "/be/postgresql.svg"],
     sourceCode: "https://github.com/COMPFEST",
     projectUrl: "https://compfest.id/",
+    category: "Organizational",
   },
   {
     cover: "/ddp0-web.png",
@@ -22,6 +24,7 @@ const datas = [
     tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/be/prisma.svg"],
     sourceCode: "https://github.com/DDP0",
     projectUrl: "https://ddp0.csui.dev/",
+    category: "Academic",
   },
   {
     cover: "/ijtihad-web.png",
@@ -41,6 +44,7 @@ const datas = [
     ],
     sourceCode: "https://github.com/anotherbondan/ijtihad-frontend",
     projectUrl: "https://ijtihad.vercel.app/",
+    category: "Competition",
   },
   {
     cover: "/portfolio-web.png",
@@ -55,15 +59,17 @@ const datas = [
     ],
     sourceCode: "https://github.com/anotherbondan/portfolio",
     projectUrl: "https://ananda-gautama.vercel.app/",
+    category: "Personal",
   },
   {
     cover: "/compfest-web.png",
     title: "COMPFEST 18",
     date: "2026",
     desc: "The official event platform for COMPFEST 18, Indonesia's largest student-run IT event. Designed to handle high traffic and deliver a seamless user experience, the website features a modern, responsive interface providing attendees with real-time event schedules and registration portals.",
-    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg"],
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/fe/vite.svg", "/fe/react-router.svg", "/be/nestjs.svg", "/be/drizzle.svg", "/be/postgresql.svg"],
     sourceCode: "",
     projectUrl: "",
+    category: "Organizational",
   },
   {
     cover: "/bem.jpg",
@@ -73,6 +79,7 @@ const datas = [
     tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg"],
     sourceCode: "",
     projectUrl: "",
+    category: "Organizational",
   },
   {
     cover: "/portfolio-web.png",
@@ -82,10 +89,59 @@ const datas = [
     tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg"],
     sourceCode: "",
     projectUrl: "",
+    category: "Other",
+  },
+  {
+    cover: "/portfolio-web.png",
+    title: "Gas.in",
+    date: "2026",
+    desc: "A platform-based programming course project focusing on delivering scalable and interactive web learning experiences.",
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg"],
+    sourceCode: "",
+    projectUrl: "",
+    category: "Academic",
+  },
+  {
+    cover: "/portfolio-web.png",
+    title: "Tiktaktuk",
+    date: "2026",
+    desc: "A database course project focusing on designing and optimizing complex database architectures for a dynamic application.",
+    tech: ["/fe/nextjs.svg", "/be/postgresql.svg"],
+    sourceCode: "",
+    projectUrl: "",
+    category: "Academic",
+  },
+  {
+    cover: "/portfolio-web.png",
+    title: "Lotus",
+    date: "2026",
+    desc: "A Human-Computer Interaction course project emphasizing user-centric design, accessibility, and intuitive interfaces.",
+    tech: ["/devtools/figma.svg"],
+    sourceCode: "",
+    projectUrl: "",
+    category: "Academic",
+  },
+  {
+    cover: "/portfolio-web.png",
+    title: "Cyber-Team",
+    date: "2026",
+    desc: "An Introduction to Software Security course project exploring vulnerability assessments, secure coding practices, and defensive software architectures.",
+    tech: ["/fe/nextjs.svg", "/be/node-js.svg"],
+    sourceCode: "",
+    projectUrl: "",
+    category: "Academic",
   },
 ];
 
+const filters = ["All", "Personal", "Organizational", "Academic", "Competition"];
+
 export default function Projects() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredData = datas.filter((data) =>
+    activeFilter === "All" ? true : data.category === activeFilter
+  );
+
   return (
     <section
       id="project"
@@ -106,22 +162,48 @@ export default function Projects() {
         </p>
       </motion.div>
 
-      <div className="mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8">
-        {datas.map((data, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-            className="flex w-full"
+      {/* Filters */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="glass flex w-auto max-w-[90vw] flex-wrap justify-center gap-1 rounded-3xl border border-white/10 p-1.5 md:rounded-full"
+      >
+        {filters.map((filter) => (
+          <button
+            key={filter}
+            onClick={() => setActiveFilter(filter)}
+            className={`font-inter rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs md:px-6 ${
+              activeFilter === filter
+                ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
+                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
+            }`}
           >
-            <Project data={data}>
-              <TechList data={data.tech} />
-            </Project>
-          </motion.div>
+            {filter}
+          </button>
         ))}
-      </div>
+      </motion.div>
+
+      <motion.div layout className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8">
+        <AnimatePresence>
+          {filteredData.map((data, idx) => (
+            <motion.div
+              layout
+              key={data.title}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="flex w-full"
+            >
+              <Project data={data}>
+                <TechList data={data.tech} />
+              </Project>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }

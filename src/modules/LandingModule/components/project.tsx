@@ -12,6 +12,7 @@ interface projectData {
   date: string;
   sourceCode: string;
   projectUrl: string;
+  category?: string;
 }
 
 interface ProjectProps {
