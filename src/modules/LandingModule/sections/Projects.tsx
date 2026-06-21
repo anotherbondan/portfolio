@@ -10,7 +10,7 @@ const datas = [
     title: "COMPFEST 17",
     date: "May 2025",
     desc: "Official event website of COMPFEST, Indonesia's largest IT event by Fasilkom UI students.",
-    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/be/prisma.svg"],
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/fe/vite.svg", "/fe/react-router.svg", "/be/nestjs.svg",   "/be/prisma.svg", "/be/postgresql.svg"],
     sourceCode: "https://github.com/COMPFEST",
     projectUrl: "https://compfest.id/",
   },
@@ -30,6 +30,7 @@ const datas = [
     desc: "AI-powered platform for halal product validation, contract analysis, and a fatwa chatbot, developed for the Gemastik 2025 Software Development Competition.",
     tech: [
       "/fe/nextjs.svg",
+      "/fe/tailwind-css.svg",
       "/be/fast-api.svg",
       "/devtools/gemini-ai.svg",
       "/devtools/vercel.svg",
@@ -46,9 +47,41 @@ const datas = [
     title: "Portfolio",
     date: "Sep 2025",
     desc: "A personal web portfolio built to showcase my projects, tools, and experiences in software engineering.",
-    tech: ["/fe/nextjs.svg", "/devtools/vercel.svg"],
+    tech: [
+      "/fe/nextjs.svg",
+      "/fe/tailwind-css.svg",
+      "/devtools/vercel.svg",
+      "/fe/framer.svg",
+    ],
     sourceCode: "https://github.com/anotherbondan/portfolio",
     projectUrl: "https://ananda-gautama.vercel.app/",
+  },
+  {
+    cover: "/compfest-web.png",
+    title: "COMPFEST 18",
+    date: "2026",
+    desc: "The official event platform for COMPFEST 18, Indonesia's largest student-run IT event. Designed to handle high traffic and deliver a seamless user experience, the website features a modern, responsive interface providing attendees with real-time event schedules and registration portals.",
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg"],
+    sourceCode: "",
+    projectUrl: "",
+  },
+  {
+    cover: "/bem.jpg",
+    title: "BEM Fasilkom UI",
+    date: "2026",
+    desc: "A centralized, dynamic digital hub for BEM Fasilkom UI. This platform serves as the primary gateway for students to access organizational news, academic resources, and event updates, built with a focus on performance and accessibility.",
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg"],
+    sourceCode: "",
+    projectUrl: "",
+  },
+  {
+    cover: "/portfolio-web.png",
+    title: "Rantai Skena (Budayago 2025)",
+    date: "2025",
+    desc: "An innovative digital initiative developed for Budayago 2025, aimed at connecting creative communities and amplifying local cultural movements. The platform provides a vibrant, interactive space for artists and enthusiasts to collaborate.",
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg"],
+    sourceCode: "",
+    projectUrl: "",
   },
 ];
 
@@ -77,10 +110,10 @@ export default function Projects() {
         {datas.map((data, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
             className="flex w-full"
           >
             <Project data={data}>

@@ -9,7 +9,7 @@ const stats = [
 
 export default function Statistics() {
   return (
-    <section className="relative z-20 mt-[-4rem] mb-10 flex w-full justify-center px-6">
+    <section className="relative z-20 mb-10 flex w-full justify-center px-6">
       <div className="grid w-full max-w-6xl grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
         {/* Statistics Card */}
         <motion.div

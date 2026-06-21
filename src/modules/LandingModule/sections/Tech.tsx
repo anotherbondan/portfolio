@@ -68,7 +68,7 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
   return (
     <>
       <div
-        className="group glass relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-white/5 bg-black/20 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]"
+        className="group glass relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-white/5 bg-black/20 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
