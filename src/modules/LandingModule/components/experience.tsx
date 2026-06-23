@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, useState } from "react";
+import Image from "next/image";
 import { FaBriefcase, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { LuCalendar } from "react-icons/lu";
 
@@ -36,12 +37,13 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
         <div className="group glass relative min-h-64 w-full max-w-156 rounded-3xl border border-white/10 p-6 backdrop-blur-3xl transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')] max-lg:max-w-full lg:p-7">
           <div className="flex h-full flex-col gap-3">
             <div className="flex items-center gap-3 max-md:flex-col max-md:items-start">
-              <div className="border-card-hover h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-neutral-900">
+              <div className="border-card-hover relative h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-neutral-900">
                 {data?.logo ? (
-                  <img
+                  <Image
                     src={data?.logo}
                     alt="icon"
-                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    className="object-contain transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
                   <div className="p-4">

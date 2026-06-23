@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const stats = [
   { value: "2++", label: "Years of Experience" },
@@ -61,7 +62,14 @@ export default function Statistics() {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
           <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-purple-500/20 bg-purple-500/10 p-1.5 transition-all duration-500 group-hover:scale-110 group-hover:bg-purple-500/20 group-hover:shadow-[0_0_20px_theme('colors.purple.500/30')] max-lg:h-40 max-lg:w-40 max-lg:p-3">
-            <img src="/universitas-indonesia.png" alt="Universitas Indonesia" />
+            <div className="relative h-full w-full">
+              <Image
+                src="/universitas-indonesia.png"
+                alt="Universitas Indonesia"
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
           <div className="flex flex-col items-center md:items-start lg:items-center">
             <h3 className="font-playfair-display relative z-10 text-2xl font-bold text-neutral-200">

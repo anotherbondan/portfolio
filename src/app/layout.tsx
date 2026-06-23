@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
       >
         <ScrollProgressBar />
         <Navbar />

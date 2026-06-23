@@ -116,9 +116,9 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
 }
 
 export default function Tech() {
-  const [activeTab, setActiveTab] = useState<"frontend" | "backend" | "database" | "devops">(
-    "frontend",
-  );
+  const [activeTab, setActiveTab] = useState<
+    "frontend" | "backend" | "database" | "devops"
+  >("frontend");
 
   const currentData =
     activeTab === "frontend"

@@ -11,7 +11,15 @@ const datas = [
     title: "COMPFEST 18",
     date: "2026",
     desc: "The official event platform for COMPFEST 18, Indonesia's largest student-run IT event. Designed to handle high traffic and deliver a seamless user experience, the website features a modern, responsive interface providing attendees with real-time event schedules and registration portals.",
-    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/fe/vite.svg", "/fe/react-router.svg", "/be/nestjs.svg", "/be/drizzle.svg", "/be/postgresql.svg"],
+    tech: [
+      "/fe/nextjs.svg",
+      "/fe/tailwind-css.svg",
+      "/fe/vite.svg",
+      "/fe/react-router.svg",
+      "/be/nestjs.svg",
+      "/be/drizzle.svg",
+      "/be/postgresql.svg",
+    ],
     sourceCode: "",
     projectUrl: "",
     category: "Organizational",
@@ -170,20 +178,34 @@ const datas = [
     title: "COMPFEST 17",
     date: "May 2025",
     desc: "Official event website of COMPFEST, Indonesia's largest IT event by Fasilkom UI students.",
-    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/fe/vite.svg", "/fe/react-router.svg", "/be/nestjs.svg", "/be/prisma.svg", "/be/postgresql.svg"],
+    tech: [
+      "/fe/nextjs.svg",
+      "/fe/tailwind-css.svg",
+      "/fe/vite.svg",
+      "/fe/react-router.svg",
+      "/be/nestjs.svg",
+      "/be/prisma.svg",
+      "/be/postgresql.svg",
+    ],
     sourceCode: "https://github.com/COMPFEST",
     projectUrl: "https://compfest.id/",
     category: "Organizational",
   },
 ];
 
-const filters = ["All", "Personal", "Organizational", "Academic", "Competition"];
+const filters = [
+  "All",
+  "Personal",
+  "Organizational",
+  "Academic",
+  "Competition",
+];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filteredData = datas.filter((data) =>
-    activeFilter === "All" ? true : data.category === activeFilter
+    activeFilter === "All" ? true : data.category === activeFilter,
   );
 
   return (
@@ -229,12 +251,15 @@ export default function Projects() {
         ))}
       </motion.div>
 
-      <motion.div layout className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8">
+      <motion.div
+        layout
+        className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8"
+      >
         <AnimatePresence>
-          {filteredData.map((data, idx) => (
+          {filteredData.map((data) => (
             <motion.div
               layout
-              key={data.title}
+              key={`${data.title}-${data.date}`}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}

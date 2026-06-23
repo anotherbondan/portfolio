@@ -1,6 +1,7 @@
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 import { ReactNode } from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { GrGithub } from "react-icons/gr";
@@ -28,10 +29,11 @@ export default function Project({ data, children }: ProjectProps) {
 
       {/* Image Container */}
       <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-xl border border-white/5 bg-black/50 lg:w-2/5 lg:rounded-2xl">
-        <img
+        <Image
           src={data.cover}
           alt={data.title}
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          fill
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
         {/* Subtle overlay that fades out on hover */}
         <div className="pointer-events-none absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-transparent" />
