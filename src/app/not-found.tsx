@@ -38,11 +38,11 @@ export default function NotFound() {
           <div className="mt-4 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
             <Button
               asChild
-              className="w-full rounded-full border-none bg-purple-600 px-8 py-3.5 transition-colors hover:bg-purple-500 sm:w-auto group"
+              className="group w-full rounded-full border-none bg-purple-600 px-8 py-3.5 transition-colors hover:bg-purple-500 sm:w-auto"
             >
               <Link href="/">
                 <span className="font-inter flex items-center gap-2 font-semibold text-neutral-100">
-                <FaArrowLeft className="transform transition-all group-hover:-translate-x-1" />
+                  <FaArrowLeft className="transform transition-all group-hover:-translate-x-1" />
                   Back to Home
                 </span>
               </Link>

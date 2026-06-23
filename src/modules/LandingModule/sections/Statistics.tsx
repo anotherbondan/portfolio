@@ -2,11 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const stats = [
-  { value: "2++", label: "Years of Experience" },
-  { value: "10++", label: "Projects Completed" },
-  { value: "20++", label: "Technologies Learned" },
-];
+import { statsData } from "@/data/statistics";
 
 export default function Statistics() {
   return (
@@ -24,7 +20,7 @@ export default function Statistics() {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
           <div className="relative z-10 grid w-full grid-cols-1 gap-8 divide-y divide-black/10 md:grid-cols-3 md:gap-4 md:divide-x md:divide-y-0 dark:divide-white/10">
-            {stats.map((stat, idx) => (
+            {statsData.map((stat, idx) => (
               <div
                 key={idx}
                 className="flex flex-col items-center justify-center max-md:pb-4 md:px-2"

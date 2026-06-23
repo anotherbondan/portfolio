@@ -141,7 +141,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-neutral-900/70 px-6 backdrop-blur-md"
+            className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-neutral-900/70 px-6 py-6 backdrop-blur-md"
           >
             <button
               className="absolute top-8 right-8 p-2 text-neutral-300 transition-colors hover:text-purple-400"
@@ -169,7 +169,7 @@ export default function Navbar() {
               <Link
                 href="https://www.linkedin.com/in/anandagautama/"
                 target="_blank"
-                className="mt-8 w-full"
+                className="w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Button className="flex w-full items-center justify-center gap-3 rounded-2xl border-none bg-purple-600 py-4 hover:bg-purple-500">
