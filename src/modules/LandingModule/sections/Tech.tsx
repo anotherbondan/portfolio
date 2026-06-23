@@ -173,7 +173,7 @@ export default function Tech() {
         className="flex flex-col items-center gap-4 px-4 text-center"
       >
         <h1 className="font-playfair-display text-center text-5xl text-purple-600 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl dark:text-purple-300">
-          Techs and Tools
+          Skills & Expertise
         </h1>
         <p className="font-inter text-center text-sm tracking-widest text-gray-600 uppercase dark:text-gray-400">
           Technologies I use to build robust applications

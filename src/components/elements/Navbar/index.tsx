@@ -11,7 +11,7 @@ import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "Home", href: "#home", id: "home" },
-  { name: "Experience", href: "#experience", id: "experience" },
+  { name: "Experiences", href: "#experience", id: "experience" },
   { name: "Tools", href: "#tech", id: "tech" },
   { name: "Projects", href: "#project", id: "project" },
   { name: "Contact", href: "#contact", id: "contact" },

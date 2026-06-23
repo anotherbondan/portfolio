@@ -172,7 +172,7 @@ const datas = [
     ],
     sourceCode: "https://github.com/DDP0",
     projectUrl: "https://ddp0.csui.dev/",
-    category: "Academic",
+    category: "Organizational",
   },
   {
     cover: "/projects/compfest-17-web.png",
@@ -222,7 +222,7 @@ export default function Projects() {
         className="flex flex-col items-center gap-4 px-4 text-center"
       >
         <h1 className="font-playfair-display text-5xl text-purple-600 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-7xl dark:text-purple-300">
-          Projects
+          Featured Work
         </h1>
         <p className="font-inter text-center text-sm tracking-widest text-gray-600 uppercase dark:text-gray-400">
           A showcase of my recent works and contributions

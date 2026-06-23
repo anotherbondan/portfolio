@@ -67,7 +67,7 @@ export default function ContactMe() {
           className="flex flex-col items-center gap-3 md:gap-4"
         >
           <h2 className="font-playfair-display text-center text-5xl text-purple-600 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl dark:text-purple-300">
-            Contact Me
+            Get in Touch
           </h2>
           <p className="font-inter text-center text-xs tracking-widest text-gray-600 uppercase md:text-sm dark:text-gray-400">
             Let&apos;s build something together
