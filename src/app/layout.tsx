@@ -30,33 +30,55 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Ananda's Portfolio",
+  title: {
+    default: "Ananda's Portfolio",
+    template: "%s | Ananda Gautama SK",
+  },
   description:
-    "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
+    "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer specializing in building scalable web applications and elegant user interfaces.",
   keywords: [
     "Ananda Gautama",
+    "Ananda Gautama SK",
     "Software Engineer",
     "Full-Stack Developer",
-    "Frontend",
-    "Backend",
+    "Frontend Developer",
+    "Backend Developer",
     "Portfolio",
     "Next.js",
     "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "CS Student",
+    "Universitas Indonesia",
   ],
+  authors: [{ name: "Ananda Gautama SK", url: baseUrl }],
+  creator: "Ananda Gautama SK",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Ananda's Portfolio",
+    title: "Ananda Gautama SK | Full-Stack Developer",
     description:
-      "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
+      "Explore the portfolio, projects, and professional journey of Ananda Gautama SK, a passionate Software Engineer.",
     url: baseUrl,
-    siteName: "Ananda Gautama Portfolio",
+    siteName: "Ananda Gautama SK Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ananda's Portfolio",
+    title: "Ananda Gautama SK | Full-Stack Developer",
     description:
-      "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications.",
+      "Explore the portfolio, projects, and professional journey of Ananda Gautama SK, a passionate Software Engineer.",
   },
 };
 
