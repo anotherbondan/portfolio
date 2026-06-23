@@ -10,7 +10,7 @@ const datas = [
   {
     cover: "/projects/compfest-18-web.png",
     title: "COMPFEST 18",
-    date: "2026",
+    date: "Apr 2026",
     desc: "The official event platform for COMPFEST 18, Indonesia's largest student-run IT event. Designed to handle high traffic and deliver a seamless user experience, the website features a modern, responsive interface providing attendees with real-time event schedules and registration portals.",
     tech: [
       "/fe/nextjs.svg",
@@ -26,34 +26,9 @@ const datas = [
     category: "Organizational",
   },
   {
-    cover: "/projects/bem-web.png",
-    title: "BEM FASILKOM UI",
-    date: "2026",
-    desc: "A centralized, dynamic digital hub for BEM Fasilkom UI. This platform serves as the primary gateway for students to access organizational news, academic resources, and event updates, built with a focus on performance and accessibility.",
-    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/devtools/vercel.svg"],
-    sourceCode: "https://github.com/Bismit-2025/bem-portfolio-2025",
-    projectUrl: "",
-    category: "Organizational",
-  },
-  {
-    cover: "/projects/gas-in-web.png",
-    title: "Gas.in",
-    date: "2026",
-    desc: "A platform-based programming course project focusing on delivering scalable and interactive web learning experiences.",
-    tech: [
-      "/fe/tailwind-css.svg",
-      "/fe/flutter.svg",
-      "/be/django.svg",
-      "/be/postgresql.svg",
-    ],
-    sourceCode: "https://github.com/PBP-D-07",
-    projectUrl: "",
-    category: "Academic",
-  },
-  {
     cover: "/projects/tiktaktuk-web.png",
     title: "Tiktaktuk",
-    date: "2026",
+    date: "May 2026",
     desc: "A database course project focusing on designing and optimizing complex database architectures for a dynamic application.",
     tech: [
       "/fe/react-router.svg",
@@ -74,7 +49,7 @@ const datas = [
   {
     cover: "/projects/lotus-web.png",
     title: "Lotus",
-    date: "2026",
+    date: "May 2026",
     desc: "A Human-Computer Interaction course project emphasizing user-centric design, accessibility, and intuitive interfaces.",
     tech: ["/devtools/figma.svg"],
     sourceCode: "",
@@ -84,7 +59,7 @@ const datas = [
   {
     cover: "/projects/cyber-team-web.png",
     title: "Cyber-Team",
-    date: "2026",
+    date: "Apr 2026",
     desc: "An Introduction to Software Security course project focused on exploring and implementing OAuth authentication and Role-Based Access Control (RBAC) to establish secure application architectures.",
     tech: [
       "/fe/nextjs.svg",
@@ -99,9 +74,34 @@ const datas = [
     category: "Academic",
   },
   {
+    cover: "/projects/bem-web.png",
+    title: "BEM FASILKOM UI",
+    date: "Feb 2026",
+    desc: "A centralized, dynamic digital hub for BEM Fasilkom UI. This platform serves as the primary gateway for students to access organizational news, academic resources, and event updates, built with a focus on performance and accessibility.",
+    tech: ["/fe/nextjs.svg", "/fe/tailwind-css.svg", "/devtools/vercel.svg"],
+    sourceCode: "https://github.com/Bismit-2025/bem-portfolio-2025",
+    projectUrl: "",
+    category: "Organizational",
+  },
+  {
+    cover: "/projects/gas-in-web.png",
+    title: "Gas.in",
+    date: "Dec 2025",
+    desc: "A platform-based programming course project focusing on delivering scalable and interactive web learning experiences.",
+    tech: [
+      "/fe/tailwind-css.svg",
+      "/fe/flutter.svg",
+      "/be/django.svg",
+      "/be/postgresql.svg",
+    ],
+    sourceCode: "https://github.com/PBP-D-07",
+    projectUrl: "",
+    category: "Academic",
+  },
+  {
     cover: "/projects/rantai-skena-web.png",
     title: "Rantai Skena",
-    date: "2025",
+    date: "Nov 2025",
     desc: "An innovative digital initiative developed for Budayago 2025, aimed at connecting creative communities and amplifying local cultural movements. The platform provides a vibrant, interactive space for artists and enthusiasts to collaborate.",
     tech: [
       "/fe/nextjs.svg",
@@ -158,7 +158,7 @@ const datas = [
   {
     cover: "/projects/ddp0-web.png",
     title: "DDP-0 2025",
-    date: "July 2025",
+    date: "Jul 2025",
     desc: "The official web portal for DDP-0 2025, a large-scale academic preparatory program designed to onboard incoming Computer Science students. Built with a robust full-stack architecture to reliably handle high concurrent user traffic and deliver interactive learning modules.",
     tech: [
       "/fe/nextjs.svg",
@@ -177,7 +177,7 @@ const datas = [
   {
     cover: "/projects/compfest-17-web.png",
     title: "COMPFEST 17",
-    date: "May 2025",
+    date: "Apr 2025",
     desc: "The comprehensive digital platform for COMPFEST 17, Indonesia's largest student-run IT event. Architected to support massive traffic spikes, the platform features dynamic event tracking and streamlined registration portals for thousands of nationwide attendees.",
     tech: [
       "/fe/nextjs.svg",
