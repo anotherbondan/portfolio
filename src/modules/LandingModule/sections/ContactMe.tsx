@@ -98,7 +98,7 @@ export default function ContactMe() {
                   placeholder="Your Name"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-white/10 bg-neutral-900/70 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                  className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
                 />
               </div>
               <div className="flex w-full flex-col gap-2">
@@ -114,7 +114,7 @@ export default function ContactMe() {
                   placeholder="youremail@email.com"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-white/10 bg-neutral-900/70 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                  className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
                 />
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function ContactMe() {
                 placeholder="Subject"
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-white/10 bg-neutral-900/70 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
               />
             </div>
 
@@ -149,7 +149,7 @@ export default function ContactMe() {
                 rows={5}
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-white/10 bg-neutral-900/70 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
               ></textarea>
             </div>
 
