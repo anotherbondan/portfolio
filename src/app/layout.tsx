@@ -25,8 +25,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ananda-gautama.vercel.app"),
+  metadataBase: new URL(baseUrl),
   title: "Ananda's Portfolio",
   description:
     "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     title: "Ananda's Portfolio",
     description:
       "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
-    url: "https://ananda-gautama.vercel.app/",
+    url: baseUrl,
     siteName: "Ananda Gautama Portfolio",
     locale: "en_US",
     type: "website",
