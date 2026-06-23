@@ -28,7 +28,7 @@ export default function Project({ data, children }: ProjectProps) {
       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 lg:rounded-[2rem]" />
 
       {/* Image Container */}
-      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-xl border border-black/5 bg-neutral-100 lg:w-2/5 lg:rounded-2xl dark:border-white/5 dark:bg-neutral-900/70">
+      <div className="relative aspect-2/1 w-full shrink-0 overflow-hidden rounded-xl border border-black/5 bg-neutral-100 lg:w-2/5 lg:rounded-2xl dark:border-white/5 dark:bg-neutral-900/70">
         <Image
           src={data.cover}
           alt={data.title}
@@ -41,7 +41,7 @@ export default function Project({ data, children }: ProjectProps) {
 
       {/* Content Container */}
       <div className="z-10 flex w-full flex-col justify-between py-1 lg:w-3/5 lg:py-2">
-        <div className="flex flex-col gap-4 lg:gap-5">
+        <div className="flex flex-col gap-4 lg:gap-2">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
             <h1 className="font-playfair-display text-2xl font-bold text-neutral-800 transition-colors duration-300 group-hover:text-purple-600 lg:text-3xl dark:text-neutral-200 dark:group-hover:text-purple-300">
               {data.title}

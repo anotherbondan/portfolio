@@ -180,7 +180,7 @@ export default function Tech() {
         </p>
       </motion.div>
 
-      <div className="flex w-full max-w-5xl flex-col items-center gap-10 px-6">
+      <div className="flex w-full max-w-5xl flex-col items-center gap-10 px-4">
         {/* Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

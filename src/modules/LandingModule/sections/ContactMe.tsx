@@ -56,7 +56,7 @@ export default function ContactMe() {
   return (
     <section
       id="contact"
-      className="flex min-h-screen flex-col items-center justify-center px-5 py-32"
+      className="flex min-h-screen flex-col items-center justify-center px-4 py-32"
     >
       <div className="flex w-full max-w-4xl flex-col gap-10">
         <motion.div
@@ -98,7 +98,7 @@ export default function ContactMe() {
                   placeholder="Your Name"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
+                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
                 />
               </div>
               <div className="flex w-full flex-col gap-2">
@@ -114,7 +114,7 @@ export default function ContactMe() {
                   placeholder="youremail@email.com"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
+                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
                 />
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function ContactMe() {
                 placeholder="Subject"
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
+                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
               />
             </div>
 
@@ -149,7 +149,7 @@ export default function ContactMe() {
                 rows={5}
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
+                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
               ></textarea>
             </div>
 

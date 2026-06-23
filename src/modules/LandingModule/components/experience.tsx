@@ -27,7 +27,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
       <div
         className={`flex w-full flex-row items-center gap-6 lg:gap-8 ${
           index % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row"
-        } pl-16 max-lg:pr-2 lg:pl-0`}
+        } pl-16 lg:pl-0`}
       >
         <div
           className={`absolute left-[1.6rem] h-4 w-4 shrink-0 rounded-full bg-purple-500 shadow-[0_0_5px_theme('colors.purple.500')] max-lg:-translate-x-4 lg:static lg:left-auto ${
