@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const frontend = [
   { src: "/fe/react.svg", alt: "ReactJS" },
@@ -156,48 +157,15 @@ export default function Tech() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="glass flex w-auto flex-wrap gap-1 rounded-3xl border border-white/10 p-1.5 md:rounded-full"
         >
-          <button
-            onClick={() => setActiveTab("frontend")}
-            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
-              activeTab === "frontend"
-                ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
-            }`}
-          >
-            Frontend
-          </button>
-          <button
-            onClick={() => setActiveTab("backend")}
-            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
-              activeTab === "backend"
-                ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
-            }`}
-          >
-            Backend
-          </button>
-          <button
-            onClick={() => setActiveTab("database")}
-            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
-              activeTab === "database"
-                ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
-            }`}
-          >
-            Database
-          </button>
-          <button
-            onClick={() => setActiveTab("devops")}
-            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
-              activeTab === "devops"
-                ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
-            }`}
-          >
-            DevOps & Tools
-          </button>
+          <Tabs value={activeTab} onValueChange={(val: string) => setActiveTab(val as "frontend" | "backend" | "database" | "devops")}>
+            <TabsList>
+              <TabsTrigger value="frontend">Frontend</TabsTrigger>
+              <TabsTrigger value="backend">Backend</TabsTrigger>
+              <TabsTrigger value="database">Database</TabsTrigger>
+              <TabsTrigger value="devops">DevOps & Tools</TabsTrigger>
+            </TabsList>
+          </Tabs>
         </motion.div>
 
         {/* Tab Content */}

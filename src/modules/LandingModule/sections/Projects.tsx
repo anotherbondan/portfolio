@@ -4,6 +4,7 @@ import Project from "../components/project";
 import TechList from "../components/tech-list";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const datas = [
   {
@@ -234,36 +235,28 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="glass flex w-auto max-w-[90vw] flex-wrap justify-center gap-1 rounded-3xl border border-white/10 p-1.5 md:rounded-full"
       >
-        {filters.map((filter) => (
-          <button
-            key={filter}
-            onClick={() => setActiveFilter(filter)}
-            className={`font-inter rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs md:px-6 ${
-              activeFilter === filter
-                ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
-                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
-            }`}
-          >
-            {filter}
-          </button>
-        ))}
+        <Tabs value={activeFilter} onValueChange={setActiveFilter}>
+          <TabsList className="max-w-[90vw]">
+            {filters.map((filter) => (
+              <TabsTrigger key={filter} value={filter}>
+                {filter}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
       </motion.div>
 
-      <motion.div
-        layout
-        className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8"
-      >
+      <motion.div layout className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8">
         <AnimatePresence>
           {filteredData.map((data) => (
             <motion.div
               layout
               key={`${data.title}-${data.date}`}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              animate={{ opacity: 1, scale: 1, y: 0, height: "auto" }}
+              exit={{ opacity: 0, scale: 0.9, height: 0, overflow: "hidden" }}
+              transition={{ duration: 0.3 }}
               className="flex w-full"
             >
               <Project data={data}>
