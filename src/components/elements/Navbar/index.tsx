@@ -53,7 +53,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-6 z-50 flex w-full justify-center px-3">
-        <div className="glass flex w-full max-w-5xl items-center justify-between gap-6 rounded-full px-4 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_15px_theme('colors.purple.500/20')] md:gap-12">
+        <div className="glass flex w-full max-w-5xl items-center justify-between gap-6 rounded-full px-4 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 md:gap-12">
           {/* Left: Logo */}
           <Link
             href="/#home"
@@ -94,7 +94,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Button
               asChild
-              className="hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none bg-purple-600 px-3 py-2 hover:bg-purple-500 hover:shadow-[0_0_10px_theme('colors.purple.500/50')] sm:block md:flex"
+              className="hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none bg-purple-600 px-3 py-2 hover:bg-purple-500   sm:block md:flex"
             >
               <Link
                 href="https://www.linkedin.com/in/anandagautama/"
@@ -124,7 +124,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-black/90 px-6 backdrop-blur-xl"
+            className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-neutral-900/70 px-6 backdrop-blur-md"
           >
             <button
               className="absolute top-8 right-8 p-2 text-neutral-300 transition-colors hover:text-purple-400"

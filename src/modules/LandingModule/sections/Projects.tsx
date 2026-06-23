@@ -118,7 +118,7 @@ const datas = [
     ],
     sourceCode: "",
     projectUrl: "",
-    category: "Other",
+    category: "Competition",
   },
   {
     cover: "/portfolio-web.png",
@@ -212,7 +212,7 @@ export default function Projects() {
   return (
     <section
       id="project"
-      className="relative flex min-h-screen flex-col items-center justify-center gap-14 pt-32 pb-20"
+      className="relative flex min-h-screen flex-col items-center justify-center gap-14 pt-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

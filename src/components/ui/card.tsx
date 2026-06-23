@@ -11,7 +11,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <div
         ref={ref}
-        className={cn("glass rounded-2xl ring-1 ring-white/10", className)}
+        className={cn("rounded-2xl ring-1 ring-white/10", className)}
       >
         {children}
       </div>

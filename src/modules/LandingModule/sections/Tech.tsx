@@ -78,7 +78,7 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
   return (
     <>
       <div
-        className="group glass relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-white/5 bg-black/20 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_10px_30px_theme('colors.purple.500/20')]"
+        className="group relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-white/5 bg-neutral-900/70 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30  "
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
@@ -133,7 +133,7 @@ export default function Tech() {
   return (
     <section
       id="tech"
-      className="flex min-h-screen w-full flex-col items-center gap-12 pt-40 pb-20"
+      className="flex min-h-screen w-full flex-col items-center gap-12 pt-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -158,7 +158,14 @@ export default function Tech() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <Tabs value={activeTab} onValueChange={(val: string) => setActiveTab(val as "frontend" | "backend" | "database" | "devops")}>
+          <Tabs
+            value={activeTab}
+            onValueChange={(val: string) =>
+              setActiveTab(
+                val as "frontend" | "backend" | "database" | "devops",
+              )
+            }
+          >
             <TabsList>
               <TabsTrigger value="frontend">Frontend</TabsTrigger>
               <TabsTrigger value="backend">Backend</TabsTrigger>

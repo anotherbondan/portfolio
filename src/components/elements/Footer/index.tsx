@@ -43,7 +43,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative mt-20 w-full overflow-hidden border-t border-white/5 bg-black/40 backdrop-blur-md">
+    <footer className="relative mt-20 w-full overflow-hidden border-t border-white/5 bg-neutral-900/70">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent" />
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 pt-16 pb-8 md:flex-row lg:px-8">
         {/* Brand / Navigation Links */}

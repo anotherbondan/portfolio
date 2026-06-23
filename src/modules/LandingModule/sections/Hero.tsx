@@ -28,19 +28,19 @@ export default function Hero() {
             className="group relative flex h-56 w-56 cursor-pointer items-center justify-center sm:h-64 sm:w-64 lg:h-80 lg:w-80"
           >
             {/* Animated Gradient Glow Background */}
-            <div className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr from-purple-600 via-fuchsia-500 to-purple-400 opacity-20 blur-2xl transition-opacity duration-700 group-hover:opacity-40" />
+            <div className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr from-purple-600 via-fuchsia-500 to-purple-400 opacity-20 transition-opacity duration-700 group-hover:opacity-40" />
 
             {/* Outer Border Ring */}
             <div className="absolute inset-0 scale-105 rounded-full border border-purple-500/20 transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 scale-110 rounded-full border border-purple-300/10 transition-transform delay-75 duration-700 group-hover:scale-125" />
 
             {/* Main Avatar Container */}
-            <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-white/10 bg-black/50 shadow-[0_0_40px_theme('colors.purple.500/20')] transition-colors duration-500 group-hover:border-purple-400/50">
+            <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-white/10 bg-neutral-900/70 shadow-[0_0_40px_theme('colors.purple.500/20')] transition-colors duration-500 group-hover:border-purple-500/30">
               <Image
-                src="/office-worker.png"
+                src="/hero.jpeg"
                 alt="Ananda Gautama SK Profile"
                 fill
-                className="object-cover grayscale-[30%] transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
+                className="object-cover grayscale-100 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
               />
             </div>
           </motion.div>
@@ -55,7 +55,7 @@ export default function Hero() {
           <div className="flex flex-col gap-2">
             <h2 className="font-playfair-display text-3xl font-semibold text-neutral-100 sm:text-4xl lg:text-5xl">
               Hi, I&apos;m{" "}
-              <span className="text-purple-300">Ananda Gautama SK</span>
+              <span className="text-purple-500">Ananda Gautama SK</span>
             </h2>
             <h1 className="font-playfair-display min-h-[40px] text-2xl text-neutral-400 sm:text-3xl lg:min-h-[48px] lg:text-4xl">
               <span className="text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
@@ -79,13 +79,12 @@ export default function Hero() {
           <p className="font-inter max-w-lg text-base leading-relaxed text-neutral-400 sm:text-lg lg:text-xl">
             I specialize in building scalable web applications, designing
             elegant user interfaces, and solving complex problems with code.
-            Let&apos;s build something amazing together.
           </p>
 
           <div className="mt-2 flex w-full flex-col items-center gap-4 sm:mt-4 sm:w-auto sm:flex-row sm:flex-wrap lg:justify-start">
             <Button
               asChild
-              className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 shadow-[0_0_15px_theme('colors.purple.500/30')] transition-colors hover:bg-purple-500 hover:shadow-[0_0_25px_theme('colors.purple.500/50')] sm:w-auto sm:py-3"
+              className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 transition-colors hover:bg-purple-500  sm:w-auto sm:py-3"
             >
               <Link href="#project" className="w-full sm:w-auto">
                 <span className="font-inter font-semibold">View My Work</span>
@@ -93,7 +92,7 @@ export default function Hero() {
             </Button>
             <Button
               asChild
-              className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3.5 transition-colors hover:border-purple-400 hover:bg-purple-900/10 sm:w-auto sm:py-3"
+              className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3.5 transition-colors hover:border-purple-500/30 hover:bg-purple-900/10 sm:w-auto sm:py-3"
             >
               <Link
                 href="/AnandaGautamaSekarKhosmana_CV.pdf"

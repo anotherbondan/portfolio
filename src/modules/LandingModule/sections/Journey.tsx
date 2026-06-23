@@ -86,7 +86,7 @@ export default function Journey() {
   return (
     <section
       id="experience"
-      className="relative flex min-h-screen w-full flex-col items-center gap-24 pt-32 pb-20"
+      className="relative flex min-h-screen w-full flex-col items-center gap-24 pt-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function Journey() {
         </p>
       </motion.div>
       <div className="relative flex w-full flex-col items-center justify-center gap-10 px-4 lg:px-12">
-        <div className="absolute left-8 z-0 h-full w-1 rounded-full bg-purple-400 opacity-50 shadow-[0_0_10px_theme('colors.purple.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
+        <div className="absolute left-8 z-0 h-full w-1 rounded-full bg-purple-400 opacity-50 shadow-[0_0_5px_theme('colors.purple.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
         {datas.map((data, idx) => (
           <motion.div
             key={idx}
