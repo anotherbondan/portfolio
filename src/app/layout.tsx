@@ -26,6 +26,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ananda-gautama.vercel.app"),
   title: "Ananda's Portfolio",
   description:
     "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
@@ -45,14 +46,6 @@ export const metadata: Metadata = {
       "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications and elegant user interfaces.",
     url: "https://ananda-gautama.vercel.app/",
     siteName: "Ananda Gautama Portfolio",
-    images: [
-      {
-        url: "/portfolio-web.png", // Reusing the project screenshot as the OG image
-        width: 1200,
-        height: 630,
-        alt: "Ananda Gautama SK Portfolio",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -61,7 +54,6 @@ export const metadata: Metadata = {
     title: "Ananda's Portfolio",
     description:
       "Portfolio of Ananda Gautama SK, a Full-Stack Developer and Software Engineer building scalable web applications.",
-    images: ["/portfolio-web.png"],
   },
 };
 
