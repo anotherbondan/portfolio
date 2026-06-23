@@ -1,8 +1,9 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTheme } from "next-themes";
 
 const frontend = [
   { src: "/fe/react.svg", alt: "ReactJS" },
@@ -75,6 +76,35 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
     setIsHovered(true);
   };
 
+  const needsDarkBg = [
+    "Shadcn/ui",
+    "Radix UI",
+    "Framer",
+    "Better Auth",
+    "Drizzle ORM",
+    "Vercel",
+    "Resend",
+    "Open AI",
+    "Github",
+    "Railway",
+    "Tanstack",
+  ].includes(item.alt);
+
+  const [mounted, setMounted] = useState(false);
+  const { theme, systemTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = theme === "system" ? systemTheme : theme;
+  const isLight = mounted && currentTheme === "light";
+
+  const imageSrc =
+    isLight && needsDarkBg
+      ? item.src.replace(".svg", "-black.svg").replace(".png", "-black.png")
+      : item.src;
+
   return (
     <>
       <div
@@ -85,10 +115,10 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
       >
         <div className="relative h-1/2 w-1/2 transition-transform duration-300 group-hover:scale-110">
           <Image
-            src={item.src}
+            src={imageSrc}
             alt={item.alt}
             fill
-            className="object-contain"
+            className="object-contain transition-all"
           />
         </div>
       </div>

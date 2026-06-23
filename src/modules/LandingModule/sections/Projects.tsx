@@ -247,7 +247,10 @@ export default function Projects() {
         </Tabs>
       </motion.div>
 
-      <motion.div layout className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8">
+      <motion.div
+        layout
+        className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-6 lg:px-8"
+      >
         <AnimatePresence>
           {filteredData.map((data) => (
             <motion.div
