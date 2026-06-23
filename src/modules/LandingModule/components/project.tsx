@@ -23,7 +23,7 @@ interface ProjectProps {
 
 export default function Project({ data, children }: ProjectProps) {
   return (
-    <Card className="group relative flex w-full flex-col gap-6 rounded-3xl border border-black/5 bg-white/70 p-5 transition-all duration-500 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30   lg:flex-row lg:gap-8 lg:rounded-[2rem] lg:p-8 dark:border-white/5 dark:bg-neutral-900/70">
+    <Card className="group relative flex w-full flex-col gap-6 rounded-3xl border border-black/5 bg-white/70 p-5 transition-all duration-500 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30 lg:flex-row lg:gap-8 lg:rounded-[2rem] lg:p-8 dark:border-white/5 dark:bg-neutral-900/70">
       {/* Background Glow on hover */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 lg:rounded-[2rem]" />
 

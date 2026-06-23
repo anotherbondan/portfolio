@@ -55,10 +55,12 @@ export default function Hero() {
           <div className="flex flex-col gap-2">
             <h2 className="font-playfair-display text-3xl font-semibold text-neutral-900 sm:text-4xl lg:text-5xl dark:text-neutral-100">
               Hi, I&apos;m{" "}
-              <span className="text-purple-600 dark:text-purple-500">Ananda Gautama SK</span>
+              <span className="text-purple-600 dark:text-purple-500">
+                Ananda Gautama SK
+              </span>
             </h2>
-            <h1 className="font-playfair-display min-h-[40px] text-2xl text-neutral-600 sm:text-3xl lg:min-h-[48px] lg:text-4xl dark:text-neutral-400">
-              <span className="text-purple-600 dark:text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
+            <h1 className="font-playfair-display min-h-10 text-2xl text-neutral-600 sm:text-3xl lg:min-h-12 lg:text-4xl dark:text-neutral-400">
+              <span className="text-purple-600 [text-shadow:0_0_15px_theme('colors.purple.500/50')] dark:text-purple-300">
                 <Typewriter
                   words={[
                     "Full-Stack Developer",
@@ -84,10 +86,12 @@ export default function Hero() {
           <div className="mt-2 flex w-full flex-col items-center gap-4 sm:mt-4 sm:w-auto sm:flex-row sm:flex-wrap lg:justify-start">
             <Button
               asChild
-              className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 transition-colors hover:bg-purple-500  sm:w-auto sm:py-3"
+              className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 transition-colors hover:bg-purple-500 sm:w-auto sm:py-3"
             >
               <Link href="#project" className="w-full sm:w-auto">
-                <span className="font-inter font-semibold text-neutral-100">View My Work</span>
+                <span className="font-inter font-semibold text-neutral-100">
+                  View My Work
+                </span>
               </Link>
             </Button>
             <Button

@@ -206,7 +206,7 @@ export default function Tech() {
         </motion.div>
 
         {/* Tab Content */}
-        <div className="min-h-[400px] w-full">
+        <div className="min-h-100 w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}

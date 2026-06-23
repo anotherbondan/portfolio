@@ -61,7 +61,7 @@ export default function Statistics() {
           {/* Subtle Background Gradient */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-          <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-purple-500/20 bg-purple-500/10 p-1.5 transition-all duration-500 group-hover:scale-110 group-hover:bg-purple-500/20   max-lg:h-40 max-lg:w-40 max-lg:p-3">
+          <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-purple-500/20 bg-purple-500/10 p-1.5 transition-all duration-500 group-hover:scale-110 group-hover:bg-purple-500/20 max-lg:h-40 max-lg:w-40 max-lg:p-3">
             <div className="relative h-full w-full">
               <Image
                 src="/universitas-indonesia.png"

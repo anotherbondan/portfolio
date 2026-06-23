@@ -79,12 +79,10 @@ export default function ContactMe() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex w-full flex-col gap-6 rounded-3xl p-5 bg-white/70 shadow-[0_0_20px_rgba(147,51,234,0.2)] ring-1 ring-black/10 md:p-8 dark:bg-neutral-900/70 dark:ring-white/10"
+          className="flex w-full flex-col gap-6 rounded-3xl bg-white/70 p-5 shadow-[0_0_20px_rgba(147,51,234,0.2)] ring-1 ring-black/10 md:p-8 dark:bg-neutral-900/70 dark:ring-white/10"
         >
-          
           <form className="space-y-5 md:space-y-8" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-5 md:flex-row md:gap-6">
-              
               <div className="flex w-full flex-col gap-2">
                 <label
                   htmlFor="name"
@@ -98,7 +96,7 @@ export default function ContactMe() {
                   placeholder="Your Name"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
+                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
                 />
               </div>
               <div className="flex w-full flex-col gap-2">
@@ -114,7 +112,7 @@ export default function ContactMe() {
                   placeholder="youremail@email.com"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
+                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
                 />
               </div>
             </div>
@@ -132,7 +130,7 @@ export default function ContactMe() {
                 placeholder="Subject"
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
+                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
               />
             </div>
 
@@ -149,7 +147,7 @@ export default function ContactMe() {
                 rows={5}
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/10 disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
+                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:border-purple-500/40 hover:shadow-md focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white dark:hover:border-purple-400/40 dark:hover:shadow-purple-900/30 dark:focus:border-purple-400 dark:focus:ring-purple-400/10"
               ></textarea>
             </div>
 
