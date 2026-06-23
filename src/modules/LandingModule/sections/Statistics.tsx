@@ -6,7 +6,7 @@ import { statsData } from "@/data/statistics";
 
 export default function Statistics() {
   return (
-    <section className="relative z-20 flex w-full justify-center px-4">
+    <section className="relative z-20 flex w-full justify-center px-4 lg:px-8">
       <div className="grid w-full max-w-6xl grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
         {/* Statistics Card */}
         <motion.div
@@ -57,7 +57,7 @@ export default function Statistics() {
           {/* Subtle Background Gradient */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-          <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-purple-500/20 bg-purple-500/10 p-1.5 transition-all duration-500 group-hover:scale-110 group-hover:bg-purple-500/20 max-lg:h-40 max-lg:w-40 max-lg:p-3">
+          <div className="relative z-10 mb-6 max-lg:mb-0 flex h-16 w-16 items-center justify-center rounded-full border border-purple-500/20 bg-purple-500/10 p-1.5 transition-all duration-500 group-hover:scale-110 group-hover:bg-purple-500/20 max-lg:h-40 max-lg:w-40 max-md:w-20 max-md:h-20 max-md:p-1 max-lg:p-3">
             <div className="relative h-full w-full">
               <Image
                 src="/universitas-indonesia.png"

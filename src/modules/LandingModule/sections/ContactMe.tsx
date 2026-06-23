@@ -56,7 +56,7 @@ export default function ContactMe() {
   return (
     <section
       id="contact"
-      className="flex min-h-screen flex-col items-center justify-center px-4 py-32"
+      className="flex min-h-screen flex-col items-center justify-center px-4 lg:px-8 py-32"
     >
       <div className="flex w-full max-w-4xl flex-col gap-10">
         <motion.div

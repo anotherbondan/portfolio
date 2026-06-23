@@ -11,9 +11,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full flex-col items-center justify-center gap-8 pt-32 pb-20 sm:gap-12 lg:flex-row lg:py-20"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center gap-8 pt-32 px-4 lg:px-8  pb-20 sm:gap-12 lg:flex-row lg:py-20"
     >
-      <div className="z-10 flex h-full w-full max-w-6xl flex-col items-center justify-between gap-10 px-4 lg:flex-row lg:gap-12">
+      <div className="z-10 flex h-full w-full max-w-6xl flex-col items-center justify-between gap-10 lg:flex-row lg:gap-12">
         {/* Right Side: Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}

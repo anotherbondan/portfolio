@@ -18,7 +18,7 @@ export default function Projects() {
   return (
     <section
       id="project"
-      className="relative flex min-h-screen flex-col items-center justify-center gap-14 pt-32"
+      className="relative flex min-h-screen flex-col items-center justify-center gap-14  px-4 lg:px-8 pt-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function Projects() {
 
       <motion.div
         layout
-        className="relative mt-4 grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:px-8"
+        className="relative grid w-full max-w-7xl grid-cols-1 gap-10"
       >
         <AnimatePresence>
           {filteredData.map((data) => (

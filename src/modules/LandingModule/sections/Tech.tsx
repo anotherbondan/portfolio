@@ -109,7 +109,7 @@ export default function Tech() {
   return (
     <section
       id="tech"
-      className="flex min-h-screen w-full flex-col items-center gap-12 pt-32"
+      className="flex min-h-screen w-full flex-col items-center gap-12  px-4 lg:px-8 pt-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export default function Tech() {
         </p>
       </motion.div>
 
-      <div className="flex w-full max-w-5xl flex-col items-center gap-10 px-4">
+      <div className="flex w-full max-w-5xl flex-col items-center gap-10">
         {/* Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

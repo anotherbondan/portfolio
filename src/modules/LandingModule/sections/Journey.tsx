@@ -10,14 +10,14 @@ export default function Journey() {
   return (
     <section
       id="experience"
-      className="relative flex min-h-screen w-full flex-col items-center gap-24 pt-32"
+      className="relative flex min-h-screen w-full flex-col items-center gap-24 pt-32 px-4 lg:px-8"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="z-10 flex flex-col items-center gap-4 px-4 text-center"
+        className="z-10 flex flex-col items-center gap-4 text-center"
       >
         <h1 className="font-playfair-display text-center text-5xl text-purple-600 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl dark:text-purple-300">
           Professional Journey
@@ -26,7 +26,7 @@ export default function Journey() {
           A timeline of my professional experiences
         </p>
       </motion.div>
-      <div className="relative flex w-full flex-col items-center justify-center gap-10 px-4 lg:px-12">
+      <div className="relative flex w-full flex-col items-center justify-center gap-10">
         <div className="absolute left-8 z-0 h-full w-1 rounded-full bg-purple-400 opacity-50 shadow-[0_0_5px_theme('colors.purple.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
         {journeyData.map((data, idx) => (
           <motion.div
