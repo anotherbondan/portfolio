@@ -45,7 +45,7 @@ export default function TechList({ data }: TechListProps) {
       {data.map((image, idx) => (
         <div
           key={idx}
-          className="h-8 w-8 rounded-lg border-1 border-neutral-200 bg-black/5 p-1.5 shadow-none transition-all duration-200 hover:scale-105 hover:rotate-6 md:h-12 md:w-12 lg:h-10 lg:w-10 dark:border-neutral-800 dark:bg-neutral-900/50"
+          className="h-10 w-10 rounded-lg border-1 border-neutral-200 bg-black/5 p-1.5 shadow-none transition-all duration-200 hover:scale-105 hover:rotate-6 md:h-12 md:w-12 lg:h-10 lg:w-10 dark:border-neutral-800 dark:bg-neutral-900/50"
         >
           <div className="relative h-full w-full">
             <Image
