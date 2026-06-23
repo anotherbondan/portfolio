@@ -9,8 +9,9 @@ const frontend = [
   { src: "/fe/vite.svg", alt: "Vite" },
   { src: "/fe/react-router.svg", alt: "React Router" },
   { src: "/fe/tanstack.svg", alt: "Tanstack" },
-  { src: "/fe/chakra-ui.svg", alt: "Chakra UI" },
   { src: "/fe/shadcn-ui.svg", alt: "Shadcn/ui" },
+  { src: "/fe/radix-ui.svg", alt: "Radix UI" },
+  { src: "/fe/chakra-ui.svg", alt: "Chakra UI" },
   { src: "/fe/tailwind-css.svg", alt: "TailwindCSS" },
   { src: "/fe/framer.svg", alt: "Framer" },
   { src: "/fe/flutter.svg", alt: "Flutter" },
@@ -21,13 +22,11 @@ const frontend = [
 const backend = [
   { src: "/be/node-js.svg", alt: "NodeJS" },
   { src: "/be/nestjs.svg", alt: "NestJS" },
+  { src: "/be/hono.svg", alt: "Hono" },
   { src: "/be/express-js.svg", alt: "ExpressJS" },
   { src: "/be/django.svg", alt: "Django" },
   { src: "/be/fast-api.svg", alt: "FastAPI" },
-  { src: "/be/redis.svg", alt: "Redis" },
-  { src: "/be/postgresql.svg", alt: "PostgreSQL" },
-  { src: "/be/prisma.svg", alt: "Prisma ORM" },
-  { src: "/be/drizzle.svg", alt: "Drizzle ORM" },
+  { src: "/be/better-auth.svg", alt: "Better Auth" },
   { src: "/be/typescript.svg", alt: "TypeScript" },
   { src: "/be/javascript.svg", alt: "Javascript" },
   { src: "/be/java.svg", alt: "Java" },
@@ -42,13 +41,22 @@ const devops = [
   { src: "/devtools/google-cloud.svg", alt: "Google Cloud Platform" },
   { src: "/devtools/pnpm.svg", alt: "pnpm" },
   { src: "/devtools/npm.svg", alt: "npm" },
-  { src: "/devtools/firebase.svg", alt: "Firebase" },
-  { src: "/devtools/neon.svg", alt: "Neon" },
-  { src: "/devtools/supabase.svg", alt: "Supabase" },
+  { src: "/devtools/resend.svg", alt: "Resend" },
   { src: "/devtools/ubuntu.svg", alt: "Ubuntu" },
   { src: "/devtools/gemini-ai.svg", alt: "Gemini" },
+  { src: "/devtools/open-ai.svg", alt: "Open AI" },
   { src: "/devtools/github.svg", alt: "Github" },
   { src: "/devtools/figma.svg", alt: "Figma" },
+];
+
+const database = [
+  { src: "/be/postgresql.svg", alt: "PostgreSQL" },
+  { src: "/be/redis.svg", alt: "Redis" },
+  { src: "/devtools/neon.svg", alt: "Neon" },
+  { src: "/devtools/supabase.svg", alt: "Supabase" },
+  { src: "/devtools/firebase.svg", alt: "Firebase" },
+  { src: "/be/prisma.svg", alt: "Prisma ORM" },
+  { src: "/be/drizzle.svg", alt: "Drizzle ORM" },
 ];
 
 function HoverTile({ item }: { item: { src: string; alt: string } }) {
@@ -108,7 +116,7 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
 }
 
 export default function Tech() {
-  const [activeTab, setActiveTab] = useState<"frontend" | "backend" | "devops">(
+  const [activeTab, setActiveTab] = useState<"frontend" | "backend" | "database" | "devops">(
     "frontend",
   );
 
@@ -117,7 +125,9 @@ export default function Tech() {
       ? frontend
       : activeTab === "backend"
         ? backend
-        : devops;
+        : activeTab === "database"
+          ? database
+          : devops;
 
   return (
     <section
@@ -167,6 +177,16 @@ export default function Tech() {
             }`}
           >
             Backend
+          </button>
+          <button
+            onClick={() => setActiveTab("database")}
+            className={`font-inter rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 max-md:text-xs ${
+              activeTab === "database"
+                ? "bg-purple-600 text-white shadow-[0_0_15px_theme('colors.purple.500/40')]"
+                : "text-neutral-400 hover:bg-white/5 hover:text-purple-300"
+            }`}
+          >
+            Database
           </button>
           <button
             onClick={() => setActiveTab("devops")}
