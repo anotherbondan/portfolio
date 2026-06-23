@@ -43,12 +43,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative mt-20 w-full overflow-hidden border-t border-white/5 bg-neutral-900/70">
+    <footer className="relative mt-20 w-full overflow-hidden border-t border-black/5 bg-white/70 dark:border-white/5 dark:bg-neutral-900/70">
       <div className="pointer-events-none absolute inset-0" />
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 pt-16 pb-8 md:flex-row lg:px-8">
         {/* Brand / Navigation Links */}
         <div className="flex flex-col items-center gap-6 md:items-start">
-          <h2 className="font-playfair-display text-2xl font-bold text-neutral-200">
+          <h2 className="font-playfair-display text-2xl font-bold text-neutral-800 dark:text-neutral-200">
             Ananda Gautama SK
           </h2>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 md:justify-start">
@@ -56,7 +56,7 @@ export default function Footer() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-inter text-sm font-medium text-neutral-400 transition-colors hover:text-purple-300"
+                className="font-inter text-sm font-medium text-neutral-600 transition-colors hover:text-purple-600 dark:text-neutral-400 dark:hover:text-purple-300"
               >
                 {link.name}
               </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="text-neutral-400 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-purple-400"
+              className="text-neutral-600 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-purple-600 dark:text-neutral-400 dark:hover:text-purple-400"
             >
               {social.icon}
             </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 border-t border-white/5 px-6 py-6 md:flex-row lg:px-8">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 border-t border-black/5 px-6 py-6 md:flex-row lg:px-8 dark:border-white/5">
         <p className="font-inter text-sm text-neutral-500">
           © {year} Ananda Gautama SK. All rights reserved.
         </p>

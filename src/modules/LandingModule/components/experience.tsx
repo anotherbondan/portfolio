@@ -30,15 +30,15 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
         } pl-16 max-lg:pr-2 lg:pl-0`}
       >
         <div
-          className={`absolute left-[1.6rem] h-4 w-4 shrink-0 rounded-full bg-purple-200 shadow-[0_0_5px_theme('colors.purple.500')] max-lg:-translate-x-4 lg:static lg:left-auto ${
+          className={`absolute left-[1.6rem] h-4 w-4 shrink-0 rounded-full bg-purple-500 shadow-[0_0_5px_theme('colors.purple.500')] max-lg:-translate-x-4 lg:static lg:left-auto ${
             index % 2 == 0 ? "lg:translate-x-1/2" : "lg:-translate-x-1/2"
-          } z-10`}
+          } z-10 dark:bg-purple-200`}
         ></div>
-        <div className="group relative min-h-64 w-full max-w-156 rounded-3xl border  bg-neutral-900/70  border-white/10 p-6 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30   max-lg:max-w-full lg:p-7">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 lg:rounded-[2rem]" />
+        <div className="group relative min-h-64 w-full max-w-156 rounded-3xl border border-black/10 bg-white/70 p-6 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30 max-lg:max-w-full lg:p-7 dark:border-white/10 dark:bg-neutral-900/70">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 lg:rounded-[2rem]" />
           <div className="flex h-full flex-col gap-3">
             <div className="flex items-center gap-3 max-md:flex-col max-md:items-start">
-              <div className="border-card-hover relative h-20 min-w-20 overflow-hidden rounded-xl border-1 bg-neutral-900">
+              <div className="relative h-20 min-w-20 overflow-hidden rounded-xl border-1 border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
                 {data?.logo ? (
                   <Image
                     src={data?.logo}
@@ -56,7 +56,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
                 <h2 className="font-inter text-2xl font-semibold">
                   {data?.event ?? "Event"}
                 </h2>
-                <h3 className="font-inter text-md text-neutral-300">
+                <h3 className="font-inter text-md text-neutral-600 dark:text-neutral-300">
                   {data?.role ?? "Role"}
                 </h3>
                 <div className="flex items-center gap-1">

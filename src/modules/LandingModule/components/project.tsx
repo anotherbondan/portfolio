@@ -23,12 +23,12 @@ interface ProjectProps {
 
 export default function Project({ data, children }: ProjectProps) {
   return (
-    <Card className="group relative flex w-full flex-col gap-6 rounded-3xl border border-white/5 bg-neutral-900/70 p-5 transition-all duration-500 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30   lg:flex-row lg:gap-8 lg:rounded-[2rem] lg:p-8">
+    <Card className="group relative flex w-full flex-col gap-6 rounded-3xl border border-black/5 bg-white/70 p-5 transition-all duration-500 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30   lg:flex-row lg:gap-8 lg:rounded-[2rem] lg:p-8 dark:border-white/5 dark:bg-neutral-900/70">
       {/* Background Glow on hover */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 lg:rounded-[2rem]" />
 
       {/* Image Container */}
-      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-xl border border-white/5 bg-neutral-900/70 lg:w-2/5 lg:rounded-2xl">
+      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-xl border border-black/5 bg-neutral-100 lg:w-2/5 lg:rounded-2xl dark:border-white/5 dark:bg-neutral-900/70">
         <Image
           src={data.cover}
           alt={data.title}
@@ -43,14 +43,14 @@ export default function Project({ data, children }: ProjectProps) {
       <div className="z-10 flex w-full flex-col justify-between py-1 lg:w-3/5 lg:py-2">
         <div className="flex flex-col gap-4 lg:gap-5">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
-            <h1 className="font-playfair-display text-2xl font-bold text-neutral-200 transition-colors duration-300 group-hover:text-purple-300 lg:text-3xl">
+            <h1 className="font-playfair-display text-2xl font-bold text-neutral-800 transition-colors duration-300 group-hover:text-purple-600 lg:text-3xl dark:text-neutral-200 dark:group-hover:text-purple-300">
               {data.title}
             </h1>
-            <span className="font-inter self-start rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1.5 text-[10px] font-semibold tracking-wide text-purple-300 lg:text-xs">
+            <span className="font-inter self-start rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1.5 text-[10px] font-semibold tracking-wide text-purple-600 lg:text-xs dark:text-purple-300">
               {data.date}
             </span>
           </div>
-          <p className="font-inter text-sm leading-relaxed font-light text-neutral-400 lg:text-base">
+          <p className="font-inter text-sm leading-relaxed font-light text-neutral-600 lg:text-base dark:text-neutral-400">
             {data.desc}
           </p>
           {children}
@@ -79,7 +79,7 @@ export default function Project({ data, children }: ProjectProps) {
               target="_blank"
               className="group/btn flex-1"
             >
-              <Button className="font-inter flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-neutral-300 transition-all duration-300 hover:bg-white/10 hover:text-white lg:px-6">
+              <Button className="font-inter flex w-full items-center justify-center gap-2 rounded-xl border border-black/10 bg-black/5 px-4 py-3 text-sm font-semibold text-neutral-700 transition-all duration-300 hover:bg-black/10 hover:text-black lg:px-6 dark:border-white/10 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-white">
                 <GrGithub
                   size={16}
                   className="transition-transform duration-300 group-hover/btn:scale-110"

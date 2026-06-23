@@ -78,7 +78,7 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
   return (
     <>
       <div
-        className="group relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-white/5 bg-neutral-900/70 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30  "
+        className="group relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-black/5 bg-black/5 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-purple-500/30 dark:border-white/5 dark:bg-neutral-900/70"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
@@ -106,7 +106,7 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
               x: { duration: 0 },
               y: { duration: 0 },
             }}
-            className="font-inter pointer-events-none fixed top-0 left-0 z-50 rounded-full border border-purple-500/30 bg-purple-900/80 px-3 py-1.5 text-xs whitespace-nowrap text-purple-100 shadow-xl"
+            className="font-inter pointer-events-none fixed top-0 left-0 z-50 rounded-full border border-purple-500/30 bg-purple-100 px-3 py-1.5 text-xs whitespace-nowrap text-purple-900 shadow-xl dark:bg-purple-900/80 dark:text-purple-100"
           >
             {item.alt}
           </motion.div>
@@ -142,10 +142,10 @@ export default function Tech() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center gap-4 px-4 text-center"
       >
-        <h1 className="font-playfair-display text-center text-5xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl">
+        <h1 className="font-playfair-display text-center text-5xl text-purple-600 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl dark:text-purple-300">
           Techs and Tools
         </h1>
-        <p className="font-inter text-center text-sm tracking-widest text-gray-400 uppercase">
+        <p className="font-inter text-center text-sm tracking-widest text-gray-600 uppercase dark:text-gray-400">
           Technologies I use to build robust applications
         </p>
       </motion.div>

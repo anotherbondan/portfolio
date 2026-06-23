@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
+  --foreground: #050505;
+  --background: #faf9f6; 
+  --grid-color: rgba(0, 0, 0, 0.15);
+}
+
+.dark {
   --foreground: #faf9f6;
-  --background: #050505; /* Deeper black for better contrast */
+  --background: #050505;
+  --grid-color: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -42,7 +51,7 @@
 
 body {
   background-color: var(--background);
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
   background-size: 32px 32px;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;

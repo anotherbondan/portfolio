@@ -35,7 +35,7 @@ export default function Hero() {
             <div className="absolute inset-0 scale-110 rounded-full border border-purple-300/10 transition-transform delay-75 duration-700 group-hover:scale-125" />
 
             {/* Main Avatar Container */}
-            <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-white/10 bg-neutral-900/70 shadow-[0_0_40px_theme('colors.purple.500/20')] transition-colors duration-500 group-hover:border-purple-500/30">
+            <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-black/10 bg-white/70 shadow-[0_0_40px_theme('colors.purple.500/20')] transition-colors duration-500 group-hover:border-purple-500/30 dark:border-white/10 dark:bg-neutral-900/70">
               <Image
                 src="/hero.jpeg"
                 alt="Ananda Gautama SK Profile"
@@ -53,12 +53,12 @@ export default function Hero() {
           className="flex flex-col items-center justify-center gap-5 text-center sm:gap-6 lg:w-1/2 lg:items-start lg:text-left"
         >
           <div className="flex flex-col gap-2">
-            <h2 className="font-playfair-display text-3xl font-semibold text-neutral-100 sm:text-4xl lg:text-5xl">
+            <h2 className="font-playfair-display text-3xl font-semibold text-neutral-900 sm:text-4xl lg:text-5xl dark:text-neutral-100">
               Hi, I&apos;m{" "}
-              <span className="text-purple-500">Ananda Gautama SK</span>
+              <span className="text-purple-600 dark:text-purple-500">Ananda Gautama SK</span>
             </h2>
-            <h1 className="font-playfair-display min-h-[40px] text-2xl text-neutral-400 sm:text-3xl lg:min-h-[48px] lg:text-4xl">
-              <span className="text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
+            <h1 className="font-playfair-display min-h-[40px] text-2xl text-neutral-600 sm:text-3xl lg:min-h-[48px] lg:text-4xl dark:text-neutral-400">
+              <span className="text-purple-600 dark:text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')]">
                 <Typewriter
                   words={[
                     "Full-Stack Developer",
@@ -76,7 +76,7 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="font-inter max-w-lg text-base leading-relaxed text-neutral-400 sm:text-lg lg:text-xl">
+          <p className="font-inter max-w-lg text-base leading-relaxed text-neutral-600 sm:text-lg lg:text-xl dark:text-neutral-400">
             I specialize in building scalable web applications, designing
             elegant user interfaces, and solving complex problems with code.
           </p>
@@ -87,12 +87,12 @@ export default function Hero() {
               className="w-full rounded-full border-none bg-purple-600 px-6 py-3.5 transition-colors hover:bg-purple-500  sm:w-auto sm:py-3"
             >
               <Link href="#project" className="w-full sm:w-auto">
-                <span className="font-inter font-semibold">View My Work</span>
+                <span className="font-inter font-semibold text-neutral-100">View My Work</span>
               </Link>
             </Button>
             <Button
               asChild
-              className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3.5 transition-colors hover:border-purple-500/30 hover:bg-purple-900/10 sm:w-auto sm:py-3"
+              className="group flex w-full items-center justify-center gap-2 rounded-full border border-black/20 bg-transparent px-6 py-3.5 text-neutral-800 transition-colors hover:border-purple-500/30 hover:bg-purple-900/10 sm:w-auto sm:py-3 dark:border-white/20 dark:text-white"
             >
               <Link
                 href="/AnandaGautamaSekarKhosmana_CV.pdf"

@@ -66,10 +66,10 @@ export default function ContactMe() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center gap-3 md:gap-4"
         >
-          <h2 className="font-playfair-display text-center text-5xl text-purple-300 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl">
+          <h2 className="font-playfair-display text-center text-5xl text-purple-600 [text-shadow:0_0_15px_theme('colors.purple.500/50')] md:text-6xl dark:text-purple-300">
             Contact Me
           </h2>
-          <p className="font-inter text-center text-xs tracking-widest text-gray-400 uppercase md:text-sm">
+          <p className="font-inter text-center text-xs tracking-widest text-gray-600 uppercase md:text-sm dark:text-gray-400">
             Let&apos;s build something together
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ export default function ContactMe() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex w-full flex-col gap-6 rounded-3xl p-5 bg-neutral-900/70 shadow-[0_0_20px_rgba(147,51,234,0.2)] ring-1 ring-white/10 md:p-8"
+          className="flex w-full flex-col gap-6 rounded-3xl p-5 bg-white/70 shadow-[0_0_20px_rgba(147,51,234,0.2)] ring-1 ring-black/10 md:p-8 dark:bg-neutral-900/70 dark:ring-white/10"
         >
           
           <form className="space-y-5 md:space-y-8" onSubmit={handleSubmit}>
@@ -88,7 +88,7 @@ export default function ContactMe() {
               <div className="flex w-full flex-col gap-2">
                 <label
                   htmlFor="name"
-                  className="font-inter text-sm font-semibold text-neutral-300 md:text-base"
+                  className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
                 >
                   Name
                 </label>
@@ -98,13 +98,13 @@ export default function ContactMe() {
                   placeholder="Your Name"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
                 />
               </div>
               <div className="flex w-full flex-col gap-2">
                 <label
                   htmlFor="email"
-                  className="font-inter text-sm font-semibold text-neutral-300 md:text-base"
+                  className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
                 >
                   Email
                 </label>
@@ -114,7 +114,7 @@ export default function ContactMe() {
                   placeholder="youremail@email.com"
                   required
                   disabled={isLoading}
-                  className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                  className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
                 />
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function ContactMe() {
             <div className="flex w-full flex-col gap-2">
               <label
                 htmlFor="subject"
-                className="font-inter text-sm font-semibold text-neutral-300 md:text-base"
+                className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
               >
                 Subject
               </label>
@@ -132,14 +132,14 @@ export default function ContactMe() {
                 placeholder="Subject"
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
               />
             </div>
 
             <div className="flex w-full flex-col gap-2">
               <label
                 htmlFor="message"
-                className="font-inter text-sm font-semibold text-neutral-300 md:text-base"
+                className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
               >
                 Message
               </label>
@@ -149,7 +149,7 @@ export default function ContactMe() {
                 rows={5}
                 required
                 disabled={isLoading}
-                className="w-full rounded-xl border border-white/10 bg-neutral-950 p-3.5 text-sm text-white transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base"
+                className="w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all focus:border-purple-500/30  focus:outline-none disabled:opacity-50  md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
               ></textarea>
             </div>
 
@@ -158,7 +158,7 @@ export default function ContactMe() {
               disabled={isLoading}
               className="w-full rounded-xl border-none bg-purple-600 py-3.5 transition-colors hover:bg-purple-500 disabled:opacity-70 md:py-4"
             >
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-3 text-neutral-100">
                 <IoPaperPlane size={20} />
                 <h1 className="font-inter md:text-md text-sm font-semibold">
                   {isLoading ? "Sending..." : "Send Message"}
