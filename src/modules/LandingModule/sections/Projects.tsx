@@ -18,7 +18,7 @@ export default function Projects() {
   return (
     <section
       id="project"
-      className="relative flex min-h-screen flex-col items-center justify-center gap-14  px-4 lg:px-8 pt-32"
+      className="relative flex min-h-screen flex-col items-center justify-center gap-14 px-4 pt-32 lg:px-8"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center gap-4 px-4 text-center"
       >
-        <h1 className="font-playfair-display text-5xl text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] md:text-6xl dark:text-primary-300">
+        <h1 className="font-playfair-display text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] dark:text-primary-300 text-5xl md:text-6xl">
           Featured Work
         </h1>
         <p className="font-inter text-center text-sm tracking-widest text-gray-600 uppercase dark:text-gray-400">

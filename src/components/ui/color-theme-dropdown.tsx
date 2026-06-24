@@ -20,7 +20,10 @@ export function ColorThemeDropdown() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -32,7 +35,7 @@ export function ColorThemeDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-neutral-600 transition-colors hover:bg-black/20 hover:text-primary-500 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-primary-400"
+        className="hover:text-primary-500 dark:hover:text-primary-400 flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-neutral-600 transition-colors hover:bg-black/20 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10"
         aria-label="Toggle color theme"
       >
         <FaPalette size={18} />
@@ -45,7 +48,7 @@ export function ColorThemeDropdown() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 top-12 z-50 w-36 rounded-2xl border border-white/10 bg-white/80 p-2 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-black/80"
+            className="absolute top-12 right-0 z-50 w-36 rounded-2xl border border-white/10 bg-white/80 p-2 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-black/80"
           >
             <div className="flex flex-col gap-1">
               {themes.map((theme) => (
@@ -58,7 +61,7 @@ export function ColorThemeDropdown() {
                   className={`flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition-colors ${
                     colorTheme === theme.value
                       ? "bg-primary-500/20 text-primary-600 dark:text-primary-400"
-                      : "text-neutral-600 hover:bg-black/5 dark:text-neutral-300 dark:hover:bg-white/5 hover:text-primary-500 dark:hover:text-primary-400"
+                      : "hover:text-primary-500 dark:hover:text-primary-400 text-neutral-600 hover:bg-black/5 dark:text-neutral-300 dark:hover:bg-white/5"
                   }`}
                 >
                   <div className={`h-4 w-4 rounded-full ${theme.colorClass}`} />

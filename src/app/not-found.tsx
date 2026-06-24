@@ -16,15 +16,15 @@ export default function NotFound() {
         >
           {/* Animated Glow Behind 404 */}
           <div className="group relative">
-            <div className="absolute -inset-4 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr from-primary-600 via-fuchsia-500 to-primary-400 opacity-20 blur-2xl transition-opacity duration-700 group-hover:opacity-40" />
+            <div className="from-primary-600 to-primary-400 absolute -inset-4 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr via-fuchsia-500 opacity-20 blur-2xl transition-opacity duration-700 group-hover:opacity-40" />
             <h1 className="font-playfair-display relative text-8xl font-black tracking-tighter text-neutral-900 md:text-9xl dark:text-neutral-100">
-              <span className="bg-gradient-to-br from-primary-600 to-primary-400 bg-clip-text text-transparent [text-shadow:0_0_15px_theme('colors.primary.500/30')] dark:from-primary-400 dark:to-primary-300">
+              <span className="from-primary-600 to-primary-400 [text-shadow:0_0_15px_theme('colors.primary.500/30')] dark:from-primary-400 dark:to-primary-300 bg-gradient-to-br bg-clip-text text-transparent">
                 404
               </span>
             </h1>
           </div>
 
-          <div className="my-2 h-px w-24 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"></div>
+          <div className="via-primary-500/50 my-2 h-px w-24 bg-gradient-to-r from-transparent to-transparent"></div>
 
           <h2 className="font-playfair-display text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-neutral-100">
             Page Not Found
@@ -38,7 +38,7 @@ export default function NotFound() {
           <div className="mt-4 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
             <Button
               asChild
-              className="group w-full rounded-full border-none bg-primary-600 px-8 py-3.5 transition-colors hover:bg-primary-500 sm:w-auto"
+              className="group bg-primary-600 hover:bg-primary-500 w-full rounded-full border-none px-8 py-3.5 transition-colors sm:w-auto"
             >
               <Link href="/">
                 <span className="font-inter flex items-center gap-2 font-semibold text-neutral-100">

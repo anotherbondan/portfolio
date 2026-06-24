@@ -14,10 +14,10 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="group relative flex h-full flex-col justify-center overflow-hidden rounded-3xl border border-black/10 bg-white/70 p-8 transition-all duration-500 hover:border-primary-500/30 md:p-10 lg:col-span-2 dark:border-white/5 dark:bg-neutral-900/70"
+          className="group hover:border-primary-500/30 relative flex h-full flex-col justify-center overflow-hidden rounded-3xl border border-black/10 bg-white/70 p-8 transition-all duration-500 md:p-10 lg:col-span-2 dark:border-white/5 dark:bg-neutral-900/70"
         >
           {/* Subtle Background Gradient */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="from-primary-500/5 pointer-events-none absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
           <div className="relative z-10 grid w-full grid-cols-1 gap-8 divide-y divide-black/10 md:grid-cols-3 md:gap-4 md:divide-x md:divide-y-0 dark:divide-white/10">
             {statsData.map((stat, idx) => (
@@ -34,7 +34,7 @@ export default function Statistics() {
                     delay: idx * 0.15 + 0.2,
                     type: "spring",
                   }}
-                  className="font-playfair-display mb-1 text-4xl font-bold text-primary-600 [text-shadow:0_0_20px_theme('colors.primary.500/80')] md:text-5xl dark:text-primary-300"
+                  className="font-playfair-display text-primary-600 [text-shadow:0_0_20px_theme('colors.primary.500/80')] dark:text-primary-300 mb-1 text-4xl font-bold md:text-5xl"
                 >
                   {stat.value}
                 </motion.h3>
@@ -52,12 +52,12 @@ export default function Statistics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-black/10 bg-white/70 p-8 text-center transition-colors duration-500 hover:border-primary-500/30 max-lg:flex-row max-lg:gap-10 max-md:flex-col max-md:gap-4 lg:col-span-1 dark:border-white/5 dark:bg-neutral-900/70"
+          className="group hover:border-primary-500/30 relative flex h-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-black/10 bg-white/70 p-8 text-center transition-colors duration-500 max-lg:flex-row max-lg:gap-10 max-md:flex-col max-md:gap-4 lg:col-span-1 dark:border-white/5 dark:bg-neutral-900/70"
         >
           {/* Subtle Background Gradient */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary-500/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="from-primary-500/10 pointer-events-none absolute inset-0 bg-gradient-to-tr to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-          <div className="relative z-10 mb-6 max-lg:mb-0 flex h-16 w-16 items-center justify-center rounded-full border border-primary-500/20 bg-primary-500/10 p-1.5 transition-all duration-500 group-hover:scale-110 group-hover:bg-primary-500/20 max-lg:h-40 max-lg:w-40 max-md:w-20 max-md:h-20 max-md:p-1 max-lg:p-3">
+          <div className="border-primary-500/20 bg-primary-500/10 group-hover:bg-primary-500/20 relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border p-1.5 transition-all duration-500 group-hover:scale-110 max-lg:mb-0 max-lg:h-40 max-lg:w-40 max-lg:p-3 max-md:h-20 max-md:w-20 max-md:p-1">
             <div className="relative h-full w-full">
               <Image
                 src="/universitas-indonesia.png"
@@ -74,9 +74,9 @@ export default function Statistics() {
             <p className="font-inter relative z-10 mt-2 mb-6 text-sm text-neutral-600 dark:text-neutral-400">
               Faculty of Computer Science
             </p>
-            <div className="relative z-10 flex w-fit items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-5 py-2 shadow-[0_0_10px_theme('colors.primary.500/10')] transition-colors duration-300 group-hover:border-primary-500/30">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-primary-400" />
-              <span className="font-inter text-sm font-bold tracking-wide text-primary-700 dark:text-primary-200">
+            <div className="border-primary-500/20 bg-primary-500/10 shadow-[0_0_10px_theme('colors.primary.500/10')] group-hover:border-primary-500/30 relative z-10 flex w-fit items-center gap-2 rounded-full border px-5 py-2 transition-colors duration-300">
+              <span className="bg-primary-400 h-2 w-2 animate-pulse rounded-full" />
+              <span className="font-inter text-primary-700 dark:text-primary-200 text-sm font-bold tracking-wide">
                 GPA: 3.78
               </span>
             </div>

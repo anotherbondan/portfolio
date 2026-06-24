@@ -9,9 +9,15 @@ interface ColorThemeContextType {
   setColorTheme: (theme: ColorTheme) => void;
 }
 
-const ColorThemeContext = createContext<ColorThemeContextType | undefined>(undefined);
+const ColorThemeContext = createContext<ColorThemeContextType | undefined>(
+  undefined,
+);
 
-export function ColorThemeProvider({ children }: { children: React.ReactNode }) {
+export function ColorThemeProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [colorTheme, setColorThemeState] = useState<ColorTheme>("amethyst");
   const [mounted, setMounted] = useState(false);
 

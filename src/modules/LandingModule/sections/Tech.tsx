@@ -54,7 +54,7 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
   return (
     <>
       <div
-        className="group relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-black/5 bg-black/5 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 hover:border-primary-500/30 dark:border-white/5 dark:bg-neutral-900/70"
+        className="group hover:border-primary-500/30 relative flex aspect-square flex-col items-center justify-center rounded-2xl border border-black/5 bg-black/5 transition-all duration-300 before:absolute before:-inset-4 before:-z-10 before:content-[''] hover:-translate-y-2 dark:border-white/5 dark:bg-neutral-900/70"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
@@ -82,7 +82,7 @@ function HoverTile({ item }: { item: { src: string; alt: string } }) {
               x: { duration: 0 },
               y: { duration: 0 },
             }}
-            className="font-inter pointer-events-none fixed top-0 left-0 z-50 rounded-full border border-primary-500/30 bg-primary-100 px-3 py-1.5 text-xs whitespace-nowrap text-primary-900 shadow-xl dark:bg-primary-900/80 dark:text-primary-100"
+            className="font-inter border-primary-500/30 bg-primary-100 text-primary-900 dark:bg-primary-900/80 dark:text-primary-100 pointer-events-none fixed top-0 left-0 z-50 rounded-full border px-3 py-1.5 text-xs whitespace-nowrap shadow-xl"
           >
             {item.alt}
           </motion.div>
@@ -109,7 +109,7 @@ export default function Tech() {
   return (
     <section
       id="tech"
-      className="flex min-h-screen w-full flex-col items-center gap-12  px-4 lg:px-8 pt-32"
+      className="flex min-h-screen w-full flex-col items-center gap-12 px-4 pt-32 lg:px-8"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,7 @@ export default function Tech() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center gap-4 px-4 text-center"
       >
-        <h1 className="font-playfair-display text-center text-5xl text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] md:text-6xl dark:text-primary-300">
+        <h1 className="font-playfair-display text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] dark:text-primary-300 text-center text-5xl md:text-6xl">
           Skills & Expertise
         </h1>
         <p className="font-inter text-center text-sm tracking-widest text-gray-600 uppercase dark:text-gray-400">

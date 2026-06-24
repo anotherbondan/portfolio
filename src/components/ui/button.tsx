@@ -22,7 +22,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         whileHover={{ scale: 1.01 }}
         whileTap={{ scale: 0.98 }}
         className={cn(
-          "bg-card border-card-hover border-1 shadow-md transition-colors hover:border-primary-500/30 hover:bg-primary-900/10",
+          "bg-card border-card-hover hover:border-primary-500/30 hover:bg-primary-900/10 border-1 shadow-md transition-colors",
 
           className,
         )}

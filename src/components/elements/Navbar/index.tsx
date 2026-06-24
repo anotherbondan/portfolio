@@ -89,7 +89,7 @@ export default function Navbar() {
                   className={`font-inter rounded-full px-4 py-2 text-sm font-medium transition-all ${
                     isActive
                       ? "bg-primary-500/20 text-primary-600 dark:text-primary-300"
-                      : "text-neutral-500 hover:bg-black/5 hover:text-primary-500 dark:text-neutral-300 dark:hover:bg-white/5 dark:hover:text-primary-400"
+                      : "hover:text-primary-500 dark:hover:text-primary-400 text-neutral-500 hover:bg-black/5 dark:text-neutral-300 dark:hover:bg-white/5"
                   }`}
                 >
                   {link.name}
@@ -102,7 +102,7 @@ export default function Navbar() {
           <div className="flex shrink-0 items-center gap-4">
             <Button
               asChild
-              className="hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none bg-primary-600 px-3 py-2 hover:bg-primary-500 sm:block md:flex"
+              className="bg-primary-600 hover:bg-primary-500 hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none px-3 py-2 sm:block md:flex"
             >
               <Link
                 href="https://www.linkedin.com/in/anandagautama/"
@@ -119,17 +119,21 @@ export default function Navbar() {
               <>
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-neutral-600 transition-colors hover:bg-black/20 hover:text-primary-500 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-primary-400"
+                  className="hover:text-primary-500 dark:hover:text-primary-400 flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-neutral-600 transition-colors hover:bg-black/20 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10"
                   aria-label="Toggle theme"
                 >
-                  {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
+                  {theme === "dark" ? (
+                    <FaSun size={18} />
+                  ) : (
+                    <FaMoon size={18} />
+                  )}
                 </button>
                 <ColorThemeDropdown />
               </>
             )}
 
             <button
-              className="p-2 text-neutral-700 transition-colors hover:text-primary-500 dark:text-neutral-200 dark:hover:text-primary-400 md:hidden"
+              className="hover:text-primary-500 dark:hover:text-primary-400 p-2 text-neutral-700 transition-colors md:hidden dark:text-neutral-200"
               onClick={() => setIsMobileMenuOpen(true)}
             >
               <HiMenu size={28} />
@@ -149,7 +153,7 @@ export default function Navbar() {
             style={{ WebkitBackdropFilter: "blur(12px)" }}
           >
             <button
-              className="absolute top-8 right-8 p-2 text-neutral-100 transition-colors hover:text-primary-500 dark:text-neutral-300 dark:hover:text-primary-400"
+              className="hover:text-primary-500 dark:hover:text-primary-400 absolute top-8 right-8 p-2 text-neutral-100 transition-colors dark:text-neutral-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <HiX size={36} />
@@ -164,7 +168,7 @@ export default function Navbar() {
                   className={`font-playfair-display text-4xl font-bold transition-all ${
                     activeSection === link.id
                       ? "text-primary-600 dark:text-primary-400"
-                      : "text-neutral-100 hover:text-primary-500 dark:text-neutral-300 dark:hover:text-primary-300"
+                      : "hover:text-primary-500 dark:hover:text-primary-300 text-neutral-100 dark:text-neutral-300"
                   }`}
                 >
                   {link.name}
@@ -177,7 +181,7 @@ export default function Navbar() {
                 className="w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Button className="flex w-full items-center justify-center gap-3 rounded-2xl border-none bg-primary-600 py-4 hover:bg-primary-500">
+                <Button className="bg-primary-600 hover:bg-primary-500 flex w-full items-center justify-center gap-3 rounded-2xl border-none py-4">
                   <FaLinkedin size={24} className="text-neutral-100" />
                   <span className="font-inter text-lg font-semibold text-neutral-100">
                     Connect on LinkedIn
@@ -188,7 +192,7 @@ export default function Navbar() {
               {mounted && (
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="flex w-full items-center justify-center gap-3 rounded-2xl bg-black/5 py-4 text-neutral-100 transition-colors hover:bg-black/10 hover:text-primary-500 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10 dark:hover:text-primary-400"
+                  className="hover:text-primary-500 dark:hover:text-primary-400 flex w-full items-center justify-center gap-3 rounded-2xl bg-black/5 py-4 text-neutral-100 transition-colors hover:bg-black/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10"
                 >
                   {theme === "dark" ? (
                     <>

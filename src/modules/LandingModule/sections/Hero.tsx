@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full flex-col items-center justify-center gap-8 pt-32 px-4 lg:px-8  pb-20 sm:gap-12 lg:flex-row lg:py-20"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center gap-8 px-4 pt-32 pb-20 sm:gap-12 lg:flex-row lg:px-8 lg:py-20"
     >
       <div className="z-10 flex h-full w-full max-w-6xl flex-col items-center justify-between gap-10 lg:flex-row lg:gap-12">
         {/* Right Side: Profile Image */}
@@ -28,14 +28,14 @@ export default function Hero() {
             className="group relative flex h-56 w-56 cursor-pointer items-center justify-center sm:h-64 sm:w-64 lg:h-80 lg:w-80"
           >
             {/* Animated Gradient Glow Background */}
-            <div className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr from-primary-600 via-primary-500 to-primary-400 opacity-20 transition-opacity duration-700 group-hover:opacity-40" />
+            <div className="from-primary-600 via-primary-500 to-primary-400 absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr opacity-20 transition-opacity duration-700 group-hover:opacity-40" />
 
             {/* Outer Border Ring */}
-            <div className="absolute inset-0 scale-105 rounded-full border border-primary-500/20 transition-transform duration-700 group-hover:scale-110" />
-            <div className="absolute inset-0 scale-110 rounded-full border border-primary-300/10 transition-transform delay-75 duration-700 group-hover:scale-125" />
+            <div className="border-primary-500/20 absolute inset-0 scale-105 rounded-full border transition-transform duration-700 group-hover:scale-110" />
+            <div className="border-primary-300/10 absolute inset-0 scale-110 rounded-full border transition-transform delay-75 duration-700 group-hover:scale-125" />
 
             {/* Main Avatar Container */}
-            <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-black/10 bg-white/70 shadow-2xl shadow-primary-500/40 transition-all duration-500 group-hover:border-primary-500/50 group-hover:shadow-primary-500/60 dark:border-white/10 dark:bg-neutral-900/70">
+            <div className="shadow-primary-500/40 group-hover:border-primary-500/50 group-hover:shadow-primary-500/60 relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-black/10 bg-white/70 shadow-2xl transition-all duration-500 dark:border-white/10 dark:bg-neutral-900/70">
               <Image
                 src="/hero.jpeg"
                 alt="Ananda Gautama SK Profile"
@@ -86,7 +86,7 @@ export default function Hero() {
           <div className="mt-2 flex w-full flex-col items-center gap-4 sm:mt-4 sm:w-auto sm:flex-row sm:flex-wrap lg:justify-start">
             <Button
               asChild
-              className="w-full rounded-full border-none bg-primary-600 px-6 py-3.5 transition-colors hover:bg-primary-500 sm:w-auto sm:py-3"
+              className="bg-primary-600 hover:bg-primary-500 w-full rounded-full border-none px-6 py-3.5 transition-colors sm:w-auto sm:py-3"
             >
               <Link href="#project" className="w-full sm:w-auto">
                 <span className="font-inter font-semibold text-neutral-100">
@@ -96,7 +96,7 @@ export default function Hero() {
             </Button>
             <Button
               asChild
-              className="group flex w-full items-center justify-center gap-2 rounded-full border border-black/20 bg-transparent px-6 py-3.5 text-neutral-800 transition-colors hover:border-primary-500/30 hover:bg-primary-900/10 sm:w-auto sm:py-3 dark:border-white/20 dark:text-white"
+              className="group hover:border-primary-500/30 hover:bg-primary-900/10 flex w-full items-center justify-center gap-2 rounded-full border border-black/20 bg-transparent px-6 py-3.5 text-neutral-800 transition-colors sm:w-auto sm:py-3 dark:border-white/20 dark:text-white"
             >
               <Link
                 href="/AnandaGautamaSekarKhosmana_CV.pdf"
