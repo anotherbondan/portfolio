@@ -27,7 +27,7 @@ export default function Journey() {
         </p>
       </motion.div>
       <div className="relative flex w-full flex-col items-center justify-center gap-10">
-        <div className="absolute left-8 z-0 h-full w-1 rounded-full bg-primary-400 opacity-50 shadow-[0_0_5px_theme('colors.primary.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
+        <div className="absolute left-4 z-0 h-full w-1 rounded-full bg-primary-400 opacity-50 shadow-[0_0_5px_theme('colors.primary.500/50')] lg:left-1/2 lg:-translate-x-1/2 lg:opacity-100"></div>
         {journeyData.map((data, idx) => (
           <motion.div
             key={idx}
