@@ -16,7 +16,7 @@ export const journeyData = [
     ],
   },
   {
-    logo: "/compfest-17.jpg",
+    logo: "/compfest-18.jpg",
     event: "COMPFEST 18",
     role: "Expert Staff of Software Engineer",
     date: "Mar 2026 - Present",
@@ -43,7 +43,7 @@ export const journeyData = [
     logo: "/compfest-17.jpg",
     event: "COMPFEST 17",
     role: "Staff of Software Engineer",
-    date: "May 2025 - Present",
+    date: "May 2025 - Dec 2025",
     descs: [
       "Engineered responsive, high-performance web components for Indonesia's largest student-run IT event, reaching thousands of participants.",
       "Collaborated cross-functionally with UI/UX designers and backend engineers to integrate complex APIs and deliver a seamless user journey.",
@@ -51,28 +51,29 @@ export const journeyData = [
     ],
     tags: ["React", "Tailwind CSS", "Web Performance"],
   },
-  {
-    logo: "/ddp0.jpg",
-    event: "DDP0 2025",
-    role: "Staff of IT Development",
-    date: "July 2025 - Present",
-    descs: [
-      "Spearheaded the frontend development of the official DDP0 portal, a critical preparatory platform for incoming Computer Science students.",
-      "Translated complex Figma wireframes into pixel-perfect, interactive React components while maintaining strict design system consistency.",
-      "Implemented modern web performance standards, significantly reducing load times and improving the overall accessibility score.",
-    ],
-    tags: ["Next.js", "UI/UX Implementation", "Frontend Development"],
-  },
+
   {
     logo: "/bem.jpg",
     event: "BEM FASILKOM UI",
     role: "Staff of SE at Business and Partnership",
-    date: "Aug 2025 - Present",
+    date: "Aug 2025 - Dec 2025",
     descs: [
       "Architected and deployed the official portfolio platform for BEM FASILKOM UI, establishing a strong digital presence for the organization.",
       "Engineered end-to-end web solutions for external enterprise clients, driving technical requirements from conception to production.",
       "Partnered closely with business stakeholders to align technical deliverables with strategic partnership goals and client expectations.",
     ],
     tags: ["Next.js", "Full-Stack Engineering", "Web Architecture"],
+  },
+  {
+    logo: "/ddp0.jpg",
+    event: "DDP0 2025",
+    role: "Staff of IT Development",
+    date: "July 2025 - Aug 2025",
+    descs: [
+      "Spearheaded the frontend development of the official DDP0 portal, a critical preparatory platform for incoming Computer Science students.",
+      "Translated complex Figma wireframes into pixel-perfect, interactive React components while maintaining strict design system consistency.",
+      "Implemented modern web performance standards, significantly reducing load times and improving the overall accessibility score.",
+    ],
+    tags: ["Next.js", "UI/UX Implementation", "Frontend Development"],
   },
 ];
