@@ -146,6 +146,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-neutral-900/70 px-6 py-6 backdrop-blur-md"
+            style={{ WebkitBackdropFilter: "blur(12px)" }}
           >
             <button
               className="absolute top-8 right-8 p-2 text-neutral-100 transition-colors hover:text-primary-500 dark:text-neutral-300 dark:hover:text-primary-400"
