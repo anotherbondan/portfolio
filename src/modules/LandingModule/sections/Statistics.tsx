@@ -77,7 +77,7 @@ export default function Statistics() {
             <div className="relative z-10 flex w-fit items-center gap-2 rounded-full border border-primary-500/20 bg-primary-500/10 px-5 py-2 shadow-[0_0_10px_theme('colors.primary.500/10')] transition-colors duration-300 group-hover:border-primary-500/30">
               <span className="h-2 w-2 animate-pulse rounded-full bg-primary-400" />
               <span className="font-inter text-sm font-bold tracking-wide text-primary-700 dark:text-primary-200">
-                GPA: 3.82
+                GPA: 3.78
               </span>
             </div>
           </div>
