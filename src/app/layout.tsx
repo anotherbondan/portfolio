@@ -5,6 +5,7 @@ import Navbar from "@/components/elements/Navbar";
 import Footer from "@/components/elements/Footer";
 import ScrollProgressBar from "@/components/elements/ScrollProgressBar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ColorThemeProvider } from "@/components/color-theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -92,12 +93,14 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <ScrollProgressBar />
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <ColorThemeProvider>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <ScrollProgressBar />
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </ColorThemeProvider>
       </body>
     </html>
   );

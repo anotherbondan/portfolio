@@ -10,7 +10,7 @@ export default function ScrollProgressBar() {
   return (
     <div className="relative top-0 z-[100] h-1 overflow-hidden">
       <motion.div
-        className="fixed top-0 h-1 w-full origin-center bg-purple-500"
+        className="fixed top-0 h-1 w-full origin-center bg-primary-500"
         style={{ scaleX }}
       />
     </div>

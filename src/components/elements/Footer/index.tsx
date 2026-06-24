@@ -57,7 +57,7 @@ export default function Footer() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-inter text-sm font-medium text-neutral-600 transition-colors hover:text-purple-600 dark:text-neutral-400 dark:hover:text-purple-300"
+                className="font-inter text-sm font-medium text-neutral-600 transition-colors hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-300"
               >
                 {link.name}
               </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="text-neutral-600 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-purple-600 dark:text-neutral-400 dark:hover:text-purple-400"
+              className="text-neutral-600 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
             >
               {social.icon}
             </Link>

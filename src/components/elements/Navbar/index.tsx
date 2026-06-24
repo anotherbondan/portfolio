@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
+import { ColorThemeDropdown } from "@/components/ui/color-theme-dropdown";
 
 const navLinks = [
   { name: "Home", href: "#home", id: "home" },
@@ -60,7 +61,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-6 z-50 flex w-full justify-center px-3">
-        <div className="glass gap-auto flex w-full max-w-5xl items-center justify-between rounded-full px-4 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 md:gap-12">
+        <div className="glass gap-auto flex w-full max-w-5xl items-center justify-between rounded-full px-4 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 md:gap-6">
           {/* Left: Logo */}
           <Link
             href="/#home"
@@ -87,8 +88,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`font-inter rounded-full px-4 py-2 text-sm font-medium transition-all ${
                     isActive
-                      ? "bg-purple-500/20 text-purple-300 not-dark:text-purple-500"
-                      : "text-neutral-300 not-dark:text-neutral-700 hover:bg-white/5 hover:text-purple-400"
+                      ? "bg-primary-500/20 text-primary-600 dark:text-primary-300"
+                      : "text-neutral-500 hover:bg-black/5 hover:text-primary-500 dark:text-neutral-300 dark:hover:bg-white/5 dark:hover:text-primary-400"
                   }`}
                 >
                   {link.name}
@@ -101,7 +102,7 @@ export default function Navbar() {
           <div className="flex shrink-0 items-center gap-4">
             <Button
               asChild
-              className="hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none bg-purple-600 px-3 py-2 hover:bg-purple-500 sm:block md:flex"
+              className="hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none bg-primary-600 px-3 py-2 hover:bg-primary-500 sm:block md:flex"
             >
               <Link
                 href="https://www.linkedin.com/in/anandagautama/"
@@ -115,17 +116,20 @@ export default function Navbar() {
             </Button>
 
             {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-neutral-600 transition-colors hover:bg-black/20 hover:text-purple-500 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-purple-400"
-                aria-label="Toggle theme"
-              >
-                {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
-              </button>
+              <>
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-neutral-600 transition-colors hover:bg-black/20 hover:text-primary-500 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-primary-400"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
+                </button>
+                <ColorThemeDropdown />
+              </>
             )}
 
             <button
-              className="p-2 text-neutral-700 transition-colors hover:text-purple-400 md:hidden dark:text-neutral-200"
+              className="p-2 text-neutral-700 transition-colors hover:text-primary-500 dark:text-neutral-200 dark:hover:text-primary-400 md:hidden"
               onClick={() => setIsMobileMenuOpen(true)}
             >
               <HiMenu size={28} />
@@ -144,7 +148,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-neutral-900/70 px-6 py-6 backdrop-blur-md"
           >
             <button
-              className="absolute top-8 right-8 p-2 text-neutral-300 transition-colors hover:text-purple-400"
+              className="absolute top-8 right-8 p-2 text-neutral-100 transition-colors hover:text-primary-500 dark:text-neutral-300 dark:hover:text-primary-400"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <HiX size={36} />
@@ -158,8 +162,8 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`font-playfair-display text-4xl font-bold transition-all ${
                     activeSection === link.id
-                      ? "text-purple-400"
-                      : "text-neutral-300 hover:text-purple-300"
+                      ? "text-primary-600 dark:text-primary-400"
+                      : "text-neutral-100 hover:text-primary-500 dark:text-neutral-300 dark:hover:text-primary-300"
                   }`}
                 >
                   {link.name}
@@ -172,7 +176,7 @@ export default function Navbar() {
                 className="w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Button className="flex w-full items-center justify-center gap-3 rounded-2xl border-none bg-purple-600 py-4 hover:bg-purple-500">
+                <Button className="flex w-full items-center justify-center gap-3 rounded-2xl border-none bg-primary-600 py-4 hover:bg-primary-500">
                   <FaLinkedin size={24} className="text-neutral-100" />
                   <span className="font-inter text-lg font-semibold text-neutral-100">
                     Connect on LinkedIn
@@ -183,7 +187,7 @@ export default function Navbar() {
               {mounted && (
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="flex w-full items-center justify-center gap-3 rounded-2xl bg-black/30 py-4 text-neutral-100 transition-colors hover:bg-black/20 hover:text-purple-500 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-purple-400"
+                  className="flex w-full items-center justify-center gap-3 rounded-2xl bg-black/5 py-4 text-neutral-100 transition-colors hover:bg-black/10 hover:text-primary-500 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10 dark:hover:text-primary-400"
                 >
                   {theme === "dark" ? (
                     <>
