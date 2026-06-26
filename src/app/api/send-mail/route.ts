@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     }
     const { name, email, subject, message } = await request.json();
 
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
       to: process.env.RESEND_TO_EMAIL || "anandagautama3112@gmail.com",
       replyTo: email,
