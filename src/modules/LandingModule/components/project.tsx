@@ -33,6 +33,7 @@ export default function Project({ data, children }: ProjectProps) {
           src={data.cover}
           alt={data.title}
           fill
+          sizes="(max-width: 1024px) 100vw, 40vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
         {/* Subtle overlay that fades out on hover */}

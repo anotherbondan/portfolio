@@ -40,6 +40,8 @@ export default function Hero() {
                 src="/hero.jpeg"
                 alt="Ananda Gautama SK Profile"
                 fill
+                priority
+                sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 320px"
                 className="object-cover grayscale-100 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
               />
             </div>
