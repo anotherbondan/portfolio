@@ -41,6 +41,8 @@ export default function Hero() {
                 alt="Ananda Gautama SK Profile"
                 fill
                 priority
+                fetchPriority="high"
+                loading="eager"
                 quality={60}
                 sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 320px"
                 className="object-cover grayscale-100 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
@@ -101,7 +103,7 @@ export default function Hero() {
               asChild
               className="group hover:border-primary-500/30 hover:bg-primary-900/10 flex w-full items-center justify-center gap-2 rounded-full border border-black/20 bg-transparent px-6 py-3.5 text-neutral-800 transition-colors sm:w-auto sm:py-3 dark:border-white/20 dark:text-white"
             >
-              <Link
+              <a
                 href="/AnandaGautamaSekarKhosmana_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -109,7 +111,7 @@ export default function Hero() {
               >
                 <span className="font-inter font-semibold">Resume</span>
                 <LuDownload />
-              </Link>
+              </a>
             </Button>
             <Link
               href="/#contact"
