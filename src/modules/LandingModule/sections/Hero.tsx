@@ -28,7 +28,7 @@ export default function Hero() {
             className="group relative flex h-56 w-56 cursor-pointer items-center justify-center sm:h-64 sm:w-64 lg:h-80 lg:w-80"
           >
             {/* Animated Gradient Glow Background */}
-            <div className="from-primary-600 via-primary-500 to-primary-400 absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full bg-gradient-to-tr opacity-20 transition-opacity duration-700 group-hover:opacity-40" />
+            <div className="from-primary-600 via-primary-500 to-primary-400 absolute inset-0 rounded-full bg-gradient-to-tr opacity-20 transition-opacity duration-700 group-hover:opacity-40" />
 
             {/* Outer Border Ring */}
             <div className="border-primary-500/20 absolute inset-0 scale-105 rounded-full border transition-transform duration-700 group-hover:scale-110" />

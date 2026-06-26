@@ -118,9 +118,9 @@ export default function Tech() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center gap-4 px-4 text-center"
       >
-        <h1 className="font-playfair-display text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] dark:text-primary-300 text-center text-5xl md:text-6xl">
+        <h2 className="font-playfair-display text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] dark:text-primary-300 text-center text-5xl md:text-6xl">
           Skills & Expertise
-        </h1>
+        </h2>
         <p className="font-inter text-center text-sm tracking-widest text-gray-600 uppercase dark:text-gray-400">
           Technologies I use to build robust applications
         </p>

@@ -54,12 +54,12 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
                 )}
               </div>
               <div className="flex flex-col justify-between">
-                <h2 className="font-inter text-2xl font-semibold">
+                <h3 className="font-inter text-2xl font-semibold">
                   {data?.event ?? "Event"}
-                </h2>
-                <h3 className="font-inter text-md text-neutral-600 dark:text-neutral-300">
-                  {data?.role ?? "Role"}
                 </h3>
+                <h4 className="font-inter text-md text-neutral-600 dark:text-neutral-300">
+                  {data?.role ?? "Role"}
+                </h4>
                 <div className="flex items-center gap-1">
                   <LuCalendar color="#999999" />
                   <span className="font-inter text-card-disabled text-sm">

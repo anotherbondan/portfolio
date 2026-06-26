@@ -44,9 +44,9 @@ export default function Project({ data, children }: ProjectProps) {
       <div className="z-10 flex w-full flex-col justify-between py-1 lg:w-3/5 lg:py-2">
         <div className="flex flex-col gap-4 lg:gap-2">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
-            <h1 className="font-playfair-display group-hover:text-primary-600 dark:group-hover:text-primary-300 text-2xl font-bold text-neutral-800 transition-colors duration-300 lg:text-3xl dark:text-neutral-200">
+            <h3 className="font-playfair-display group-hover:text-primary-600 dark:group-hover:text-primary-300 text-2xl font-bold text-neutral-800 transition-colors duration-300 lg:text-3xl dark:text-neutral-200">
               {data.title}
-            </h1>
+            </h3>
             <span className="font-inter border-primary-500/20 bg-primary-500/10 text-primary-600 dark:text-primary-300 self-start rounded-full border px-3 py-1.5 text-[10px] font-semibold tracking-wide lg:text-xs">
               {data.date}
             </span>

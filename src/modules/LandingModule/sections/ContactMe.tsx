@@ -158,9 +158,9 @@ export default function ContactMe() {
             >
               <div className="flex items-center justify-center gap-3 text-neutral-100">
                 <IoPaperPlane size={20} />
-                <h1 className="font-inter md:text-md text-sm font-semibold">
+                <span className="font-inter md:text-md text-sm font-semibold">
                   {isLoading ? "Sending..." : "Send Message"}
-                </h1>
+                </span>
               </div>
             </Button>
             {status.message && (
