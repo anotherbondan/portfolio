@@ -70,7 +70,7 @@ export default function Navbar() {
           >
             <div className="relative h-10 w-10">
               <Image
-                src="/portfolio.png"
+                src="/portfolio.webp"
                 alt="Logo"
                 fill
                 sizes="40px"
@@ -100,7 +100,7 @@ export default function Navbar() {
           </div>
 
           {/* Right: LinkedIn Reach Out & Mobile Hamburger */}
-          <div className="flex shrink-0 items-center gap-2 md:gap-4 ">
+          <div className="flex shrink-0 items-center gap-2 md:gap-4">
             <Button
               asChild
               className="bg-primary-600 hover:bg-primary-500 hidden h-10 w-fit items-center justify-center gap-1 rounded-full border-none px-3 py-2 sm:block md:flex"

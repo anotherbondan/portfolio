@@ -1,6 +1,6 @@
 export const journeyData = [
   {
-    logo: "/bem.jpg",
+    logo: "/bem.webp",
     event: "BEM FASILKOM UI",
     role: "Deputy of Business & Partnership Bureau",
     date: "May 2026 - Present",
@@ -16,7 +16,7 @@ export const journeyData = [
     ],
   },
   {
-    logo: "/compfest-18.jpg",
+    logo: "/compfest-18.webp",
     event: "COMPFEST 18",
     role: "Expert Staff of Software Engineer",
     date: "Mar 2026 - Present",
@@ -28,7 +28,7 @@ export const journeyData = [
     tags: ["Next.js", "TypeScript", "Frontend Engineering"],
   },
   {
-    logo: "/universitas-indonesia.png",
+    logo: "/universitas-indonesia.webp",
     event: "Faculty of Computer Science, UI",
     role: "Teaching Assistant of Programming Foundations 2",
     date: "Jan - Jun 2026",
@@ -40,7 +40,7 @@ export const journeyData = [
     tags: ["Java", "Object-Oriented Programming", "Code Review"],
   },
   {
-    logo: "/compfest-17.jpg",
+    logo: "/compfest-17.webp",
     event: "COMPFEST 17",
     role: "Staff of Software Engineer",
     date: "May - Dec 2025",
@@ -53,7 +53,7 @@ export const journeyData = [
   },
 
   {
-    logo: "/bem.jpg",
+    logo: "/bem.webp",
     event: "BEM FASILKOM UI",
     role: "SE Staff at Business & Partnership Bureau",
     date: "Aug - Dec 2025",
@@ -65,7 +65,7 @@ export const journeyData = [
     tags: ["Next.js", "Full-Stack Engineering", "Web Architecture"],
   },
   {
-    logo: "/ddp0.jpg",
+    logo: "/ddp0.webp",
     event: "DDP0 2025",
     role: "Staff of IT Development",
     date: "July - Aug 2025",

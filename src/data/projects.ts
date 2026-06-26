@@ -1,8 +1,8 @@
 export const projectsData = [
   {
-    cover: "/projects/compfest-18-web.png",
+    cover: "/projects/compfest-18-web.webp",
     title: "COMPFEST 18",
-    date: "Apr 2026",
+    date: "2026",
     desc: "The official event platform for COMPFEST 18, Indonesia's largest student-run IT event. Designed to handle high traffic and deliver a seamless user experience, the website features a modern, responsive interface providing attendees with real-time event schedules and registration portals.",
     tech: [
       "/fe/nextjs.svg",
@@ -18,7 +18,7 @@ export const projectsData = [
     category: "Organizational",
   },
   {
-    cover: "/projects/tiktaktuk-web.png",
+    cover: "/projects/tiktaktuk-web.webp",
     title: "Tiktaktuk",
     date: "May 2026",
     desc: "A database course project focusing on designing and optimizing complex database architectures for a dynamic application.",
@@ -39,7 +39,7 @@ export const projectsData = [
     category: "Academic",
   },
   {
-    cover: "/projects/lotus-web.png",
+    cover: "/projects/lotus-web.webp",
     title: "Lotus",
     date: "May 2026",
     desc: "A Human-Computer Interaction course project emphasizing user-centric design, accessibility, and intuitive interfaces.",
@@ -49,7 +49,7 @@ export const projectsData = [
     category: "Academic",
   },
   {
-    cover: "/projects/cyber-team-web.png",
+    cover: "/projects/cyber-team-web.webp",
     title: "Cyber-Team",
     date: "Apr 2026",
     desc: "An Introduction to Software Security course project focused on exploring and implementing OAuth authentication and Role-Based Access Control (RBAC) to establish secure application architectures.",
@@ -66,7 +66,7 @@ export const projectsData = [
     category: "Academic",
   },
   {
-    cover: "/projects/bem-web.png",
+    cover: "/projects/bem-web.webp",
     title: "BEM FASILKOM UI",
     date: "Feb 2026",
     desc: "A centralized, dynamic digital hub for BEM Fasilkom UI. This platform serves as the primary gateway for students to access organizational news, academic resources, and event updates, built with a focus on performance and accessibility.",
@@ -76,7 +76,7 @@ export const projectsData = [
     category: "Organizational",
   },
   {
-    cover: "/projects/gas-in-web.png",
+    cover: "/projects/gas-in-web.webp",
     title: "Gas.in",
     date: "Dec 2025",
     desc: "A platform-based programming course project focusing on delivering scalable and interactive web learning experiences.",
@@ -91,7 +91,7 @@ export const projectsData = [
     category: "Academic",
   },
   {
-    cover: "/projects/rantai-skena-web.png",
+    cover: "/projects/rantai-skena-web.webp",
     title: "Rantai Skena",
     date: "Nov 2025",
     desc: "An innovative digital initiative developed for Budayago 2025, aimed at connecting creative communities and amplifying local cultural movements. The platform provides a vibrant, interactive space for artists and enthusiasts to collaborate.",
@@ -113,7 +113,7 @@ export const projectsData = [
     category: "Competition",
   },
   {
-    cover: "/projects/portfolio-web.png",
+    cover: "/projects/portfolio-web.webp",
     title: "Portfolio",
     date: "Sep 2025",
     desc: "A high-performance personal web portfolio featuring dynamic Framer Motion animations and custom responsive theming to effectively showcase my engineering projects, skills, and professional journey.",
@@ -128,7 +128,7 @@ export const projectsData = [
     category: "Personal",
   },
   {
-    cover: "/projects/ijtihad-web.png",
+    cover: "/projects/ijtihad-web.webp",
     title: "Ijtihad",
     date: "Aug 2025",
     desc: "An innovative AI-powered platform engineered for the Gemastik 2025 Software Development Competition. It seamlessly integrates LLMs and complex data pipelines to provide real-time halal product validation, automated contract analysis, and an intelligent fatwa chatbot.",
@@ -148,7 +148,7 @@ export const projectsData = [
     category: "Competition",
   },
   {
-    cover: "/projects/ddp0-web.png",
+    cover: "/projects/ddp0-web.webp",
     title: "DDP-0 2025",
     date: "Jul 2025",
     desc: "The official web portal for DDP-0 2025, a large-scale academic preparatory program designed to onboard incoming Computer Science students. Built with a robust full-stack architecture to reliably handle high concurrent user traffic and deliver interactive learning modules.",
@@ -167,9 +167,9 @@ export const projectsData = [
     category: "Organizational",
   },
   {
-    cover: "/projects/compfest-17-web.png",
+    cover: "/projects/compfest-17-web.webp",
     title: "COMPFEST 17",
-    date: "Apr 2025",
+    date: "2025",
     desc: "The comprehensive digital platform for COMPFEST 17, Indonesia's largest student-run IT event. Architected to support massive traffic spikes, the platform features dynamic event tracking and streamlined registration portals for thousands of nationwide attendees.",
     tech: [
       "/fe/nextjs.svg",

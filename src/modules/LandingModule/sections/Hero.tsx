@@ -37,7 +37,7 @@ export default function Hero() {
             {/* Main Avatar Container */}
             <div className="shadow-primary-500/40 group-hover:border-primary-500/50 group-hover:shadow-primary-500/60 relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-black/10 bg-white/70 shadow-2xl transition-all duration-500 dark:border-white/10 dark:bg-neutral-900/70">
               <Image
-                src="/hero.jpeg"
+                src="/me.webp"
                 alt="Ananda Gautama SK Profile"
                 fill
                 priority

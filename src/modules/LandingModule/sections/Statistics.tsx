@@ -60,7 +60,7 @@ export default function Statistics() {
           <div className="border-primary-500/20 bg-primary-500/10 group-hover:bg-primary-500/20 relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border p-1.5 transition-all duration-500 group-hover:scale-110 max-lg:mb-0 max-lg:h-40 max-lg:w-40 max-lg:p-3 max-md:h-20 max-md:w-20 max-md:p-1">
             <div className="relative h-full w-full">
               <Image
-                src="/universitas-indonesia.png"
+                src="/universitas-indonesia.webp"
                 alt="Universitas Indonesia"
                 fill
                 className="object-contain"
