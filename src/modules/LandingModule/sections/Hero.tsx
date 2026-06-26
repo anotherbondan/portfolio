@@ -41,6 +41,7 @@ export default function Hero() {
                 alt="Ananda Gautama SK Profile"
                 fill
                 priority
+                quality={60}
                 sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 320px"
                 className="object-cover grayscale-100 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
               />
@@ -55,13 +56,13 @@ export default function Hero() {
           className="flex flex-col items-center justify-center gap-5 text-center sm:gap-6 lg:w-1/2 lg:items-start lg:text-left"
         >
           <div className="flex flex-col gap-2">
-            <h2 className="font-playfair-display text-3xl font-semibold text-neutral-900 sm:text-4xl lg:text-5xl dark:text-neutral-100">
+            <h1 className="font-playfair-display text-3xl font-semibold text-neutral-900 sm:text-4xl lg:text-5xl dark:text-neutral-100">
               Hi, I&apos;m{" "}
               <span className="text-primary-600 dark:text-primary-500">
                 Ananda Gautama SK
               </span>
-            </h2>
-            <h1 className="font-playfair-display min-h-10 text-2xl text-neutral-600 sm:text-3xl lg:min-h-12 lg:text-4xl dark:text-neutral-400">
+            </h1>
+            <h2 className="font-playfair-display min-h-10 text-2xl text-neutral-600 sm:text-3xl lg:min-h-12 lg:text-4xl dark:text-neutral-400">
               <span className="text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] dark:text-primary-300">
                 <Typewriter
                   words={[
@@ -77,7 +78,7 @@ export default function Hero() {
                   delaySpeed={1500}
                 />
               </span>
-            </h1>
+            </h2>
           </div>
 
           <p className="font-inter max-w-lg text-base leading-relaxed text-neutral-600 sm:text-lg lg:text-xl dark:text-neutral-400">

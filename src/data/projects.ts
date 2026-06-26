@@ -124,7 +124,7 @@ export const projectsData = [
       "/devtools/vercel.svg",
     ],
     sourceCode: "https://github.com/anotherbondan/portfolio",
-    projectUrl: "https://ananda-gautama.vercel.app/",
+    projectUrl: "https://nandaskr.my.id/",
     category: "Personal",
   },
   {

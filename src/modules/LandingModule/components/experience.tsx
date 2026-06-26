@@ -44,6 +44,7 @@ const Experience: React.FC<ExperienceProps> = ({ data, children, index }) => {
                     src={data?.logo}
                     alt="icon"
                     fill
+                    sizes="80px"
                     className="object-contain transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (

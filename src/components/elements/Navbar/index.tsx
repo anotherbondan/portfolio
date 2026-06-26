@@ -108,6 +108,7 @@ export default function Navbar() {
               <Link
                 href="https://www.linkedin.com/in/anandagautama/"
                 target="_blank"
+                aria-label="Reach out on LinkedIn"
               >
                 <FaLinkedin size={18} className="text-neutral-100" />
                 <span className="font-inter text-sm font-semibold text-neutral-100 max-lg:hidden max-lg:text-xs">
@@ -136,6 +137,7 @@ export default function Navbar() {
             <button
               className="hover:text-primary-500 dark:hover:text-primary-400 p-2 text-neutral-700 transition-colors md:hidden dark:text-neutral-200"
               onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open mobile menu"
             >
               <HiMenu size={28} />
             </button>
@@ -156,6 +158,7 @@ export default function Navbar() {
             <button
               className="hover:text-primary-500 dark:hover:text-primary-400 absolute top-8 right-8 p-2 text-neutral-100 transition-colors dark:text-neutral-300"
               onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Close mobile menu"
             >
               <HiX size={36} />
             </button>
