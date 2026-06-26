@@ -88,7 +88,7 @@ export default function Hero() {
               asChild
               className="bg-primary-600 hover:bg-primary-500 w-full rounded-full border-none px-6 py-3.5 transition-colors sm:w-auto sm:py-3"
             >
-              <Link href="#project" className="w-full sm:w-auto">
+              <Link href="/#project" className="w-full sm:w-auto">
                 <span className="font-inter font-semibold text-neutral-100">
                   View My Work
                 </span>
@@ -109,7 +109,7 @@ export default function Hero() {
               </Link>
             </Button>
             <Link
-              href="#contact"
+              href="/#contact"
               className="group mt-2 flex items-center gap-1.5 sm:mt-0"
             >
               <span className="font-inter text-sm font-semibold group-hover:underline sm:text-base">

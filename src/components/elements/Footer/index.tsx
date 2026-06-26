@@ -40,7 +40,7 @@ export default function Footer() {
     { name: "Experiences", href: "/#experience" },
     { name: "Tools", href: "/#tech" },
     { name: "Projects", href: "/#project" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (

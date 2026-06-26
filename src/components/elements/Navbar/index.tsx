@@ -11,11 +11,11 @@ import { useTheme } from "next-themes";
 import { ColorThemeDropdown } from "@/components/ui/color-theme-dropdown";
 
 const navLinks = [
-  { name: "Home", href: "#home", id: "home" },
-  { name: "Experiences", href: "#experience", id: "experience" },
-  { name: "Tools", href: "#tech", id: "tech" },
-  { name: "Projects", href: "#project", id: "project" },
-  { name: "Contact", href: "#contact", id: "contact" },
+  { name: "Home", href: "/#home", id: "home" },
+  { name: "Experiences", href: "/#experience", id: "experience" },
+  { name: "Tools", href: "/#tech", id: "tech" },
+  { name: "Projects", href: "/#project", id: "project" },
+  { name: "Contact", href: "/#contact", id: "contact" },
 ];
 
 export default function Navbar() {
