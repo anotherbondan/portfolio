@@ -3,7 +3,7 @@ export const projectsData = [
     cover: "/projects/matakota-web.webp",
     title: "MataKota",
     date: "Jul 2026",
-    desc: "Mata-Kota is an AI-powered public safety platform developed during **Garuda Hacks 7.0**, enabling real-time incident monitoring, risk visualization, evidence management, and personnel coordination.",
+    desc: "Mata-Kota is an AI-powered public safety platform developed during Garuda Hacks 7.0, enabling real-time incident monitoring, risk visualization, evidence management, and personnel coordination.",
     tech: [
       "/fe/nextjs.svg",
       "/fe/shadcn-ui.svg",
