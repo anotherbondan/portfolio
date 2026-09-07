@@ -14,6 +14,7 @@ export const projectsData = [
       "/devtools/railway.svg",
     ],
     sourceCode: "https://github.com/anotherbondan/mata-kota",
+    projectUrl: "",
     category: "Competition",
   },
   {
