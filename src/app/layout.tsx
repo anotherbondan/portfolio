@@ -6,6 +6,7 @@ import Footer from "@/components/elements/Footer";
 import ScrollProgressBar from "@/components/elements/ScrollProgressBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ColorThemeProvider } from "@/components/color-theme-provider";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,6 +102,7 @@ export default function RootLayout({
             <Footer />
           </ThemeProvider>
         </ColorThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
