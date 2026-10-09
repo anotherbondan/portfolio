@@ -1,5 +1,17 @@
 export const journeyData = [
   {
+    logo: "/universitas-indonesia.webp",
+    event: "Faculty of Computer Science, UI",
+    role: "Teaching Assistant of Platform-Based Programming",
+    date: "Jul 2026 - Present",
+    descs: [
+      "Supervised Django and Flutter laboratory sessions, guiding students through web and mobile application development.",
+      "Helped students debug applications and resolve technical issues during practicums.",
+      "Reviewed programming assignments for correctness and code quality, providing constructive implementation feedback.",
+    ],
+    tags: ["Django", "Flutter", "Code Review"],
+  },
+  {
     logo: "/bem.webp",
     event: "BEM FASILKOM UI",
     role: "Deputy of Business & Partnership Bureau",
@@ -16,10 +28,22 @@ export const journeyData = [
     ],
   },
   {
+    logo: "/kmbui.webp",
+    event: "PPMB KMBUI",
+    role: "Staff of IT Development",
+    date: "May - Jun 2026",
+    descs: [
+      "Developed a responsive event landing page for PPMB KMBUI.",
+      "Built the Kalyanamitta peer-connection page to help new students connect with their peers.",
+      "Implemented the FOSSIB orientation assignment submission page.",
+    ],
+    tags: ["Frontend Development", "Responsive Design"],
+  },
+  {
     logo: "/compfest-18.webp",
     event: "COMPFEST 18",
     role: "Expert Staff of Software Engineer",
-    date: "Mar 2026 - Present",
+    date: "Mar - Sep 2026",
     descs: [
       "Engineered highly complex frontend features and interactive user interfaces for Southeast Asia's largest student-run IT event.",
       "Developed advanced core functionalities to support large-scale event operations and seamless user experiences.",
@@ -43,7 +67,7 @@ export const journeyData = [
     logo: "/compfest-17.webp",
     event: "COMPFEST 17",
     role: "Staff of Software Engineer",
-    date: "May - Dec 2025",
+    date: "Apr - Sep 2025",
     descs: [
       "Engineered responsive, high-performance web components for Indonesia's largest student-run IT event, reaching thousands of participants.",
       "Collaborated cross-functionally with UI/UX designers and backend engineers to integrate complex APIs and deliver a seamless user journey.",
@@ -68,7 +92,7 @@ export const journeyData = [
     logo: "/ddp0.webp",
     event: "DDP0 2025",
     role: "Staff of IT Development",
-    date: "July - Aug 2025",
+    date: "Jun - Sep 2025",
     descs: [
       "Spearheaded the frontend development of the official DDP0 portal, a critical preparatory platform for incoming Computer Science students.",
       "Translated complex Figma wireframes into pixel-perfect, interactive React components while maintaining strict design system consistency.",

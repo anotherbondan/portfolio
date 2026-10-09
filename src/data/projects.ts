@@ -20,7 +20,7 @@ export const projectsData = [
   {
     cover: "/projects/kmbui-web.webp",
     title: "PPMB KMBUI",
-    date: "Jul 2026",
+    date: "Jun 2026",
     desc: "An official website developed for PPMB KMBUI, serving as a centralized digital platform for welcoming and guiding new Buddhist students at Universitas Indonesia.",
     tech: [
       "/fe/nextjs.svg",
@@ -35,7 +35,7 @@ export const projectsData = [
   },
   {
     cover: "/projects/fiorisce-web.webp",
-    title: "Fiorisce — Bakti Champions Movement",
+    title: "Fiorisce",
     date: "Jun 2026",
     desc: "E-commerce website developed for Fiorisce Floristry as part of the Bakti Champions Movement, supporting its digitalization and business operations.",
     tech: [
@@ -44,8 +44,8 @@ export const projectsData = [
       "/be/prisma.svg",
       "/be/postgresql.svg",
     ],
-    sourceCode: "https://github.com/COMPFEST",
-    projectUrl: "https://compfest.id/",
+    sourceCode: "",
+    projectUrl: "https://fiorisce.id/",
     category: "Organizational",
   },
   {
