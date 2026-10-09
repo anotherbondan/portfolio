@@ -48,7 +48,7 @@ export function ColorThemeDropdown() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-12 right-0 z-50 w-36 rounded-2xl border border-white/10 bg-white/80 p-2 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-black/80"
+            className="absolute top-12 right-0 z-50 w-fit rounded-full border border-white/10 bg-white/80 p-2 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-black/80"
           >
             <div className="flex flex-col gap-1">
               {themes.map((theme) => (
@@ -58,14 +58,13 @@ export function ColorThemeDropdown() {
                     setColorTheme(theme.value);
                     setIsOpen(false);
                   }}
-                  className={`flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-3 rounded-full px-2 py-2 text-sm font-medium transition-colors ${
                     colorTheme === theme.value
                       ? "bg-primary-500/20 text-primary-600 dark:text-primary-400"
                       : "hover:text-primary-500 dark:hover:text-primary-400 text-neutral-600 hover:bg-black/5 dark:text-neutral-300 dark:hover:bg-white/5"
                   }`}
                 >
                   <div className={`h-4 w-4 rounded-full ${theme.colorClass}`} />
-                  {theme.name}
                 </button>
               ))}
             </div>
