@@ -1,87 +1,29 @@
-"use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
-
 import { statsData } from "@/data/statistics";
-
 export default function Statistics() {
   return (
-    <section className="relative z-20 flex w-full justify-center px-4 lg:px-8">
-      <div className="grid w-full max-w-6xl grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
-        {/* Statistics Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="group hover:border-primary-500/30 relative flex h-full flex-col justify-center overflow-hidden rounded-3xl border border-black/10 bg-white/70 p-8 transition-all duration-500 md:p-10 lg:col-span-2 dark:border-white/5 dark:bg-neutral-900/70"
-        >
-          {/* Subtle Background Gradient */}
-          <div className="from-primary-500/5 pointer-events-none absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-          <div className="relative z-10 grid w-full grid-cols-1 gap-8 divide-y divide-black/10 md:grid-cols-3 md:gap-4 md:divide-x md:divide-y-0 dark:divide-white/10">
-            {statsData.map((stat, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center justify-center max-md:pb-4 md:px-2"
-              >
-                <motion.h3
-                  initial={{ scale: 0.5, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: idx * 0.15 + 0.2,
-                    type: "spring",
-                  }}
-                  className="font-playfair-display text-primary-600 [text-shadow:0_0_20px_theme('colors.primary.500/80')] dark:text-primary-300 mb-1 text-4xl font-bold md:text-5xl"
-                >
-                  {stat.value}
-                </motion.h3>
-                <p className="font-inter text-center text-sm font-medium tracking-wider text-neutral-600 uppercase dark:text-neutral-400">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Education Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="group hover:border-primary-500/30 relative flex h-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-black/10 bg-white/70 p-8 text-center transition-colors duration-500 max-lg:flex-row max-lg:gap-10 max-md:flex-col max-md:gap-4 lg:col-span-1 dark:border-white/5 dark:bg-neutral-900/70"
-        >
-          {/* Subtle Background Gradient */}
-          <div className="from-primary-500/10 pointer-events-none absolute inset-0 bg-gradient-to-tr to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-          <div className="border-primary-500/20 bg-primary-500/10 group-hover:bg-primary-500/20 relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full border p-1.5 transition-all duration-500 group-hover:scale-110 max-lg:mb-0 max-lg:h-40 max-lg:w-40 max-lg:p-3 max-md:h-20 max-md:w-20 max-md:p-1">
-            <div className="relative h-full w-full">
-              <Image
-                src="/universitas-indonesia.webp"
-                alt="Universitas Indonesia"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center md:items-start lg:items-center">
-            <h3 className="font-playfair-display relative z-10 text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-              Universitas Indonesia
-            </h3>
-            <p className="font-inter relative z-10 mt-2 mb-6 text-sm text-neutral-600 dark:text-neutral-400">
-              Faculty of Computer Science
-            </p>
-            <div className="border-primary-500/20 bg-primary-500/10 shadow-[0_0_10px_theme('colors.primary.500/10')] group-hover:border-primary-500/30 relative z-10 flex w-fit items-center gap-2 rounded-full border px-5 py-2 transition-colors duration-300">
-              <span className="bg-primary-400 h-2 w-2 animate-pulse rounded-full" />
-              <span className="font-inter text-primary-700 dark:text-primary-200 text-sm font-bold tracking-wide">
-                GPA: 3.78
-              </span>
-            </div>
-          </div>
-        </motion.div>
+    <section
+      aria-label="Statistics and education"
+      className="info-band container"
+    >
+      {statsData.map((s) => (
+        <div className="stat" key={s.label}>
+          <strong>{s.value}</strong>
+          <span className="eyebrow">{s.label}</span>
+        </div>
+      ))}
+      <div className="education">
+        <Image
+          src="/universitas-indonesia.webp"
+          alt=""
+          width={48}
+          height={48}
+        />
+        <div>
+          <h2>Universitas Indonesia</h2>
+          <p>Faculty of Computer Science</p>
+          <span className="accent mono">GPA: 3.78</span>
+        </div>
       </div>
     </section>
   );
