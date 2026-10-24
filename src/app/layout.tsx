@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { MotionProvider } from "@/components/motion";
 import Navbar from "@/components/elements/Navbar";
 import Footer from "@/components/elements/Footer";
 import ScrollProgressBar from "@/components/elements/ScrollProgressBar";
@@ -90,16 +91,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
+        className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ColorThemeProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-            <ScrollProgressBar />
-            <Navbar />
-            {children}
-            <Footer />
+            <MotionProvider>
+              <a href="#main" className="skip-link">
+                Skip to content
+              </a>
+              <ScrollProgressBar />
+              <Navbar />
+              {children}
+              <Footer />
+            </MotionProvider>
           </ThemeProvider>
         </ColorThemeProvider>
         <Analytics />

@@ -4,15 +4,14 @@ import Journey from "./sections/Journey";
 import Projects from "./sections/Projects";
 import Tech from "./sections/Tech";
 import Statistics from "./sections/Statistics";
-
 export default function LandingModule() {
   return (
-    <main className="flex w-full flex-col gap-10 overflow-x-hidden">
+    <main id="main">
       <Hero />
       <Statistics />
+      <Projects />
       <Journey />
       <Tech />
-      <Projects />
       <ContactMe />
     </main>
   );

@@ -1,28 +1,9 @@
-interface TagProps {
-  desc: string;
-  index: number;
-}
-
-interface TagListProps {
-  descList: string[];
-}
-
-const Tag: React.FC<TagProps> = ({ desc }) => {
+export default function TagList({ descList }: { descList: string[] }) {
   return (
-    <div className="w-fit rounded-lg border-1 border-neutral-200 px-2 py-0.5 transition-all hover:rotate-3 dark:border-neutral-800">
-      <span className="font-inter text-xs text-neutral-500">{desc}</span>
-    </div>
-  );
-};
-
-const TagList: React.FC<TagListProps> = ({ descList }) => {
-  return (
-    <div className="flex w-full flex-wrap gap-2">
-      {descList.map((desc, i) => (
-        <Tag key={desc} desc={desc} index={i} />
+    <ul className="tags">
+      {descList.map((desc) => (
+        <li key={desc}>{desc}</li>
       ))}
-    </div>
+    </ul>
   );
-};
-
-export default TagList;
+}
