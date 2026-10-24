@@ -1,5 +1,7 @@
 export const projectsData = [
   {
+    id: "matakota",
+    featured: true,
     cover: "/projects/matakota-web.webp",
     title: "MataKota",
     date: "Jul 2026",
@@ -18,6 +20,8 @@ export const projectsData = [
     category: "Competition",
   },
   {
+    id: "ppmb-kmbui",
+    featured: false,
     cover: "/projects/kmbui-web.webp",
     title: "PPMB KMBUI",
     date: "Jun 2026",
@@ -34,6 +38,8 @@ export const projectsData = [
     category: "Organizational",
   },
   {
+    id: "fiorisce",
+    featured: true,
     cover: "/projects/fiorisce-web.webp",
     title: "Fiorisce",
     date: "Jun 2026",
@@ -49,6 +55,8 @@ export const projectsData = [
     category: "Organizational",
   },
   {
+    id: "compfest-18",
+    featured: true,
     cover: "/projects/compfest-18-web.webp",
     title: "COMPFEST 18",
     date: "2026",
@@ -66,6 +74,8 @@ export const projectsData = [
     category: "Organizational",
   },
   {
+    id: "tiktaktuk",
+    featured: false,
     cover: "/projects/tiktaktuk-web.webp",
     title: "Tiktaktuk",
     date: "May 2026",
@@ -87,6 +97,8 @@ export const projectsData = [
     category: "Academic",
   },
   {
+    id: "lotus",
+    featured: false,
     cover: "/projects/lotus-web.webp",
     title: "Lotus",
     date: "May 2026",
@@ -97,6 +109,8 @@ export const projectsData = [
     category: "Academic",
   },
   {
+    id: "cyber-team",
+    featured: false,
     cover: "/projects/cyber-team-web.webp",
     title: "Cyber-Team",
     date: "Apr 2026",
@@ -114,6 +128,8 @@ export const projectsData = [
     category: "Academic",
   },
   {
+    id: "bem-fasilkom-ui",
+    featured: false,
     cover: "/projects/bem-web.webp",
     title: "BEM FASILKOM UI",
     date: "Feb 2026",
@@ -124,6 +140,8 @@ export const projectsData = [
     category: "Organizational",
   },
   {
+    id: "gas-in",
+    featured: false,
     cover: "/projects/gas-in-web.webp",
     title: "Gas.in",
     date: "Dec 2025",
@@ -139,6 +157,8 @@ export const projectsData = [
     category: "Academic",
   },
   {
+    id: "rantai-skena",
+    featured: false,
     cover: "/projects/rantai-skena-web.webp",
     title: "Rantai Skena",
     date: "Nov 2025",
@@ -161,6 +181,8 @@ export const projectsData = [
     category: "Competition",
   },
   {
+    id: "portfolio",
+    featured: false,
     cover: "/projects/portfolio-web.webp",
     title: "Portfolio",
     date: "Sep 2025",
@@ -176,6 +198,8 @@ export const projectsData = [
     category: "Personal",
   },
   {
+    id: "ijtihad",
+    featured: false,
     cover: "/projects/ijtihad-web.webp",
     title: "Ijtihad",
     date: "Aug 2025",
@@ -196,6 +220,8 @@ export const projectsData = [
     category: "Competition",
   },
   {
+    id: "ddp0-2025",
+    featured: false,
     cover: "/projects/ddp0-web.webp",
     title: "DDP-0 2025",
     date: "Jul 2025",
@@ -215,6 +241,8 @@ export const projectsData = [
     category: "Organizational",
   },
   {
+    id: "compfest-17",
+    featured: false,
     cover: "/projects/compfest-17-web.webp",
     title: "COMPFEST 17",
     date: "2025",
