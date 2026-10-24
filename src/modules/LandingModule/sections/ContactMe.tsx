@@ -1,180 +1,141 @@
 "use client";
-
+import { useState, FormEvent } from "react";
 import Button from "@/components/ui/button";
-import { useState } from "react";
-import { IoPaperPlane } from "react-icons/io5";
-import { motion } from "framer-motion";
-
+import { SectionHeading, Reveal } from "@/components/motion";
 export default function ContactMe() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string | null;
-  }>({ type: null, message: null });
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setIsLoading(true);
-    setStatus({ type: null, message: null });
-
-    const formData = new FormData(event.currentTarget);
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+  async function submit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (loading) return;
+    const form = e.currentTarget;
+    const values = new FormData(form);
     const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      subject: formData.get("subject"),
-      message: formData.get("message"),
+      name: values.get("name"),
+      email: values.get("email"),
+      subject: values.get("subject"),
+      message: values.get("message"),
     };
-
+    setLoading(true);
+    setStatus(null);
     try {
       const response = await fetch("/api/send-mail", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || "Failed to send message");
-      }
-
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok)
+        throw new Error(
+          result.message ||
+            (response.status === 429
+              ? "Too many requests. Please try again later."
+              : "Failed to send message. Please try again."),
+        );
       setStatus({ type: "success", message: "Message sent successfully!" });
-      (event.target as HTMLFormElement).reset();
+      form.reset();
     } catch (error) {
       setStatus({
         type: "error",
         message:
-          error instanceof Error ? error.message : "Something went wrong",
+          error instanceof TypeError
+            ? "Could not connect. Please try again."
+            : error instanceof Error
+              ? error.message
+              : "Something went wrong. Please try again.",
       });
     } finally {
-      setIsLoading(false);
+      setLoading(false);
     }
   }
-
   return (
-    <section
-      id="contact"
-      className="flex min-h-screen flex-col items-center justify-center px-4 py-32 lg:px-8"
-    >
-      <div className="flex w-full max-w-4xl flex-col gap-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center gap-3 md:gap-4"
+    <section id="contact" className="section contact-grid container">
+      <div>
+        <SectionHeading
+          number="04"
+          title="Let's build something together."
+          description="Get in touch"
+        />
+        <a
+          className="text-link contact-email"
+          href="mailto:anandagautama3112@gmail.com"
         >
-          <h2 className="font-playfair-display text-primary-600 [text-shadow:0_0_15px_theme('colors.primary.500/50')] dark:text-primary-300 text-center text-5xl md:text-6xl">
-            Get in Touch
-          </h2>
-          <p className="font-inter text-center text-xs tracking-widest text-gray-600 uppercase md:text-sm dark:text-gray-400">
-            Let&apos;s build something together
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="shadow-[0_0_20px_theme('colors.primary.600/0.2')] flex w-full flex-col gap-6 rounded-3xl bg-white/70 p-5 ring-1 ring-black/10 md:p-8 dark:bg-neutral-900/70 dark:ring-white/10"
-        >
-          <form className="space-y-5 md:space-y-8" onSubmit={handleSubmit}>
-            <div className="flex flex-col gap-5 md:flex-row md:gap-6">
-              <div className="flex w-full flex-col gap-2">
-                <label
-                  htmlFor="name"
-                  className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  disabled={isLoading}
-                  className="hover:border-primary-500/40 focus:border-primary-500 focus:ring-primary-500/10 dark:hover:border-primary-400/40 dark:hover:shadow-primary-900/30 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:shadow-md focus:ring-4 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
-                />
-              </div>
-              <div className="flex w-full flex-col gap-2">
-                <label
-                  htmlFor="email"
-                  className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="youremail@email.com"
-                  required
-                  disabled={isLoading}
-                  className="hover:border-primary-500/40 focus:border-primary-500 focus:ring-primary-500/10 dark:hover:border-primary-400/40 dark:hover:shadow-primary-900/30 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:shadow-md focus:ring-4 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
-                />
-              </div>
-            </div>
-
-            <div className="flex w-full flex-col gap-2">
-              <label
-                htmlFor="subject"
-                className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-                disabled={isLoading}
-                className="hover:border-primary-500/40 focus:border-primary-500 focus:ring-primary-500/10 dark:hover:border-primary-400/40 dark:hover:shadow-primary-900/30 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:shadow-md focus:ring-4 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
-              />
-            </div>
-
-            <div className="flex w-full flex-col gap-2">
-              <label
-                htmlFor="message"
-                className="font-inter text-sm font-semibold text-neutral-600 md:text-base dark:text-neutral-300"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                rows={5}
-                required
-                disabled={isLoading}
-                className="hover:border-primary-500/40 focus:border-primary-500 focus:ring-primary-500/10 dark:hover:border-primary-400/40 dark:hover:shadow-primary-900/30 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 w-full rounded-xl border border-black/10 bg-white p-3.5 text-sm text-neutral-800 transition-all hover:shadow-md focus:ring-4 focus:outline-none disabled:opacity-50 md:text-base dark:border-white/10 dark:bg-neutral-950 dark:text-white"
-              ></textarea>
-            </div>
-
-            <Button
-              type="submit"
-              disabled={isLoading}
-              className="bg-primary-600 hover:bg-primary-500 w-full rounded-xl border-none py-3.5 transition-colors disabled:opacity-70 md:py-4"
-            >
-              <div className="flex items-center justify-center gap-3 text-neutral-100">
-                <IoPaperPlane size={20} />
-                <span className="font-inter md:text-md text-sm font-semibold">
-                  {isLoading ? "Sending..." : "Send Message"}
-                </span>
-              </div>
-            </Button>
-            {status.message && (
-              <div
-                className={`mt-2 text-center text-sm font-semibold ${
-                  status.type === "success" ? "text-green-400" : "text-red-400"
-                }`}
-              >
-                {status.message}
-              </div>
-            )}
-          </form>
-        </motion.div>
+          anandagautama3112@gmail.com ↗
+        </a>
       </div>
+      <Reveal>
+        <form onSubmit={submit} aria-busy={loading} className="contact-form">
+          <div className="form-row">
+            {[
+              {
+                name: "name",
+                label: "Name",
+                type: "text",
+                auto: "name",
+                placeholder: "Your Name",
+              },
+              {
+                name: "email",
+                label: "Email",
+                type: "email",
+                auto: "email",
+                placeholder: "youremail@email.com",
+              },
+            ].map((f) => (
+              <div className="field" key={f.name}>
+                <label htmlFor={f.name}>{f.label}</label>
+                <input
+                  id={f.name}
+                  name={f.name}
+                  type={f.type}
+                  autoComplete={f.auto}
+                  placeholder={f.placeholder}
+                  required
+                  disabled={loading}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="field">
+            <label htmlFor="subject">Subject</label>
+            <input
+              id="subject"
+              name="subject"
+              autoComplete="off"
+              placeholder="Subject"
+              required
+              disabled={loading}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              autoComplete="off"
+              rows={5}
+              placeholder="Your Message"
+              required
+              disabled={loading}
+            />
+          </div>
+          <Button type="submit" disabled={loading}>
+            {loading ? "Sending…" : "Send Message"}
+            <span aria-hidden>↗</span>
+          </Button>
+          <p
+            className={"form-status " + (status?.type ?? "")}
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {status?.message}
+          </p>
+        </form>
+      </Reveal>
     </section>
   );
 }
