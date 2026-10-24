@@ -104,7 +104,7 @@ export default function Hero() {
               className="group hover:border-primary-500/30 hover:bg-primary-900/10 flex w-full items-center justify-center gap-2 rounded-full border border-black/20 bg-transparent px-6 py-3.5 text-neutral-800 transition-colors sm:w-auto sm:py-3 dark:border-white/20 dark:text-white"
             >
               <a
-                href="/AnandaGautamaSekarKhosmana_CV.pdf"
+                href="/CV_AnandaGautamaSekarKhosmana.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
