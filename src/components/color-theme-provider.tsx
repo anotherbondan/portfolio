@@ -19,29 +19,28 @@ export function ColorThemeProvider({
   children: React.ReactNode;
 }) {
   const [colorTheme, setColorThemeState] = useState<ColorTheme>("amethyst");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem("color-theme") as ColorTheme;
-    if (savedTheme) {
-      setColorThemeState(savedTheme);
+    let savedTheme: string | null = null;
+    try {
+      savedTheme = localStorage.getItem("color-theme");
+    } catch {}
+    if (
+      savedTheme &&
+      ["amethyst", "sapphire", "emerald", "topaz", "ruby"].includes(savedTheme)
+    ) {
+      setColorThemeState(savedTheme as ColorTheme);
       document.documentElement.setAttribute("data-theme-color", savedTheme);
     }
   }, []);
 
   const setColorTheme = (theme: ColorTheme) => {
     setColorThemeState(theme);
-    localStorage.setItem("color-theme", theme);
+    try {
+      localStorage.setItem("color-theme", theme);
+    } catch {}
     document.documentElement.setAttribute("data-theme-color", theme);
   };
-
-  // Prevent hydration mismatch by rendering a generic wrapper until mounted
-  // Actually, we don't strictly need to block children rendering for just a context
-  // but it's safer for UI components reading the context
-  if (!mounted) {
-    return <>{children}</>;
-  }
 
   return (
     <ColorThemeContext.Provider value={{ colorTheme, setColorTheme }}>
