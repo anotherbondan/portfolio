@@ -1,20 +1,23 @@
 "use client";
 import { ActionIcon } from "@/components/ui/action-icon";
 import { cn } from "@/lib/utils";
-import { useRef } from "react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import {
   motion,
   useScroll,
   useTransform,
   useReducedMotion,
+  useMotionValue,
+  useSpring,
 } from "framer-motion";
 import { projectsData } from "@/data/projects";
 import TechList from "./tech-list";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import Disclosure from "@/components/disclosure";
-import { Reveal } from "@/components/motion";
+import { Reveal, tactile, timing } from "@/components/motion";
 type ProjectData = (typeof projectsData)[number];
 function Actions({ data }: { data: ProjectData }) {
   return (
@@ -50,6 +53,66 @@ export default function Project({
   variant?: "featured" | "archive";
   index?: number;
 }) {
+  if (variant === "archive")
+    return <ArchiveProject data={data} index={index} />;
+  return <FeaturedProject data={data} index={index} />;
+}
+
+function ArchiveProject({ data, index }: { data: ProjectData; index: number }) {
+  const open = useRef(false);
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const reduced = useReducedMotion();
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const trailingX = useSpring(x, tactile);
+  const trailingY = useSpring(y, tactile);
+
+  const showPreview = (event: PointerEvent<HTMLDivElement>) => {
+    if (
+      open.current ||
+      event.pointerType !== "mouse" ||
+      !window.matchMedia("(hover: hover) and (pointer: fine)").matches
+    ) {
+      setPreviewVisible(false);
+      return;
+    }
+
+    const width = Math.min(320, window.innerWidth - 32);
+    const height = width / 1.8;
+    const gap = 24;
+    const left =
+      event.clientX + gap + width > window.innerWidth - 16
+        ? event.clientX - width - gap
+        : event.clientX + gap;
+    const top =
+      event.clientY + gap + height > window.innerHeight - 16
+        ? event.clientY - height - gap
+        : event.clientY + gap;
+
+    x.set(Math.max(16, Math.min(left, window.innerWidth - width - 16)));
+    y.set(Math.max(16, Math.min(top, window.innerHeight - height - 16)));
+    if (!previewVisible) {
+      trailingX.jump(x.get());
+      trailingY.jump(y.get());
+      setPreviewVisible(true);
+    }
+  };
+
+  useEffect(() => {
+    if (!previewVisible) return;
+    const hide = () => setPreviewVisible(false);
+    window.addEventListener("scroll", hide, true);
+    window.addEventListener("resize", hide);
+    window.addEventListener("blur", hide);
+    document.addEventListener("keydown", hide);
+    return () => {
+      window.removeEventListener("scroll", hide, true);
+      window.removeEventListener("resize", hide);
+      window.removeEventListener("blur", hide);
+      document.removeEventListener("keydown", hide);
+    };
+  }, [previewVisible]);
+
   const image = (
     <div className="relative aspect-[1.8] overflow-hidden bg-surface">
       <Image
@@ -61,11 +124,19 @@ export default function Project({
       />
     </div>
   );
-  if (variant === "archive")
-    return (
+  return (
+    <>
       <Disclosure
         id={"archive-" + data.id}
         className="last:border-b last:border-border"
+        onOpenChange={(nextOpen) => {
+          open.current = nextOpen;
+          setPreviewVisible(false);
+        }}
+        onPointerEnter={showPreview}
+        onPointerMove={showPreview}
+        onPointerLeave={() => setPreviewVisible(false)}
+        onPointerCancel={() => setPreviewVisible(false)}
         summary={
           <>
             <span className="w-[18px] font-mono text-[9px] leading-[1.6] text-muted min-[768px]:w-7 min-[768px]:text-[11px]">
@@ -92,8 +163,28 @@ export default function Project({
           </div>
         </div>
       </Disclosure>
-    );
-  return <FeaturedProject data={data} index={index} />;
+      {previewVisible &&
+        createPortal(
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none fixed top-0 left-0 z-50 hidden aspect-[1.8] w-[min(320px,calc(100vw-32px))] overflow-hidden border border-border bg-surface shadow-xl [@media(hover:hover)_and_(pointer:fine)]:block"
+            style={{ x: reduced ? x : trailingX, y: reduced ? y : trailingY }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: reduced ? 0 : timing.feedback }}
+          >
+            <Image
+              src={data.cover}
+              alt=""
+              fill
+              sizes="320px"
+              className="object-cover object-top"
+            />
+          </motion.div>,
+          document.body,
+        )}
+    </>
+  );
 }
 
 function FeaturedProject({
