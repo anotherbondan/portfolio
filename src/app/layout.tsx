@@ -94,7 +94,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="scroll-pt-24 scroll-smooth motion-reduce:scroll-auto!"
+      className="scroll-pt-24 scroll-smooth motion-reduce:scroll-auto! [@media(hover:hover)_and_(pointer:fine)_and_(prefers-reduced-motion:no-preference)]:data-[cursor-active]:cursor-none! [@media(hover:hover)_and_(pointer:fine)_and_(prefers-reduced-motion:no-preference)]:data-[cursor-active]:[&_*]:cursor-none!"
     >
       <body
         className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
