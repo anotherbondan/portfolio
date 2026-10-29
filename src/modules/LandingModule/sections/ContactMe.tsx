@@ -1,4 +1,7 @@
 "use client";
+import { Section } from "@/components/ui/layout";
+import { TextLink } from "@/components/ui/text-link";
+import { FormField, formControlClasses } from "@/components/ui/form-field";
 import { useState, FormEvent } from "react";
 import Button from "@/components/ui/button";
 import { SectionHeading, Reveal } from "@/components/motion";
@@ -52,23 +55,28 @@ export default function ContactMe() {
     }
   }
   return (
-    <section id="contact" className="section contact-grid container">
+    <Section
+      id="contact"
+      className="grid grid-cols-1 gap-10 pb-(--space-section) min-[768px]:grid-cols-2 min-[768px]:gap-[6%] min-[1024px]:gap-[10%]"
+    >
       <div>
         <SectionHeading
+          className="max-[768px]:mb-5"
+          titleClassName="text-[clamp(3.3rem,12vw,5rem)] leading-[1.06] min-[768px]:text-[clamp(3.5rem,6vw,6rem)]"
           number="04"
           title="Let's build something together."
           description="Get in touch"
         />
-        <a
-          className="text-link contact-email"
+        <TextLink
+          className="text-[12px] [overflow-wrap:anywhere]"
           href="mailto:anandagautama3112@gmail.com"
         >
           anandagautama3112@gmail.com ↗
-        </a>
+        </TextLink>
       </div>
       <Reveal>
-        <form onSubmit={submit} aria-busy={loading} className="contact-form">
-          <div className="form-row">
+        <form onSubmit={submit} aria-busy={loading} className="grid gap-6">
+          <div className="grid grid-cols-1 gap-6 min-[768px]:grid-cols-2 min-[768px]:gap-5">
             {[
               {
                 name: "name",
@@ -85,8 +93,7 @@ export default function ContactMe() {
                 placeholder: "youremail@email.com",
               },
             ].map((f) => (
-              <div className="field" key={f.name}>
-                <label htmlFor={f.name}>{f.label}</label>
+              <FormField key={f.name} id={f.name} label={f.label}>
                 <input
                   id={f.name}
                   name={f.name}
@@ -95,12 +102,12 @@ export default function ContactMe() {
                   placeholder={f.placeholder}
                   required
                   disabled={loading}
+                  className={formControlClasses}
                 />
-              </div>
+              </FormField>
             ))}
           </div>
-          <div className="field">
-            <label htmlFor="subject">Subject</label>
+          <FormField id="subject" label="Subject">
             <input
               id="subject"
               name="subject"
@@ -108,10 +115,10 @@ export default function ContactMe() {
               placeholder="Subject"
               required
               disabled={loading}
+              className={formControlClasses}
             />
-          </div>
-          <div className="field">
-            <label htmlFor="message">Message</label>
+          </FormField>
+          <FormField id="message" label="Message">
             <textarea
               id="message"
               name="message"
@@ -120,14 +127,15 @@ export default function ContactMe() {
               placeholder="Your Message"
               required
               disabled={loading}
+              className={formControlClasses + " resize-y"}
             />
-          </div>
-          <Button type="submit" disabled={loading}>
+          </FormField>
+          <Button type="submit" disabled={loading} className="justify-between">
             {loading ? "Sending…" : "Send Message"}
             <span aria-hidden>↗</span>
           </Button>
           <p
-            className={"form-status " + (status?.type ?? "")}
+            className={"min-h-6 text-[13px]" + (status ? " text-accent" : "")}
             role="status"
             aria-live="polite"
             aria-atomic="true"
@@ -136,6 +144,6 @@ export default function ContactMe() {
           </p>
         </form>
       </Reveal>
-    </section>
+    </Section>
   );
 }

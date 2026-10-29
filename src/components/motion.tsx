@@ -1,4 +1,6 @@
 "use client";
+import { cn } from "@/lib/utils";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { MotionConfig, motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 export const timing = {
@@ -57,17 +59,28 @@ export function SectionHeading({
   number,
   title,
   description,
+  className,
+  titleClassName,
 }: {
   number: string;
   title: string;
   description: string;
+  className?: string;
+  titleClassName?: string;
 }) {
   return (
-    <Reveal className="section-heading">
-      <p className="eyebrow">
+    <Reveal className={cn("mb-8 min-[768px]:mb-14", className)}>
+      <Eyebrow className="mb-[1.3rem] text-[9px] leading-[1.6] text-muted min-[768px]:text-[11px]">
         {number} / {description}
-      </p>
-      <h2>{title}</h2>
+      </Eyebrow>
+      <h2
+        className={cn(
+          "text-[clamp(2.5rem,9vw,4rem)] leading-[1.06] font-medium tracking-[-0.045em] min-[768px]:text-[clamp(2.8rem,5vw,5rem)]",
+          titleClassName,
+        )}
+      >
+        {title}
+      </h2>
     </Reveal>
   );
 }

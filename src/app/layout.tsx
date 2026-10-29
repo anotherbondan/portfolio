@@ -91,14 +91,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="scroll-pt-24 scroll-smooth motion-reduce:scroll-auto!"
+    >
       <body
         className={`${outfit.variable} ${plusJakartaSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ColorThemeProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <MotionProvider>
-              <a href="#main" className="skip-link">
+              <a
+                href="#main"
+                className="fixed top-[-100px] left-4 z-[150] bg-background p-3 focus:top-3"
+              >
                 Skip to content
               </a>
               <ScrollProgressBar />

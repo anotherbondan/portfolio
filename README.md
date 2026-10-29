@@ -20,6 +20,12 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Styling
+
+Use Tailwind utilities first for component styling, including responsive layouts and interaction states. Extract repeated UI into reusable components in `src/components/ui`; use their props and `cn()` for variants instead of parent-dependent CSS overrides.
+
+Keep `src/app/globals.css` focused on Tailwind configuration, theme tokens, and shared document/accessibility defaults. Add custom component CSS only when Tailwind cannot express the behavior, and document the reason. Keep Framer Motion values dynamic through its animation API.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

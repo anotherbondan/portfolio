@@ -1,4 +1,8 @@
 "use client";
+import { Container } from "@/components/ui/layout";
+import { Brand } from "@/components/ui/brand";
+import { IconButton } from "@/components/ui/icon-button";
+import { TextLink } from "@/components/ui/text-link";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -54,30 +58,28 @@ export default function Navbar() {
   }, [open]);
   return (
     <>
-      <header className="site-header">
-        <nav className="nav-bar container" aria-label="Main navigation">
-          <Link
-            href="/#home"
-            className="brand"
-            aria-label="Ananda Gautama, home"
-          >
-            ag<span className="accent">.</span>
-          </Link>
-          <div className="desktop-nav">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background">
+        <Container
+          as="nav"
+          className="flex min-h-17 items-center justify-between gap-5 min-[768px]:min-h-20"
+          aria-label="Main navigation"
+        >
+          <Brand aria-label="Ananda Gautama, home" />
+          <div className="hidden gap-7 min-[768px]:flex min-[768px]:max-[1024px]:gap-[18px]">
             {links.map((l) => (
               <Link
                 key={l.id}
                 href={"/#" + l.id}
                 aria-current={active === l.id ? "location" : undefined}
+                className="relative flex min-h-11 items-center text-[12px] text-muted after:absolute after:bottom-[5px] after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-[140ms] after:ease-linear hover:text-foreground hover:after:scale-x-100 aria-[current]:text-foreground aria-[current]:after:scale-x-100"
               >
                 {l.name}
               </Link>
             ))}
           </div>
-          <div className="nav-controls">
+          <div className="flex items-center gap-1.5 max-[360px]:gap-1">
             <ColorThemeDropdown />
-            <button
-              className="icon-button"
+            <IconButton
               aria-label={
                 mounted && resolvedTheme === "light"
                   ? "Switch to dark mode"
@@ -90,32 +92,32 @@ export default function Navbar() {
               <span aria-hidden>
                 {mounted && resolvedTheme === "light" ? "☾" : "☼"}
               </span>
-            </button>
-            <a
-              className="linkedin-nav text-link"
+            </IconButton>
+            <TextLink
+              className="ml-3 max-[1024px]:hidden"
               href="https://www.linkedin.com/in/anandagautama/"
               target="_blank"
               rel="noopener noreferrer"
             >
               LinkedIn ↗
-            </a>
-            <button
+            </TextLink>
+            <IconButton
               ref={trigger}
-              className="icon-button menu-trigger"
+              className="min-[768px]:hidden"
               aria-expanded={open}
               aria-controls="mobile-navigation"
               aria-label="Open navigation menu"
               onClick={() => setOpen(true)}
             >
               ☰
-            </button>
+            </IconButton>
           </div>
-        </nav>
+        </Container>
       </header>
       <dialog
         id="mobile-navigation"
         ref={dialog}
-        className="mobile-dialog"
+        className="m-0 h-dvh max-h-dvh w-full max-w-none border-0 bg-background p-6 text-foreground backdrop:bg-[#0008]"
         aria-labelledby="menu-title"
         onCancel={() => setOpen(false)}
         onKeyDown={(event) => {
@@ -141,30 +143,37 @@ export default function Navbar() {
           if (e.target === e.currentTarget) setOpen(false);
         }}
       >
-        <div className="mobile-menu">
-          <div className="mobile-menu-top">
-            <p id="menu-title" className="eyebrow">
+        <div>
+          <div className="mb-10 flex items-center justify-between">
+            <p
+              id="menu-title"
+              className="font-mono text-[11px] leading-[1.6] tracking-[0.1em] uppercase"
+            >
               Navigation
             </p>
-            <button
+            <IconButton
               autoFocus
-              className="icon-button"
               aria-label="Close navigation menu"
               onClick={() => setOpen(false)}
             >
               ×
-            </button>
+            </IconButton>
           </div>
-          <nav aria-label="Mobile navigation">
+          <nav aria-label="Mobile navigation" className="grid">
             {links.map((l, i) => (
               <Link
                 key={l.id}
                 href={"/#" + l.id}
                 onClick={() => setOpen(false)}
+                className="flex items-center gap-5 border-t border-border py-5 font-display text-[32px]"
               >
-                <span className="mono">0{i + 1}</span>
+                <span className="font-mono text-[11px] leading-[1.6]">
+                  0{i + 1}
+                </span>
                 {l.name}
-                <span aria-hidden>↗</span>
+                <span className="ml-auto" aria-hidden>
+                  ↗
+                </span>
               </Link>
             ))}
           </nav>
