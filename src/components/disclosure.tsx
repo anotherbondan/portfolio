@@ -1,5 +1,5 @@
 "use client";
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, ComponentPropsWithoutRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { timing, entranceEase } from "@/components/motion";
 import { cn } from "@/lib/utils";
@@ -9,17 +9,21 @@ export default function Disclosure({
   children,
   className,
   variant = "archive",
+  onOpenChange,
+  ...props
 }: {
   id: string;
   summary: ReactNode;
   children: ReactNode;
   className?: string;
   variant?: "archive" | "experience";
-}) {
+  onOpenChange?: (open: boolean) => void;
+} & Omit<ComponentPropsWithoutRef<"div">, "children" | "id">) {
   const [open, setOpen] = useState(false);
   const reduced = useReducedMotion();
   return (
     <div
+      {...props}
       className={cn(
         variant === "archive" && "border-t border-border",
         className,
@@ -36,7 +40,10 @@ export default function Disclosure({
           )}
           aria-expanded={open}
           aria-controls={id}
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            setOpen(!open);
+            onOpenChange?.(!open);
+          }}
         >
           {summary}
           <span
