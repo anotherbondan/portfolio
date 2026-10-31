@@ -209,21 +209,28 @@ export function Reveal({
   mask?: boolean;
 }) {
   const reduced = useReducedMotion();
+  const visible = {
+    y: 0,
+    opacity: 1,
+    ...(mask ? { clipPath: "inset(0 0 0% 0)" } : {}),
+  };
   return (
     <motion.div
-      className={className}
-      initial={false}
-      whileInView={
+      className={cn(
+        "focus-within:transform-none! focus-within:opacity-100! motion-reduce:transform-none! motion-reduce:opacity-100! motion-reduce:[clip-path:none]!",
+        className,
+      )}
+      initial={
         reduced
-          ? {}
+          ? false
           : {
-              y: [hero ? 32 : 20, 0],
-              opacity: [0.4, 1],
-              ...(mask
-                ? { clipPath: ["inset(0 0 18% 0)", "inset(0 0 0% 0)"] }
-                : {}),
+              y: hero ? 32 : 20,
+              opacity: 0,
+              ...(mask ? { clipPath: "inset(0 0 18% 0)" } : {}),
             }
       }
+      animate={reduced ? visible : undefined}
+      whileInView={visible}
       viewport={{ once: true, amount: 0.18 }}
       transition={{
         duration: reduced ? 0 : hero ? timing.hero : timing.entrance,

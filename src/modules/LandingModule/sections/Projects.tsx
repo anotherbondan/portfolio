@@ -18,7 +18,7 @@ export default function Projects() {
         title="Selected work."
         description="Ideas, engineered into experiences"
       />
-      <div className="grid gap-14 min-[768px]:gap-24">
+      <div className="-m-2 grid gap-14 overflow-clip p-2 min-[768px]:gap-24">
         {["matakota", "compfest-18", "fiorisce"].map((id, index) => (
           <Project
             key={id}

@@ -11,13 +11,14 @@ import {
   useReducedMotion,
   useMotionValue,
   useSpring,
+  useInView,
 } from "framer-motion";
 import { projectsData } from "@/data/projects";
 import TechList from "./tech-list";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import Disclosure from "@/components/disclosure";
-import { Reveal, tactile, timing } from "@/components/motion";
+import { entranceEase, tactile, timing } from "@/components/motion";
 type ProjectData = (typeof projectsData)[number];
 function Actions({ data }: { data: ProjectData }) {
   return (
@@ -194,7 +195,10 @@ function FeaturedProject({
   data: ProjectData;
   index: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
+  // Observe the stationary row so its entrance cannot change the visibility trigger.
+  // Latch after the first entry so leaving cannot interrupt or replay the animation.
+  const hasEntered = useInView(ref, { amount: 0.18, once: true });
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -224,38 +228,52 @@ function FeaturedProject({
     </div>
   );
   return (
-    <article
-      ref={ref}
-      className="group/project flex flex-col items-stretch gap-6 min-[768px]:grid min-[768px]:grid-cols-12 min-[768px]:items-center min-[1024px]:gap-9"
-    >
-      <Reveal
+    <article ref={ref} className="group/project">
+      <motion.div
         className={cn(
-          "overflow-hidden min-[768px]:col-start-1 min-[768px]:col-end-8",
-          index % 2 !== 0 &&
-            "min-[768px]:col-start-6 min-[768px]:col-end-13 min-[768px]:row-start-1",
+          "flex flex-col items-stretch gap-6 focus-within:transform-none! focus-within:opacity-100! motion-reduce:transform-none! motion-reduce:opacity-100! min-[768px]:grid min-[768px]:grid-cols-12 min-[768px]:items-center min-[1024px]:gap-9",
+          index % 2 === 0
+            ? "[--project-entrance-x:32px] min-[768px]:[--project-entrance-x:72px]"
+            : "[--project-entrance-x:-32px] min-[768px]:[--project-entrance-x:-72px]",
         )}
-        mask
+        initial={false}
+        animate={
+          reduced || hasEntered
+            ? { x: "0px", opacity: 1 }
+            : { x: "var(--project-entrance-x)", opacity: 0 }
+        }
+        transition={{
+          duration: hasEntered && !reduced ? timing.entrance : 0,
+          ease: entranceEase,
+        }}
       >
-        <Card>{image}</Card>
-      </Reveal>
-      <Reveal
-        className={cn(
-          "min-[768px]:col-start-8 min-[768px]:col-end-13",
-          index % 2 !== 0 &&
-            "min-[768px]:col-start-1 min-[768px]:col-end-6 min-[768px]:row-start-1",
-        )}
-        index={1}
-      >
-        <p className="font-mono text-[11px] leading-[1.6] tracking-[0.1em] text-accent uppercase min-[768px]:max-[1024px]:text-[9px]">
-          0{index + 1} / {data.category} / {data.date}
-        </p>
-        <h3 className="my-3.5 text-[36px] leading-[1.1] font-medium tracking-[-0.04em] min-[768px]:my-[18px] min-[768px]:text-[32px] min-[1024px]:text-[clamp(2rem,3vw,3.4rem)]">
-          {data.title}
-        </h3>
-        <p className="text-[13px] leading-[1.85] text-muted">{data.desc}</p>
-        <TechList data={data.tech} />
-        <Actions data={data} />
-      </Reveal>
+        <div
+          className={cn(
+            "overflow-hidden min-[768px]:col-start-1 min-[768px]:col-end-8",
+            index % 2 !== 0 &&
+              "min-[768px]:col-start-6 min-[768px]:col-end-13 min-[768px]:row-start-1",
+          )}
+        >
+          <Card>{image}</Card>
+        </div>
+        <div
+          className={cn(
+            "min-[768px]:col-start-8 min-[768px]:col-end-13",
+            index % 2 !== 0 &&
+              "min-[768px]:col-start-1 min-[768px]:col-end-6 min-[768px]:row-start-1",
+          )}
+        >
+          <p className="font-mono text-[11px] leading-[1.6] tracking-[0.1em] text-accent uppercase min-[768px]:max-[1024px]:text-[9px]">
+            0{index + 1} / {data.category} / {data.date}
+          </p>
+          <h3 className="my-3.5 text-[36px] leading-[1.1] font-medium tracking-[-0.04em] min-[768px]:my-[18px] min-[768px]:text-[32px] min-[1024px]:text-[clamp(2rem,3vw,3.4rem)]">
+            {data.title}
+          </h3>
+          <p className="text-[13px] leading-[1.85] text-muted">{data.desc}</p>
+          <TechList data={data.tech} />
+          <Actions data={data} />
+        </div>
+      </motion.div>
     </article>
   );
 }
