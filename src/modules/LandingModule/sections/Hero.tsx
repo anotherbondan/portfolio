@@ -28,8 +28,7 @@ export default function Hero() {
         <div className="relative z-2 col-span-full min-[768px]:col-span-8">
           <Reveal hero>
             <Eyebrow>
-              <span className="text-accent">●</span> Software engineer / CS
-              student
+              <span className="text-accent">●</span> Information Systems Student
             </Eyebrow>
           </Reveal>
           <h1 className="my-6 text-[clamp(3.25rem,12vw,5.8rem)] leading-[0.98] font-medium tracking-[-0.065em] max-[360px]:text-[12vw] min-[768px]:mt-7 min-[768px]:text-[clamp(4rem,8.2vw,6rem)] min-[1024px]:text-[clamp(4.5rem,8.2vw,8.1rem)]">
@@ -46,7 +45,7 @@ export default function Hero() {
           </h1>
           <Reveal hero index={3}>
             <p className="mb-[18px] font-display text-[25px] tracking-[-0.02em] min-[768px]:text-[clamp(1.5rem,2.5vw,2.2rem)]">
-              Full-Stack Developer
+              Software Engineer
             </p>
           </Reveal>
           <Reveal hero index={4}>

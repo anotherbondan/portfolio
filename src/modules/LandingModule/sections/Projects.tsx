@@ -48,7 +48,7 @@ export default function Projects() {
             aria-pressed={filter === f}
             className={cn(
               "relative isolate min-h-11 overflow-hidden border border-border bg-transparent px-3 py-2.5 text-[10px] text-muted transition-[background,color,border-color] duration-[140ms] ease-linear hover:border-accent hover:text-foreground min-[768px]:px-4 min-[768px]:text-[12px]",
-              "aria-pressed:bg-surface aria-pressed:bg-[linear-gradient(135deg,var(--surface)_0%,color-mix(in_srgb,var(--foreground)_3%,var(--surface))_25%,color-mix(in_srgb,var(--foreground)_7%,var(--surface))_50%,color-mix(in_srgb,var(--foreground)_3%,var(--surface))_75%,var(--surface)_100%)] aria-pressed:text-foreground aria-pressed:shadow-[inset_0_1px_0_rgb(255_255_255/0.08)]",
+              "aria-pressed:bg-surface aria-pressed:bg-[linear-gradient(135deg,var(--surface)_0%,color-mix(in_srgb,var(--foreground)_3%,var(--surface))_25%,color-mix(in_srgb,var(--foreground)_7%,var(--surface))_50%,color-mix(in_srgb,var(--foreground)_3%,var(--surface))_75%,var(--surface)_100%)] aria-pressed:text-foreground",
               "before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:bg-[linear-gradient(135deg,transparent_10%,rgb(255_255_255/0.03)_30%,rgb(255_255_255/0.14)_50%,rgb(255_255_255/0.03)_70%,transparent_90%)] before:opacity-0 before:transition-opacity before:duration-700 before:ease-in-out motion-reduce:before:transition-none",
               "aria-pressed:before:opacity-25 aria-pressed:hover:before:opacity-45 dark:aria-pressed:before:opacity-10 dark:aria-pressed:hover:before:opacity-25",
             )}
