@@ -30,4 +30,4 @@ export function FormField({
 }
 
 export const formControlClasses =
-  "w-full min-w-0 rounded-none border border-border bg-surface p-3.5 text-[16px] text-foreground focus:outline-2 focus:outline-accent focus:outline-offset-2 min-[768px]:text-[14px]";
+  "w-full min-w-0 rounded-none border border-border bg-surface p-3.5 text-[16px] text-foreground focus:outline-1 focus:outline-accent focus:outline-offset-2 min-[768px]:text-[14px]";
