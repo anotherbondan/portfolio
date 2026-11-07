@@ -5,24 +5,29 @@ import { IconButton } from "@/components/ui/icon-button";
 import { TextLink } from "@/components/ui/text-link";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { ColorThemeDropdown } from "@/components/ui/color-theme-dropdown";
 const links = [
-  { name: "Home", id: "home" },
-  { name: "Projects", id: "project" },
-  { name: "Journey", id: "experience" },
-  { name: "Tools", id: "tech" },
-  { name: "Contact", id: "contact" },
+  { name: "Home", id: "home", href: "/#home" },
+  { name: "Projects", id: "project", href: "/#project" },
+  { name: "Journey", id: "experience", href: "/#experience" },
+  { name: "Tools", id: "tech", href: "/#tech" },
+  { name: "Contact", id: "contact", href: "/#contact" },
 ];
 export default function Navbar() {
+  const pathname = usePathname();
   const [active, setActive] = useState("home"),
     [open, setOpen] = useState(false),
     [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const activeLink =
+    pathname === "/gallery" ? "gallery" : pathname === "/" ? active : undefined;
   const dialog = useRef<HTMLDialogElement>(null),
     trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => setMounted(true), []);
   useEffect(() => {
+    if (pathname !== "/") return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -32,11 +37,12 @@ export default function Navbar() {
       { rootMargin: "-15% 0px -65% 0px", threshold: 0 },
     );
     links.forEach((l) => {
+      if (!l.href.startsWith("/#")) return;
       const el = document.getElementById(l.id);
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
   useEffect(() => {
     if (!open) return;
     const d = dialog.current!;
@@ -69,8 +75,14 @@ export default function Navbar() {
             {links.map((l) => (
               <Link
                 key={l.id}
-                href={"/#" + l.id}
-                aria-current={active === l.id ? "location" : undefined}
+                href={l.href}
+                aria-current={
+                  activeLink === l.id
+                    ? l.id === "gallery"
+                      ? "page"
+                      : "location"
+                    : undefined
+                }
                 className="relative flex min-h-11 items-center text-[12px] text-muted after:absolute after:bottom-[5px] after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-[140ms] after:ease-linear hover:text-foreground hover:after:scale-x-100 aria-[current]:text-foreground aria-[current]:after:scale-x-100"
               >
                 {l.name}
@@ -163,7 +175,14 @@ export default function Navbar() {
             {links.map((l, i) => (
               <Link
                 key={l.id}
-                href={"/#" + l.id}
+                href={l.href}
+                aria-current={
+                  activeLink === l.id
+                    ? l.id === "gallery"
+                      ? "page"
+                      : "location"
+                    : undefined
+                }
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-5 border-t border-border py-5 font-display text-[32px]"
               >

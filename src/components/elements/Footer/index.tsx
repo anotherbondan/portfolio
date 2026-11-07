@@ -2,12 +2,31 @@ import { Container } from "@/components/ui/layout";
 import { Brand } from "@/components/ui/brand";
 import { TextLink } from "@/components/ui/text-link";
 import Link from "next/link";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+} from "react-icons/fa6";
 const socials = [
-  ["LinkedIn", "https://www.linkedin.com/in/anandagautama/"],
-  ["GitHub", "https://github.com/anotherbondan"],
-  ["Instagram", "https://instagram.com/nandaaskrr"],
-  ["X", "https://x.com/bombdamn"],
-  ["Email", "mailto:anandagautama3112@gmail.com"],
+  {
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/anandagautama/",
+    Icon: FaLinkedinIn,
+  },
+  { label: "GitHub", url: "https://github.com/anotherbondan", Icon: FaGithub },
+  {
+    label: "Instagram",
+    url: "https://instagram.com/nandaaskrr",
+    Icon: FaInstagram,
+  },
+  { label: "X", url: "https://x.com/bombdamn", Icon: FaXTwitter },
+  {
+    label: "Email",
+    url: "mailto:anandagautama3112@gmail.com",
+    Icon: FaEnvelope,
+  },
 ];
 export default function Footer() {
   return (
@@ -29,34 +48,40 @@ export default function Footer() {
           className="flex flex-wrap gap-4 min-[768px]:gap-5"
         >
           {[
-            ["Home", "home"],
-            ["Projects", "project"],
-            ["Journey", "experience"],
-            ["Tools", "tech"],
-            ["Contact", "contact"],
-          ].map(([label, id]) => (
+            ["Home", "/#home"],
+            ["Projects", "/#project"],
+            ["Journey", "/#experience"],
+            ["Tools", "/#tech"],
+            ["Contact", "/#contact"],
+          ].map(([label, href]) => (
             <TextLink
-              key={id}
+              key={href}
               asChild
               className="text-[11px] text-muted underline-offset-[5px]"
             >
-              <Link href={"/#" + id}>{label}</Link>
+              <Link href={href}>{label}</Link>
             </TextLink>
           ))}
         </nav>
         <nav
           aria-label="Social links"
-          className="mt-2 flex flex-wrap gap-4 min-[768px]:mt-4 min-[768px]:gap-5"
+          className="mt-2 flex flex-wrap gap-1.5 min-[768px]:mt-4 min-[768px]:gap-2"
         >
-          {socials.map(([label, url]) => (
+          {socials.map(({ label, url, Icon }) => (
             <TextLink
               key={label}
               href={url}
+              aria-label={label}
+              title={label}
               target="_blank"
               rel="noopener noreferrer"
-              className="gap-0 text-[11px] text-muted underline-offset-[5px]"
+              className="size-11 justify-center gap-0 text-muted transition-colors duration-[140ms] hover:bg-surface focus-visible:bg-surface motion-reduce:transition-none"
             >
-              {label} <span aria-hidden>↗</span>
+              <Icon
+                className="size-[18px]"
+                aria-hidden="true"
+                focusable="false"
+              />
             </TextLink>
           ))}
         </nav>
